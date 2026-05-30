@@ -12,9 +12,7 @@ report_generation_github/
 
 - Python 3.11+
 - Node.js 18+
-- An **Azure OpenAI** resource with two deployments:
-  - a chat model (default name: `gpt-4o`)
-  - an embedding model (default name: `text-embedding-3-large`)
+- An **OpenAI API key** ([create one here](https://platform.openai.com/api-keys))
 
 ## 1. Clone
 
@@ -23,25 +21,14 @@ git clone https://github.com/magic-YuanTian/worker_report_generation.git
 cd worker_report_generation
 ```
 
-## 2. Configure credentials
-
-Copy the example file and fill in your Azure OpenAI endpoint and key:
+## 2. Add your OpenAI key
 
 ```bash
 cp .env.example backend/.env
-# then edit backend/.env
+# then open backend/.env and replace sk-... with your real key
 ```
 
-The backend reads these variables on startup:
-
-| Variable | Description |
-|---|---|
-| `AZURE_OPENAI_ENDPOINT` | e.g. `https://your-resource.openai.azure.com/` |
-| `AZURE_OPENAI_API_KEY` | Azure key for the resource above |
-| `AZURE_OPENAI_API_VERSION` | Chat API version (default `2024-10-01-preview`) |
-| `AZURE_OPENAI_LLM_MODEL` | Chat deployment name (default `gpt-4o`) |
-| `AZURE_OPENAI_EMBEDDING_API_VERSION` | Embedding API version (default `2024-02-15-preview`) |
-| `AZURE_OPENAI_EMBEDDING_MODEL` | Embedding deployment name (default `text-embedding-3-large`) |
+That's it — only `OPENAI_API_KEY` is needed. The chat model defaults to `gpt-4o` and embeddings to `text-embedding-3-large`; both are hard-coded in `backend/conversation_manager.py` and `backend/rag_engine.py` if you want to change them.
 
 ## 3. Start the backend
 
@@ -55,7 +42,7 @@ python app.py
 
 The server runs on `http://127.0.0.1:5001`.
 
-> **First run:** the RAG index is not committed. The backend will read every PDF in `backend/documents/`, generate embeddings, and persist them to `backend/rag_storage/`. This takes a minute or two and is only done once — subsequent starts load the saved index instantly.
+> **First run:** the RAG index is not committed. The backend reads every PDF in `backend/documents/`, generates embeddings, and persists them to `backend/rag_storage/`. This takes a minute or two and is only done once — subsequent starts load the saved index instantly.
 >
 > To use your own reference documents, drop PDFs into `backend/documents/` (and delete `backend/rag_storage/` to force a rebuild).
 
@@ -91,6 +78,6 @@ Then serve `frontend/dist/` from any static host and point its `/api` calls at t
 
 ## Troubleshooting
 
-- **`AuthenticationError` from Azure** — Check `AZURE_OPENAI_ENDPOINT` ends with a trailing `/` and the deployment names match what's in your Azure resource.
+- **`AuthenticationError`** — Check `OPENAI_API_KEY` in `backend/.env` is a valid key.
 - **First request takes a long time** — Expected on first run while the RAG index is built. Watch the backend logs.
 - **Frontend can't reach backend** — Confirm `python app.py` is running on port `5001`; the proxy in `frontend/vite.config.js` expects that port.

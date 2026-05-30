@@ -5,11 +5,11 @@ from dotenv import load_dotenv
 
 load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
-from flask import Flask, request, jsonify, send_file
-from flask_cors import CORS
-from rag_engine import init_rag
-from conversation_manager import ConversationManager
-from report_generator import generate_report_pdf
+from flask import Flask, request, jsonify, send_file  # noqa: E402
+from flask_cors import CORS  # noqa: E402
+from rag_engine import init_rag  # noqa: E402
+from conversation_manager import ConversationManager  # noqa: E402
+from report_generator import generate_report_pdf  # noqa: E402
 
 app = Flask(__name__)
 CORS(app)

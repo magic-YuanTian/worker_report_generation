@@ -1,15 +1,11 @@
 import json
-import os
 import uuid
 import copy
-from openai import AzureOpenAI
+from openai import OpenAI
 from tenacity import retry, stop_after_attempt, wait_random_exponential
 from rag_engine import query_rag
 
-AZURE_ENDPOINT = os.environ.get("AZURE_OPENAI_ENDPOINT", "")
-AZURE_API_KEY = os.environ.get("AZURE_OPENAI_API_KEY", "")
-AZURE_API_VERSION = os.environ.get("AZURE_OPENAI_API_VERSION", "2024-10-01-preview")
-LLM_MODEL = os.environ.get("AZURE_OPENAI_LLM_MODEL", "gpt-4o")
+LLM_MODEL = "gpt-4o"
 
 REPORT_TEMPLATE = {
     "activity": {
@@ -176,11 +172,7 @@ class Session:
 class ConversationManager:
     def __init__(self, rag_retriever):
         self.retriever = rag_retriever
-        self.client = AzureOpenAI(
-            azure_endpoint=AZURE_ENDPOINT,
-            api_key=AZURE_API_KEY,
-            api_version=AZURE_API_VERSION,
-        )
+        self.client = OpenAI()
         self.sessions = {}
 
     def create_session(self):

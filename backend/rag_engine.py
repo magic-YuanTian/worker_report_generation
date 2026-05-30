@@ -10,10 +10,12 @@ from llama_index.core import (
     load_index_from_storage,
     Settings,
 )
-from llama_index.core.embeddings import BaseEmbedding
-from llama_index.core.bridge.pydantic import PrivateAttr
-from openai import AzureOpenAI
+from llama_index.embeddings.openai import OpenAIEmbedding
+from openai import OpenAI
 from tenacity import retry, stop_after_attempt, wait_random_exponential
+
+LLM_MODEL = "gpt-4o"
+EMBEDDING_MODEL = "text-embedding-3-large"
 
 try:
     from rank_bm25 import BM25Okapi
@@ -136,71 +138,11 @@ def _reciprocal_rank_fusion(ranked_lists: List[List[Any]], k: int = 60) -> List[
     ordered_ids = sorted(scores, key=lambda nid: scores[nid], reverse=True)
     return [seen[nid] for nid in ordered_ids]
 
-AZURE_ENDPOINT = os.environ.get("AZURE_OPENAI_ENDPOINT", "")
-AZURE_API_KEY = os.environ.get("AZURE_OPENAI_API_KEY", "")
-EMBEDDING_API_VERSION = os.environ.get("AZURE_OPENAI_EMBEDDING_API_VERSION", "2024-02-15-preview")
-EMBEDDING_MODEL = os.environ.get("AZURE_OPENAI_EMBEDDING_MODEL", "text-embedding-3-large")
-
-
-class AzureEmbeddingWrapper(BaseEmbedding):
-    """Wraps Azure OpenAI embedding API for use with LlamaIndex."""
-
-    _client: Any = PrivateAttr()
-    _model_name: str = PrivateAttr()
-
-    def __init__(
-        self,
-        azure_endpoint: str,
-        api_key: str,
-        api_version: str,
-        model_name: str,
-        **kwargs,
-    ):
-        super().__init__(model_name=model_name, **kwargs)
-        self._client = AzureOpenAI(
-            azure_endpoint=azure_endpoint,
-            api_key=api_key,
-            api_version=api_version,
-        )
-        self._model_name = model_name
-
-    @classmethod
-    def class_name(cls) -> str:
-        return "AzureEmbeddingWrapper"
-
-    @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
-    def _call_api(self, text: str) -> List[float]:
-        response = self._client.embeddings.create(
-            input=text,
-            model=self._model_name,
-        )
-        return response.data[0].embedding
-
-    def _get_query_embedding(self, query: str) -> List[float]:
-        return self._call_api(query)
-
-    async def _aget_query_embedding(self, query: str) -> List[float]:
-        return self._call_api(query)
-
-    def _get_text_embedding(self, text: str) -> List[float]:
-        return self._call_api(text)
-
-    async def _aget_text_embedding(self, text: str) -> List[float]:
-        return self._call_api(text)
-
-
 def init_rag():
     """Initialize the RAG retriever from PDF documents."""
     print("Initializing RAG engine...")
 
-    embed_model = AzureEmbeddingWrapper(
-        azure_endpoint=AZURE_ENDPOINT,
-        api_key=AZURE_API_KEY,
-        api_version=EMBEDDING_API_VERSION,
-        model_name=EMBEDDING_MODEL,
-    )
-
-    Settings.embed_model = embed_model
+    Settings.embed_model = OpenAIEmbedding(model=EMBEDDING_MODEL)
     Settings.llm = None
 
     index_exists = os.path.exists(os.path.join(STORAGE_DIR, "docstore.json"))
@@ -232,9 +174,6 @@ BM25_TOP_K = 10       # Candidates pulled from the BM25 keyword retriever
 CANDIDATE_POOL = 8    # Fused candidates handed to the LLM relevance judge
 MAX_RESULTS = 4       # Max sources to return after judging
 
-JUDGE_API_VERSION = os.environ.get("AZURE_OPENAI_API_VERSION", "2024-10-01-preview")
-JUDGE_MODEL = os.environ.get("AZURE_OPENAI_LLM_MODEL", "gpt-4o")
-
 RELEVANCE_PROMPT = """\
 You are a relevance judge. Given a user query and a document chunk, decide \
 whether the chunk contains information that is relevant and useful for \
@@ -248,17 +187,13 @@ Document chunk:
 {chunk}"""
 
 # Shared LLM client for relevance judging (created lazily)
-_judge_client: AzureOpenAI | None = None
+_judge_client: OpenAI | None = None
 
 
-def _get_judge_client() -> AzureOpenAI:
+def _get_judge_client() -> OpenAI:
     global _judge_client
     if _judge_client is None:
-        _judge_client = AzureOpenAI(
-            azure_endpoint=AZURE_ENDPOINT,
-            api_key=AZURE_API_KEY,
-            api_version=JUDGE_API_VERSION,
-        )
+        _judge_client = OpenAI()
     return _judge_client
 
 
@@ -267,7 +202,7 @@ def _judge_relevance(query: str, chunk: str) -> bool:
     """Ask the LLM whether a chunk is relevant to the query."""
     client = _get_judge_client()
     response = client.chat.completions.create(
-        model=JUDGE_MODEL,
+        model=LLM_MODEL,
         messages=[
             {
                 "role": "user",
