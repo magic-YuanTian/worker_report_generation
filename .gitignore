@@ -1,0 +1,53 @@
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Secrets =====
+.env
+.env.*
+!.env.example
+
+# Local backup of the previous git history (contains leaked Azure key).
+# Keep on disk for recovery but NEVER commit.
+.git.bak*/
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.coverage
+htmlcov/
+
+# ===== Node / Frontend =====
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===== Editor =====
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*~
+
+# ===== Generated RAG artifacts =====
+# Vector store + docstore are rebuilt on first run from backend/documents/.
+backend/rag_storage/
+
+# ===== Vectorizer outputs =====
+# Processed chunks / embeddings are regenerable from data/raw/.
+pdf-vectorizer/data/processed/
+pdf-vectorizer/.uv/
+pdf-vectorizer/.cache/

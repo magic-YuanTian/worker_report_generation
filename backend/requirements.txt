@@ -1,0 +1,11 @@
+flask
+flask-cors
+openai
+tenacity
+fpdf2
+llama-index-core
+llama-index-readers-file
+llama-index-embeddings-openai
+pypdf
+rank-bm25
+python-dotenv

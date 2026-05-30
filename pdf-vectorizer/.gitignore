@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+.venv/
+
+# UV (uv.lock is committed; only ignore the internal cache dir)
+.uv/
+
+# Environment variables
+.env
+.env.*
+
+# Model / library caches
+.cache/
+*.cache
+
+# Data (PDFs and processed outputs are not tracked)
+# data/raw/*.pdf
+# data/processed/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Keep directory stubs in git
+!data/raw/.gitkeep
+!data/processed/.gitkeep
