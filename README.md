@@ -4,9 +4,8 @@ A conversational web app that helps construction workers and building-lab studen
 
 ```
 report_generation_github/
-├── backend/          Flask API + RAG engine (Python)
-├── frontend/         React + Vite chat UI
-└── pdf-vectorizer/   Standalone CLI for chunking & embedding PDFs (optional)
+├── backend/    Flask API + RAG engine (Python)
+└── frontend/   React + Vite chat UI
 ```
 
 ## Prerequisites
@@ -89,10 +88,6 @@ npm run build       # outputs to frontend/dist/
 ```
 
 Then serve `frontend/dist/` from any static host and point its `/api` calls at the Flask backend.
-
-## Optional: pdf-vectorizer
-
-`pdf-vectorizer/` is a standalone CLI for extracting, chunking, and embedding PDFs outside the main app — useful if you want to build embeddings with a local `sentence-transformers` model instead of Azure. See `pdf-vectorizer/README.md` for usage.
 
 ## Troubleshooting
 

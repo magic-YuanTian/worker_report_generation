@@ -45,9 +45,3 @@ pnpm-debug.log*
 # ===== Generated RAG artifacts =====
 # Vector store + docstore are rebuilt on first run from backend/documents/.
 backend/rag_storage/
-
-# ===== Vectorizer outputs =====
-# Processed chunks / embeddings are regenerable from data/raw/.
-pdf-vectorizer/data/processed/
-pdf-vectorizer/.uv/
-pdf-vectorizer/.cache/
