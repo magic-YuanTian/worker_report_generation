@@ -1,7 +1,5 @@
 # Worker Daily Report Generator
 
-A conversational web app that helps construction workers and building-lab students put together a daily activity report. The assistant walks the user through a short chat, fills in a structured report (activity, materials, equipment, safety hazards), pulls in relevant context from OSHA guidance and building codes via RAG, and exports the result as a PDF.
-
 ```
 report_generation_github/
 ├── backend/    Flask API + RAG engine (Python)
