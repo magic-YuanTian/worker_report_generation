@@ -45,3 +45,7 @@ pnpm-debug.log*
 # ===== Generated RAG artifacts =====
 # Vector store + docstore are rebuilt on first run from backend/documents/.
 backend/rag_storage/
+
+# ===== Participant session exports =====
+# Conversation transcripts + evaluation metrics, written on report download.
+backend/session_exports/
