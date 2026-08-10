@@ -197,6 +197,18 @@ def _get_judge_client() -> OpenAI:
     return _judge_client
 
 
+def get_retrieval_config() -> dict:
+    """Expose the live retrieval knobs saved with each collected session."""
+    return {
+        "retrieval_relevance_judge_model": LLM_MODEL,
+        "embedding_model": EMBEDDING_MODEL,
+        "dense_top_k": DENSE_TOP_K,
+        "bm25_top_k": BM25_TOP_K,
+        "candidate_pool": CANDIDATE_POOL,
+        "max_results": MAX_RESULTS,
+    }
+
+
 @retry(wait=wait_random_exponential(min=1, max=30), stop=stop_after_attempt(3))
 def _judge_relevance(query: str, chunk: str) -> bool:
     """Ask the LLM whether a chunk is relevant to the query."""

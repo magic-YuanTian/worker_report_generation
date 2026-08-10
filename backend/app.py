@@ -10,7 +10,7 @@ from flask_cors import CORS  # noqa: E402
 from rag_engine import init_rag  # noqa: E402
 from conversation_manager import ConversationManager  # noqa: E402
 from report_generator import generate_report_pdf  # noqa: E402
-from session_store import save_session  # noqa: E402
+from sessions import save_session  # noqa: E402
 
 app = Flask(__name__)
 CORS(app)
@@ -66,7 +66,9 @@ def get_metrics(session_id):
 
     return jsonify(
         {
+            "evaluation": session.get_evaluation_state(),
             "metrics_history": session.metrics_history,
+            "turn_records": session.get_ordered_turn_records(),
             "aggregated": session.get_aggregated_metrics(),
         }
     )
@@ -84,8 +86,7 @@ def download_report(session_id):
         session.report_data, session_id, explanation=explanation, analysis=analysis
     )
 
-    session.wait_for_pending_metrics()
-    save_session(session)
+    save_session(session, collection_config=manager.get_collection_config())
 
     return send_file(
         io.BytesIO(pdf_bytes),

@@ -48,4 +48,4 @@ backend/rag_storage/
 
 # ===== Participant session exports =====
 # Conversation transcripts + evaluation metrics, written on report download.
-backend/session_exports/
+# backend/session_exports/

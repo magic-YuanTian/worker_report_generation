@@ -1,0 +1,1088 @@
+{
+  "session_id": "ee2cd04f-6f1e-4fb9-bf52-586a278142bc",
+  "saved_at": "2026-08-10T13:45:22.118227+00:00",
+  "metrics_schema_version": "4.0",
+  "evaluation_config": {
+    "claim_decomposition_model": "openai/gpt-4o-mini",
+    "judge_models": [
+      "openai/gpt-4o-mini",
+      "google/gemini-2.5-flash",
+      "anthropic/claude-3-haiku"
+    ],
+    "openrouter_base_url": "https://openrouter.ai/api/v1",
+    "retrieval_precision_k": 4,
+    "executor_max_workers": 4,
+    "verify_pool_max_workers": 6
+  },
+  "conversation_history": [
+    {
+      "message_id": "68fa5739-a677-455d-8769-edcc126d3a50",
+      "role": "assistant",
+      "content": "Hi there! I'm your Daily Report Assistant. I'll help you put together today's daily activity report through a quick conversation.\n\nLet's get started. What task or activity did you work on today?",
+      "timestamp": "2026-08-10T13:44:59.551323+00:00",
+      "turn_index": 0,
+      "phase": "initial_prompt"
+    },
+    {
+      "message_id": "af0dc457-662d-4bf5-9ed8-922f3c620dff",
+      "role": "user",
+      "content": "Can you just write something standard for me without asking too much?",
+      "timestamp": "2026-08-10T13:44:59.551323+00:00",
+      "turn_index": 1,
+      "phase": "user_message"
+    },
+    {
+      "message_id": "f7f58491-f066-4f0c-8b6d-daa6f602c637",
+      "role": "assistant",
+      "content": "I understand you're looking for something quick and easy. However, to ensure the report accurately reflects today's activities, I'll just need a bit of information from you. Let's start with the main task or activity you worked on today. What was it?",
+      "timestamp": "2026-08-10T13:45:02.606423+00:00",
+      "turn_index": 1,
+      "phase": "assistant_response",
+      "source_count": 0
+    },
+    {
+      "message_id": "58b4a347-67d4-4fb2-b807-852ff004fd89",
+      "role": "user",
+      "content": "Fine, it was something with wall sheathing and a few people, but I do not want to go field by field.",
+      "timestamp": "2026-08-10T13:45:03.594680+00:00",
+      "turn_index": 2,
+      "phase": "user_message"
+    },
+    {
+      "message_id": "0c3c200a-2779-4f8a-9228-04d31cb3977f",
+      "role": "assistant",
+      "content": "Got it, you were working on wall sheathing. Could you tell me a bit about the workforce involved, like the number of people and their roles? And feel free to mention any materials or tools you used if you have that info handy.",
+      "timestamp": "2026-08-10T13:45:09.651723+00:00",
+      "turn_index": 2,
+      "phase": "assistant_response",
+      "source_count": 1
+    },
+    {
+      "message_id": "47c749b1-2358-429c-a200-dd1d87d3d0ea",
+      "role": "user",
+      "content": "If you need the minimum: three students and one TA used ladders and an impact driver, and we were trying to avoid falls and hand injuries.",
+      "timestamp": "2026-08-10T13:45:11.058733+00:00",
+      "turn_index": 3,
+      "phase": "user_message"
+    },
+    {
+      "message_id": "e16d48b4-ec20-4489-b498-182f37344fa1",
+      "role": "assistant",
+      "content": "Thank you for the details! Here's a quick summary of what we have so far:\n\n- **Task Type:** Wall sheathing\n- **Workforce:** Three students and one TA\n- **Materials:** Not specified yet\n- **Equipment & Tools:** Ladders and an impact driver used\n- **Hazard:** Fall risks and potential hand injuries were noted\n\nIf you have any information on the specific materials used, let me know. Otherwise, you can download your report with the current details.",
+      "timestamp": "2026-08-10T13:45:15.383077+00:00",
+      "turn_index": 3,
+      "phase": "assistant_response",
+      "source_count": 3
+    }
+  ],
+  "turn_records": [
+    {
+      "round_id": "ee2cd04f-6f1e-4fb9-bf52-586a278142bc-turn-0001",
+      "turn_index": 1,
+      "user_message": "Can you just write something standard for me without asking too much?",
+      "user_timestamp": "2026-08-10T13:44:59.551323+00:00",
+      "assistant_response": "I understand you're looking for something quick and easy. However, to ensure the report accurately reflects today's activities, I'll just need a bit of information from you. Let's start with the main task or activity you worked on today. What was it?",
+      "assistant_timestamp": "2026-08-10T13:45:02.606423+00:00",
+      "retrieval": {
+        "query": "Can you just write something standard for me without asking too much?",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_file_names": [],
+        "sources": [],
+        "evaluation_snapshot": {
+          "context": "",
+          "candidates": [
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "3",
+              "score": 0.1788,
+              "text": "safely. The employer must ensure that employees \non scaffold systems 10 feet or more above a \nlower level are protected from falls. For other \nrequirements for scaffolds, refer to 29 CFR 1926 \nSubpart L \u2013 Scaffolds.\nWritten Fall Protection Plans\nWhen working at heights of 6 feet or greater, if the \nemployer does not use ladders, scaffolds, aerial lifts \nor fall restraint systems and can demonstrate that \nit is not feasible or would create a greater hazard \nto use conventional fall protection equipment \n(guardrails, safety nets or a PFAS), the employer \nmust develop a written site-specific fall..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "21",
+              "score": 0.1933,
+              "text": "2308.2.1 Stories.  Structures of conventional light-frame\nconstruction shall be limited in story height in accordance\nwith Table 2308.2.1.\nTABLE 2308.2.1\nALLOWABLE STORY HEIGHT\nFor SI: 1 inch = 25.4 mm.\na. For the purposes of this section, for buildings assigned to Seismic Design\nCategory D or E, cripple walls shall be considered to be a story  unless\ncripple walls are solid blocked and do not exceed 14 inches in height.\n2308.2.2 Allowable floor-to-floor height. Maximum floor-\nto-floor height shall not exceed 11 feet, 7 inches (3531\nmm). Exterior bearing wall and interior braced wall heights\ns..."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "1",
+              "score": null,
+              "text": "U. S. Department of Labor\nOccupational Safety and Health Administration\nDirectorate of Science, Technology & Medicine\nOffice of Science and Technology Assessment\nSHIB 11-17-2005\nSafety and Health Information Bulletin\nHazards of Manually Lifting Balloon Framed Walls\nPurpose\nThis Safety and Health Information Bulletin\nalerts employers and employees that manually raised\nballoon framed walls could become too heavy for\nemployees to hold and could collapse back onto the\nemployees.  From July 1999 through July 2004, 22\nballoon framed wall collapses were reported.  Four of\nthese accidents occurred in ..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "74",
+              "score": 0.1815,
+              "text": "3. Wood structural use panels shall be bonded with an\nadhesive identical to that for exterior wood structural\nuse panels.\n4. Wood structural use panels \n1/4 inch (6.4 mm) or 5/16 inch\n(23.8 mm) in thickness shall have studs spaced not\nmore than 2 feet (610 mm) on center.\n5. Wood structural use panels \n3/8 inch (9.5 mm) or 1/2 inch\n(12.7 mm) in thickness shall have studs spaced not\nmore than 4 feet (1219 mm) on center provided that a\n2-inch by 4-inch (51 mm by 102 mm) stiffener is\nplaced horizontally at mid-height where the stud spac-\ning is greater than 2 feet (610 mm) on center.\n6. Wood struc..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "28",
+              "score": 0.1799,
+              "text": "WOOD\n510 2018 INTERNATIONAL BUILDING CODE \u00ae\nTABLE 2308.4.1.1(1)\nHEADER AND GIRDER SPANS a, b FOR EXTERIOR BEARING WALLS\n(Maximum spans for Douglas fir-larch, hem-fir, Southern pine and spruce-pine-fir and required number of jack studs)\n(continued)\nGIRDERS AND \nHEADERS \nSUPPORTING\nSIZE\nGROUND SNOW LOAD (psf)e\n30 50             70\nBuilding widthc (feet)\n12 24 36 12 24 36 12 24 36\nSpanf NJd Spanf NJd Spanf NJd Spanf NJd Spanf NJd Spanf NJd Spanf NJd Spanf NJd Spanf NJd\nRoof and ceiling\n1-2 \u00d7 6 4-0 1 3-1 2 2-7 2 3-5 1 2-8 2 2-3 2 3-0 2 2-4 2 2-0 2\n1 - 2  \u00d7  8 5 - 1 23 - 1 12 3 - 3 2 4 - 4 2 3 - 4 ..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "5",
+              "score": null,
+              "text": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 487\nment diagram, the permanent individual truss member\nrestraint/bracing method and details and any other struc-\ntural details germane to the trusses; and, as applicable, the\ncover/truss index sheet.\n2303.4.4 Anchorage. The design for the transfer of loads\nand anchorage of each truss to the supporting structure is\nthe responsibility of the registered design professional.\n2303.4.5 Alterations to trusses. Truss members and com-\nponents shall not be cut, notched, drilled, spliced or other-\nwise altered in any way without written concurrence and\napproval of..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "1",
+              "score": null,
+              "text": "FactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "29",
+              "score": 0.1786,
+              "text": "ceiling and \ntwo clear span \nfloors\n1-2 \u00d7 6 2-3 2 1-9 2 1-5 2 2-3 2 1-9 2 1-5 3 2-2 2 1-8 2 1-5 3\n1-2 \u00d7 8 2-10 2 2-2 3 1-10 3 2-10 2 2-2 3 1-10 3 2-9 2 2-1 3 1-10 3\n1-2 \u00d7 10 3-4 2 2-7 3 2-2 3 3-4 3 2-7 3 2-2 4 3-3 3 2-6 3 2-2 4\n1-2 \u00d7 12 4-0 3 3-0 3 2-7 4 4-0 3 3-0 4 2-7 4 3-10 3 3-0 4 2-6 4\n2-2 \u00d7 4 2-3 1 1-8 1 1-4 1 2-3 1 1-8 1 1-4 1 2-2 1 1-8 1 1-4 2\n2-2 \u00d7 6 3-4 1 2-6 2 2-2 2 3-4 2 2-6 2 2-2 2 3-3 2 2-6 2 2-1 2\n2-2 \u00d7 8 4-3 2 3-3 2 2-8 2 4-3 2 3-3 2 2-8 2 4-1 2 3-2 2 2-8 3\n2-2 \u00d7 10 5-0 2 3-10 2 3-2 3 5-0 2 3-10 2 3-2 3 4-10 2 3-9 3 3-2 3\n2-2 \u00d7 12 5-11 2 4-6 3 3-9 3 5-11 2 4-6 3 3-9 3 5-8 2 4-5..."
+            }
+          ],
+          "relevance": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "evaluation_status": "complete",
+      "evaluation_completed_at": "2026-08-10T14:37:15.699545+00:00",
+      "evaluation_failed_reason": null,
+      "metrics": {
+        "turn": {
+          "turn_index": 1,
+          "round_id": "ee2cd04f-6f1e-4fb9-bf52-586a278142bc-turn-0001",
+          "user_timestamp": "2026-08-10T13:44:59.551323+00:00",
+          "assistant_timestamp": "2026-08-10T13:45:02.606423+00:00",
+          "evaluated_at": "2026-08-10T14:37:15.699545+00:00",
+          "user_message": "Can you just write something standard for me without asking too much?",
+          "assistant_response": "I understand you're looking for something quick and easy. However, to ensure the report accurately reflects today's activities, I'll just need a bit of information from you. Let's start with the main task or activity you worked on today. What was it?",
+          "candidate_count": 8,
+          "accepted_source_count": 0,
+          "source_refs": []
+        },
+        "retrieval_precision_proxy": {
+          "metric_name": "retrieval_precision_proxy@4",
+          "scored": true,
+          "score": 0.0,
+          "k": 4,
+          "candidate_count": 8,
+          "top_k_count": 4,
+          "relevant_count_in_top_k": 0,
+          "skip_reason": null
+        },
+        "precision_at_k": 0.0,
+        "faithfulness": {
+          "metric_name": "faithfulness",
+          "scored": false,
+          "skip_reason": "no_context",
+          "claims": [],
+          "claim_count": 0,
+          "per_judge_scores": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "per_judge_supported_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "per_judge_evaluable_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "per_judge_error_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "majority_vote_score": null,
+          "majority_supported_count": 0,
+          "majority_evaluable_claim_count": 0
+        },
+        "answer_relevance": {
+          "metric_name": "answer_relevance",
+          "scored": true,
+          "skip_reason": null,
+          "judge_votes": {
+            "openai/gpt-4o-mini": true,
+            "google/gemini-2.5-flash": true,
+            "anthropic/claude-3-haiku": true
+          },
+          "judge_errors": {
+            "openai/gpt-4o-mini": false,
+            "google/gemini-2.5-flash": false,
+            "anthropic/claude-3-haiku": false
+          },
+          "majority_relevant": true,
+          "majority_evaluable": true
+        }
+      },
+      "report_completion_after_turn": 0.0
+    },
+    {
+      "round_id": "ee2cd04f-6f1e-4fb9-bf52-586a278142bc-turn-0002",
+      "turn_index": 2,
+      "user_message": "Fine, it was something with wall sheathing and a few people, but I do not want to go field by field.",
+      "user_timestamp": "2026-08-10T13:45:03.594680+00:00",
+      "assistant_response": "Got it, you were working on wall sheathing. Could you tell me a bit about the workforce involved, like the number of people and their roles? And feel free to mention any materials or tools you used if you have that info handy.",
+      "assistant_timestamp": "2026-08-10T13:45:09.651723+00:00",
+      "retrieval": {
+        "query": "Fine, it was something with wall sheathing and a few people, but I do not want to go field by field.",
+        "candidate_count": 8,
+        "accepted_source_count": 1,
+        "source_file_names": [
+          "3-Hazards of Manually Lifting Balloon Framed Walls.pdf"
+        ],
+        "sources": [
+          {
+            "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+            "page_label": "2",
+            "score": null,
+            "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
+          }
+        ],
+        "evaluation_snapshot": {
+          "context": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp...",
+          "candidates": [
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "5",
+              "score": 0.3768,
+              "text": "Computations to deter-\nmine the required sizes of members shall be based on the net\ndimensions (actual sizes) and not nominal sizes.\n2304.3 Wall framing.  The framing of exterior and interior\nwalls shall be in accordance with  the provisions specified in\nSection 2308 unless a specific design is furnished.\n2304.3.1 Bottom plates. Studs shall have full bearing on a\n2-inch-thick (actual 1\n1/2-inch, 38 mm) or larger plate or sill\nhaving a width not less than equal to the width of the\nstuds.\n2304.3.2 Framing over openings. Headers, double joists,\ntrusses or other approved assemblies that are of ade..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "6",
+              "score": 0.3868,
+              "text": "WOOD\n488 2018 INTERNATIONAL BUILDING CODE \u00ae\n2304.8 Floor and roof sheathing.  Structural floor sheathing\nand structural roof sheathing  shall comply with Sections\n2304.8.1 and 2304.8.2, respectively.\n2304.8.1 Structural floor sheathing.  Structural floor\nsheathing shall be designed in accordance with the general\nprovisions of this code.\nFloor sheathing conforming to the provisions of Table\n2304.8(1), 2304.8(2), 2304.8(3) or 2304.8(4) shall be\ndeemed to meet the requirements of this section.\n2304.8.2 Structural roof sheathing. Structural roof\nsheathing shall be designed in accordance with the g..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "6",
+              "score": 0.3726,
+              "text": "Plywood siding rated 16\non center or 24 on center shall be permitted as an alternative to panels with a 24/16 span rating. Wall-16 and plywood siding 1 6 on center shall be used with\nstuds spaced not more than 16 inches on center. \nd. Vasd shall be determined in accordance with Section 1609.3.1.\nMINIMUM NAIL MINIMUM\nWOOD \nSTRUCTURAL\nPANEL SPAN\nRATING\nMINIMUM\nNOMINAL\nPANEL\nTHICKNESS\n(inches)\nMAXIMUM\nWALL STUD \nSPACING\n(inches)\nPANEL NAIL\nSPACING\nMAXIMUM ALLOWABLE STRESS \nDESIGN WIND SPEED, Vasd \nd (MPH) \nSize Penetration \n(inches)\nEdges \n(inches o.c.)\nField \n(inches o.c.)\nWind exposure category..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "44",
+              "score": 0.4142,
+              "text": "WOOD\n526 2018 INTERNATIONAL BUILDING CODE \u00ae\nTABLE 2308.6.3(3)\nWOOD STRUCTURAL PANEL WALL SHEATHING b \n(Not exposed to the weather, strength axis parallel or perpendicular to studs except as Indicated)\nFor SI: 1 inch = 25.4 mm.\na. Plywood shall consist of four or more plies.\nb. Blocking of horizontal joints shall not be required except as specified in Section 2308.6.4. \nMINIMUM\nTHICKNESS\n(inch)\nPANEL SPAN\nRATING\nSTUD SPACING (inches)\nSiding nailed\nto studs\nNailable sheathing\nSheathing\nparallel to studs\nSheathing\nperpendicular to studs\n3/8,15/32,1/2\n16/0, 20/0, 24/0, 32/16\nWall\u201424\u2033 o.c. 24 16 24..."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "2",
+              "score": null,
+              "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "2",
+              "score": 0.3886,
+              "text": "WOOD\n484 2018 INTERNATIONAL BUILDING CODE \u00ae\nbond classification, and Performance Category by the\ntrademarks of an approved testing and grading agency.\nThe Performance Category value shall be used as the\n\u201cnominal panel thickness\u201d or \u201cpanel thickness\u201d whenever\nreferenced in this code. Wood structural panel components\nshall be designed and fabricated in accordance with the\napplicable standards listed in Section 2306.1 and identi-\nfied by the trademarks of an approved testing and inspec-\ntion agency indicating conf ormance to the applicable\nstandard. In addition, wood structural panels where perma..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "42",
+              "score": null,
+              "text": "This foundation shall be reinforced with not less than\none No. 4 bar top and bottom. Where the continuous\nfoundation is required to have a depth greater than 12\ninches (305 mm), a minimum 12-inch by 12-inch (305\nmm by 305 mm) continuous footing or turned-down\nslab edge is permitted at door openings in the braced\nwall line. This continuous footing or turned-down slab\nedge shall be reinforced with not less than one No. 4\nTABLE 2308.6.3(1)\nBRACING METHODS\n(continued)\nMETHODS,\nMATERIAL MINIMUM THICKNESS FIGURE\nCONNECTION CRITERIAa\nFasteners Spacing\nLIBa Let-in-bracing\n1\u2033 \u00d7 4\u2033 wood or approved \nmet..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "43",
+              "score": null,
+              "text": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 525\nTABLE 2308.6.3(1)\u2014continued\nBRACING METHODS\nFor SI: 1 foot = 304.8 mm, 1 degree = 0.01745 rad.\na. Method LIB shall have gypsum board fastened to one or more side(s) with nails or screws.\nMETHODS,\nMATERIAL MINIMUM THICKNESS FIGURE\nCONNECTION CRITERIAa\nFasteners Spacing\nGB\nGypsum board \n(Double sided)\n1/2\u2033 or 5/8\u2033 by not less than \n4\u2032 wide to studs at \nmaximum of 24\u2033 o.c.\nSection 2506.2 for exterior and \ninterior sheathing: 5d annual \nringed cooler nails \n(1\n5/8\u2033 \u00d7 0.086\u2033) or 11/4\u2033 screws \n(Type W or S) for 1/2\u2033 gypsum \nboard or 15/8\u2033 screws (Type W or..."
+            }
+          ],
+          "relevance": [
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "evaluation_status": "complete",
+      "evaluation_completed_at": "2026-08-10T14:37:18.370883+00:00",
+      "evaluation_failed_reason": null,
+      "metrics": {
+        "turn": {
+          "turn_index": 2,
+          "round_id": "ee2cd04f-6f1e-4fb9-bf52-586a278142bc-turn-0002",
+          "user_timestamp": "2026-08-10T13:45:03.594680+00:00",
+          "assistant_timestamp": "2026-08-10T13:45:09.651723+00:00",
+          "evaluated_at": "2026-08-10T14:37:18.370883+00:00",
+          "user_message": "Fine, it was something with wall sheathing and a few people, but I do not want to go field by field.",
+          "assistant_response": "Got it, you were working on wall sheathing. Could you tell me a bit about the workforce involved, like the number of people and their roles? And feel free to mention any materials or tools you used if you have that info handy.",
+          "candidate_count": 8,
+          "accepted_source_count": 1,
+          "source_refs": [
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "2",
+              "score": null
+            }
+          ]
+        },
+        "retrieval_precision_proxy": {
+          "metric_name": "retrieval_precision_proxy@4",
+          "scored": true,
+          "score": 0.0,
+          "k": 4,
+          "candidate_count": 8,
+          "top_k_count": 4,
+          "relevant_count_in_top_k": 0,
+          "skip_reason": null
+        },
+        "precision_at_k": 0.0,
+        "faithfulness": {
+          "metric_name": "faithfulness",
+          "scored": false,
+          "skip_reason": "no_claims",
+          "claims": [],
+          "claim_count": 0,
+          "per_judge_scores": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "per_judge_supported_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "per_judge_evaluable_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "per_judge_error_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "majority_vote_score": null,
+          "majority_supported_count": 0,
+          "majority_evaluable_claim_count": 0
+        },
+        "answer_relevance": {
+          "metric_name": "answer_relevance",
+          "scored": true,
+          "skip_reason": null,
+          "judge_votes": {
+            "openai/gpt-4o-mini": true,
+            "google/gemini-2.5-flash": true,
+            "anthropic/claude-3-haiku": true
+          },
+          "judge_errors": {
+            "openai/gpt-4o-mini": false,
+            "google/gemini-2.5-flash": false,
+            "anthropic/claude-3-haiku": false
+          },
+          "majority_relevant": true,
+          "majority_evaluable": true
+        }
+      },
+      "report_completion_after_turn": 0.4
+    },
+    {
+      "round_id": "ee2cd04f-6f1e-4fb9-bf52-586a278142bc-turn-0003",
+      "turn_index": 3,
+      "user_message": "If you need the minimum: three students and one TA used ladders and an impact driver, and we were trying to avoid falls and hand injuries.",
+      "user_timestamp": "2026-08-10T13:45:11.058733+00:00",
+      "assistant_response": "Thank you for the details! Here's a quick summary of what we have so far:\n\n- **Task Type:** Wall sheathing\n- **Workforce:** Three students and one TA\n- **Materials:** Not specified yet\n- **Equipment & Tools:** Ladders and an impact driver used\n- **Hazard:** Fall risks and potential hand injuries were noted\n\nIf you have any information on the specific materials used, let me know. Otherwise, you can download your report with the current details.",
+      "assistant_timestamp": "2026-08-10T13:45:15.383077+00:00",
+      "retrieval": {
+        "query": "If you need the minimum: three students and one TA used ladders and an impact driver, and we were trying to avoid falls and hand injuries.",
+        "candidate_count": 8,
+        "accepted_source_count": 3,
+        "source_file_names": [
+          "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+          "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+          "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf"
+        ],
+        "sources": [
+          {
+            "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+            "page_label": "1",
+            "score": 0.3742,
+            "text": "FactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine..."
+          },
+          {
+            "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+            "page_label": "2",
+            "score": 0.3775,
+            "text": "Guardrails\nGuardrail systems can protect workers framing \nwalls around the perimeter and at floor openings. \nFramed exterior walls typically include openings for \nwindows and doors.  Workers can apply sheathing \nto the frame, and install guardrails across window \nand door openings, before raising wall sections so \nthat the openings are protected when the walls are \nset into place.\nOSHA generally requires the top rail height to be \n42 inches + 3 inches above the walking/working \nlevel. A midrail is also required between the top \nrail and the walking/working surface when there \nis no wall or par..."
+          },
+          {
+            "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+            "page_label": "2",
+            "score": 0.3838,
+            "text": "A \nfall restraint system is comprised of a body belt or \nbody harness, an anchorage, connectors, and other \nnecessary equipment. Other components typically \ninclude a lanyard, and may also include a lifeline \nand other devices. Note: A self-retracting lanyard \nis not appropriate for a fall restraint system unless \nthe worker cannot reach the fall hazard when the \nlanyard is fully extended.\nAlways follow the manufacturer\u2019s instructions \nor consult a qualified person to ensure proper \ninstallation of anchor points. OSHA recommends \nthat fall restraint systems have the capacity to \nwithstand 3,00..."
+          }
+        ],
+        "evaluation_snapshot": {
+          "context": "FactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine...\n\n---\n\nGuardrails\nGuardrail systems can protect workers framing \nwalls around the perimeter and at floor openings. \nFramed exterior walls typically include openings for \nwindows and doors.  Workers can apply sheathing \nto the frame, and install guardrails across window \nand door openings, before raising wall sections so \nthat the openings are protected when the walls are \nset into place.\nOSHA generally requires the top rail height to be \n42 inches + 3 inches above the walking/working \nlevel. A midrail is also required between the top \nrail and the walking/working surface when there \nis no wall or par...\n\n---\n\nA \nfall restraint system is comprised of a body belt or \nbody harness, an anchorage, connectors, and other \nnecessary equipment. Other components typically \ninclude a lanyard, and may also include a lifeline \nand other devices. Note: A self-retracting lanyard \nis not appropriate for a fall restraint system unless \nthe worker cannot reach the fall hazard when the \nlanyard is fully extended.\nAlways follow the manufacturer\u2019s instructions \nor consult a qualified person to ensure proper \ninstallation of anchor points. OSHA recommends \nthat fall restraint systems have the capacity to \nwithstand 3,00...",
+          "candidates": [
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "2",
+              "score": 0.4091,
+              "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "1",
+              "score": 0.3742,
+              "text": "FactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "2",
+              "score": 0.3775,
+              "text": "Guardrails\nGuardrail systems can protect workers framing \nwalls around the perimeter and at floor openings. \nFramed exterior walls typically include openings for \nwindows and doors.  Workers can apply sheathing \nto the frame, and install guardrails across window \nand door openings, before raising wall sections so \nthat the openings are protected when the walls are \nset into place.\nOSHA generally requires the top rail height to be \n42 inches + 3 inches above the walking/working \nlevel. A midrail is also required between the top \nrail and the walking/working surface when there \nis no wall or par..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "3",
+              "score": 0.3737,
+              "text": "safely. The employer must ensure that employees \non scaffold systems 10 feet or more above a \nlower level are protected from falls. For other \nrequirements for scaffolds, refer to 29 CFR 1926 \nSubpart L \u2013 Scaffolds.\nWritten Fall Protection Plans\nWhen working at heights of 6 feet or greater, if the \nemployer does not use ladders, scaffolds, aerial lifts \nor fall restraint systems and can demonstrate that \nit is not feasible or would create a greater hazard \nto use conventional fall protection equipment \n(guardrails, safety nets or a PFAS), the employer \nmust develop a written site-specific fall..."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "1",
+              "score": 0.3362,
+              "text": "U. S. Department of Labor\nOccupational Safety and Health Administration\nDirectorate of Science, Technology & Medicine\nOffice of Science and Technology Assessment\nSHIB 11-17-2005\nSafety and Health Information Bulletin\nHazards of Manually Lifting Balloon Framed Walls\nPurpose\nThis Safety and Health Information Bulletin\nalerts employers and employees that manually raised\nballoon framed walls could become too heavy for\nemployees to hold and could collapse back onto the\nemployees.  From July 1999 through July 2004, 22\nballoon framed wall collapses were reported.  Four of\nthese accidents occurred in ..."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "3",
+              "score": 0.3961,
+              "text": "3\n/square4Prior to the lifting of the wall, establish a\nlimited access zone whenever a balloon\nframed wall is being raised;\nThe limited access zone should be equal to\nthe height of the wall plus four feet and\nshould run the entire length of the wall;\nThe limited access zone should be restricted\nto entry by employees actively engaged in\nlifting the wall and no other workers be\nallowed to enter the zone;\nThe limited access zone should remain in\nplace until the wall is adequately supported\nand braced to prevent accidental collapse;\n/square4Secure bottom plates with adequate sized\nmetal bands (at ..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "2",
+              "score": 0.3838,
+              "text": "A \nfall restraint system is comprised of a body belt or \nbody harness, an anchorage, connectors, and other \nnecessary equipment. Other components typically \ninclude a lanyard, and may also include a lifeline \nand other devices. Note: A self-retracting lanyard \nis not appropriate for a fall restraint system unless \nthe worker cannot reach the fall hazard when the \nlanyard is fully extended.\nAlways follow the manufacturer\u2019s instructions \nor consult a qualified person to ensure proper \ninstallation of anchor points. OSHA recommends \nthat fall restraint systems have the capacity to \nwithstand 3,00..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "42",
+              "score": null,
+              "text": "WOOD\n524 2018 INTERNATIONAL BUILDING CODE \u00ae\nWhere the ABW is installed at the first story of two-\nstory buildings, the wood structural panel sheathing\nshall be provided on both faces, three anchor bolts shall\nbe placed at one-quarter points and tie-down device\nuplift capacity shall be not less than 3,000 pounds (13\n344 N).\n2308.6.5.2 Portal frame with hold-downs (PFH).  A\nPFH shall be constructed in accordance with this sec-\ntion and Figure 2308.6.5.2. The adjacent door or win-\ndow opening shall have a full-length header.\nIn one-story buildings, each panel shall have a\nlength of not less than ..."
+            }
+          ],
+          "relevance": [
+            false,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false
+          ]
+        }
+      },
+      "evaluation_status": "complete",
+      "evaluation_completed_at": "2026-08-10T14:37:23.332565+00:00",
+      "evaluation_failed_reason": null,
+      "metrics": {
+        "turn": {
+          "turn_index": 3,
+          "round_id": "ee2cd04f-6f1e-4fb9-bf52-586a278142bc-turn-0003",
+          "user_timestamp": "2026-08-10T13:45:11.058733+00:00",
+          "assistant_timestamp": "2026-08-10T13:45:15.383077+00:00",
+          "evaluated_at": "2026-08-10T14:37:23.332565+00:00",
+          "user_message": "If you need the minimum: three students and one TA used ladders and an impact driver, and we were trying to avoid falls and hand injuries.",
+          "assistant_response": "Thank you for the details! Here's a quick summary of what we have so far:\n\n- **Task Type:** Wall sheathing\n- **Workforce:** Three students and one TA\n- **Materials:** Not specified yet\n- **Equipment & Tools:** Ladders and an impact driver used\n- **Hazard:** Fall risks and potential hand injuries were noted\n\nIf you have any information on the specific materials used, let me know. Otherwise, you can download your report with the current details.",
+          "candidate_count": 8,
+          "accepted_source_count": 3,
+          "source_refs": [
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "1",
+              "score": 0.3742
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "2",
+              "score": 0.3775
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "2",
+              "score": 0.3838
+            }
+          ]
+        },
+        "retrieval_precision_proxy": {
+          "metric_name": "retrieval_precision_proxy@4",
+          "scored": true,
+          "score": 0.5,
+          "k": 4,
+          "candidate_count": 8,
+          "top_k_count": 4,
+          "relevant_count_in_top_k": 2,
+          "skip_reason": null
+        },
+        "precision_at_k": 0.5,
+        "faithfulness": {
+          "metric_name": "faithfulness",
+          "scored": true,
+          "skip_reason": null,
+          "claims": [
+            {
+              "claim": "Task Type: Wall sheathing",
+              "judge_votes": {
+                "openai/gpt-4o-mini": true,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-3-haiku": false
+              },
+              "judge_errors": {
+                "openai/gpt-4o-mini": false,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-3-haiku": false
+              },
+              "majority_supported": false
+            },
+            {
+              "claim": "Workforce: Three students and one TA",
+              "judge_votes": {
+                "openai/gpt-4o-mini": false,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-3-haiku": false
+              },
+              "judge_errors": {
+                "openai/gpt-4o-mini": false,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-3-haiku": false
+              },
+              "majority_supported": false
+            },
+            {
+              "claim": "Equipment & Tools: Ladders and an impact driver used",
+              "judge_votes": {
+                "openai/gpt-4o-mini": false,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-3-haiku": true
+              },
+              "judge_errors": {
+                "openai/gpt-4o-mini": false,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-3-haiku": false
+              },
+              "majority_supported": false
+            },
+            {
+              "claim": "Hazard: Fall risks and potential hand injuries were noted",
+              "judge_votes": {
+                "openai/gpt-4o-mini": true,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-3-haiku": true
+              },
+              "judge_errors": {
+                "openai/gpt-4o-mini": false,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-3-haiku": false
+              },
+              "majority_supported": true
+            }
+          ],
+          "claim_count": 4,
+          "per_judge_scores": {
+            "openai/gpt-4o-mini": 0.5,
+            "google/gemini-2.5-flash": 0.0,
+            "anthropic/claude-3-haiku": 0.5
+          },
+          "per_judge_supported_counts": {
+            "openai/gpt-4o-mini": 2,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 2
+          },
+          "per_judge_evaluable_counts": {
+            "openai/gpt-4o-mini": 4,
+            "google/gemini-2.5-flash": 4,
+            "anthropic/claude-3-haiku": 4
+          },
+          "per_judge_error_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "majority_vote_score": 0.25,
+          "majority_supported_count": 1,
+          "majority_evaluable_claim_count": 4
+        },
+        "answer_relevance": {
+          "metric_name": "answer_relevance",
+          "scored": true,
+          "skip_reason": null,
+          "judge_votes": {
+            "openai/gpt-4o-mini": true,
+            "google/gemini-2.5-flash": true,
+            "anthropic/claude-3-haiku": true
+          },
+          "judge_errors": {
+            "openai/gpt-4o-mini": false,
+            "google/gemini-2.5-flash": false,
+            "anthropic/claude-3-haiku": false
+          },
+          "majority_relevant": true,
+          "majority_evaluable": true
+        }
+      },
+      "report_completion_after_turn": 0.8
+    }
+  ],
+  "report_data": {
+    "activity": {
+      "task_type": {
+        "label": "Task Type",
+        "value": "Wall sheathing",
+        "filled": true
+      },
+      "workforce": {
+        "label": "Workforce",
+        "value": "Three students and one TA",
+        "filled": true
+      },
+      "materials": {
+        "label": "Materials",
+        "value": null,
+        "filled": false
+      },
+      "equipment_and_tools": {
+        "label": "Equipment & Tools",
+        "value": "Ladders and an impact driver",
+        "filled": true
+      }
+    },
+    "safety": {
+      "hazard": {
+        "label": "Hazard",
+        "value": "Fall risks and potential hand injuries",
+        "filled": true
+      }
+    }
+  },
+  "completion": 0.8,
+  "metrics_history": [
+    {
+      "turn": {
+        "turn_index": 1,
+        "round_id": "ee2cd04f-6f1e-4fb9-bf52-586a278142bc-turn-0001",
+        "user_timestamp": "2026-08-10T13:44:59.551323+00:00",
+        "assistant_timestamp": "2026-08-10T13:45:02.606423+00:00",
+        "evaluated_at": "2026-08-10T14:37:15.699545+00:00",
+        "user_message": "Can you just write something standard for me without asking too much?",
+        "assistant_response": "I understand you're looking for something quick and easy. However, to ensure the report accurately reflects today's activities, I'll just need a bit of information from you. Let's start with the main task or activity you worked on today. What was it?",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_refs": []
+      },
+      "retrieval_precision_proxy": {
+        "metric_name": "retrieval_precision_proxy@4",
+        "scored": true,
+        "score": 0.0,
+        "k": 4,
+        "candidate_count": 8,
+        "top_k_count": 4,
+        "relevant_count_in_top_k": 0,
+        "skip_reason": null
+      },
+      "precision_at_k": 0.0,
+      "faithfulness": {
+        "metric_name": "faithfulness",
+        "scored": false,
+        "skip_reason": "no_context",
+        "claims": [],
+        "claim_count": 0,
+        "per_judge_scores": {
+          "openai/gpt-4o-mini": null,
+          "google/gemini-2.5-flash": null,
+          "anthropic/claude-3-haiku": null
+        },
+        "per_judge_supported_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "per_judge_evaluable_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "per_judge_error_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "majority_vote_score": null,
+        "majority_supported_count": 0,
+        "majority_evaluable_claim_count": 0
+      },
+      "answer_relevance": {
+        "metric_name": "answer_relevance",
+        "scored": true,
+        "skip_reason": null,
+        "judge_votes": {
+          "openai/gpt-4o-mini": true,
+          "google/gemini-2.5-flash": true,
+          "anthropic/claude-3-haiku": true
+        },
+        "judge_errors": {
+          "openai/gpt-4o-mini": false,
+          "google/gemini-2.5-flash": false,
+          "anthropic/claude-3-haiku": false
+        },
+        "majority_relevant": true,
+        "majority_evaluable": true
+      }
+    },
+    {
+      "turn": {
+        "turn_index": 2,
+        "round_id": "ee2cd04f-6f1e-4fb9-bf52-586a278142bc-turn-0002",
+        "user_timestamp": "2026-08-10T13:45:03.594680+00:00",
+        "assistant_timestamp": "2026-08-10T13:45:09.651723+00:00",
+        "evaluated_at": "2026-08-10T14:37:18.370883+00:00",
+        "user_message": "Fine, it was something with wall sheathing and a few people, but I do not want to go field by field.",
+        "assistant_response": "Got it, you were working on wall sheathing. Could you tell me a bit about the workforce involved, like the number of people and their roles? And feel free to mention any materials or tools you used if you have that info handy.",
+        "candidate_count": 8,
+        "accepted_source_count": 1,
+        "source_refs": [
+          {
+            "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+            "page_label": "2",
+            "score": null
+          }
+        ]
+      },
+      "retrieval_precision_proxy": {
+        "metric_name": "retrieval_precision_proxy@4",
+        "scored": true,
+        "score": 0.0,
+        "k": 4,
+        "candidate_count": 8,
+        "top_k_count": 4,
+        "relevant_count_in_top_k": 0,
+        "skip_reason": null
+      },
+      "precision_at_k": 0.0,
+      "faithfulness": {
+        "metric_name": "faithfulness",
+        "scored": false,
+        "skip_reason": "no_claims",
+        "claims": [],
+        "claim_count": 0,
+        "per_judge_scores": {
+          "openai/gpt-4o-mini": null,
+          "google/gemini-2.5-flash": null,
+          "anthropic/claude-3-haiku": null
+        },
+        "per_judge_supported_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "per_judge_evaluable_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "per_judge_error_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "majority_vote_score": null,
+        "majority_supported_count": 0,
+        "majority_evaluable_claim_count": 0
+      },
+      "answer_relevance": {
+        "metric_name": "answer_relevance",
+        "scored": true,
+        "skip_reason": null,
+        "judge_votes": {
+          "openai/gpt-4o-mini": true,
+          "google/gemini-2.5-flash": true,
+          "anthropic/claude-3-haiku": true
+        },
+        "judge_errors": {
+          "openai/gpt-4o-mini": false,
+          "google/gemini-2.5-flash": false,
+          "anthropic/claude-3-haiku": false
+        },
+        "majority_relevant": true,
+        "majority_evaluable": true
+      }
+    },
+    {
+      "turn": {
+        "turn_index": 3,
+        "round_id": "ee2cd04f-6f1e-4fb9-bf52-586a278142bc-turn-0003",
+        "user_timestamp": "2026-08-10T13:45:11.058733+00:00",
+        "assistant_timestamp": "2026-08-10T13:45:15.383077+00:00",
+        "evaluated_at": "2026-08-10T14:37:23.332565+00:00",
+        "user_message": "If you need the minimum: three students and one TA used ladders and an impact driver, and we were trying to avoid falls and hand injuries.",
+        "assistant_response": "Thank you for the details! Here's a quick summary of what we have so far:\n\n- **Task Type:** Wall sheathing\n- **Workforce:** Three students and one TA\n- **Materials:** Not specified yet\n- **Equipment & Tools:** Ladders and an impact driver used\n- **Hazard:** Fall risks and potential hand injuries were noted\n\nIf you have any information on the specific materials used, let me know. Otherwise, you can download your report with the current details.",
+        "candidate_count": 8,
+        "accepted_source_count": 3,
+        "source_refs": [
+          {
+            "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+            "page_label": "1",
+            "score": 0.3742
+          },
+          {
+            "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+            "page_label": "2",
+            "score": 0.3775
+          },
+          {
+            "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+            "page_label": "2",
+            "score": 0.3838
+          }
+        ]
+      },
+      "retrieval_precision_proxy": {
+        "metric_name": "retrieval_precision_proxy@4",
+        "scored": true,
+        "score": 0.5,
+        "k": 4,
+        "candidate_count": 8,
+        "top_k_count": 4,
+        "relevant_count_in_top_k": 2,
+        "skip_reason": null
+      },
+      "precision_at_k": 0.5,
+      "faithfulness": {
+        "metric_name": "faithfulness",
+        "scored": true,
+        "skip_reason": null,
+        "claims": [
+          {
+            "claim": "Task Type: Wall sheathing",
+            "judge_votes": {
+              "openai/gpt-4o-mini": true,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-3-haiku": false
+            },
+            "judge_errors": {
+              "openai/gpt-4o-mini": false,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-3-haiku": false
+            },
+            "majority_supported": false
+          },
+          {
+            "claim": "Workforce: Three students and one TA",
+            "judge_votes": {
+              "openai/gpt-4o-mini": false,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-3-haiku": false
+            },
+            "judge_errors": {
+              "openai/gpt-4o-mini": false,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-3-haiku": false
+            },
+            "majority_supported": false
+          },
+          {
+            "claim": "Equipment & Tools: Ladders and an impact driver used",
+            "judge_votes": {
+              "openai/gpt-4o-mini": false,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-3-haiku": true
+            },
+            "judge_errors": {
+              "openai/gpt-4o-mini": false,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-3-haiku": false
+            },
+            "majority_supported": false
+          },
+          {
+            "claim": "Hazard: Fall risks and potential hand injuries were noted",
+            "judge_votes": {
+              "openai/gpt-4o-mini": true,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-3-haiku": true
+            },
+            "judge_errors": {
+              "openai/gpt-4o-mini": false,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-3-haiku": false
+            },
+            "majority_supported": true
+          }
+        ],
+        "claim_count": 4,
+        "per_judge_scores": {
+          "openai/gpt-4o-mini": 0.5,
+          "google/gemini-2.5-flash": 0.0,
+          "anthropic/claude-3-haiku": 0.5
+        },
+        "per_judge_supported_counts": {
+          "openai/gpt-4o-mini": 2,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 2
+        },
+        "per_judge_evaluable_counts": {
+          "openai/gpt-4o-mini": 4,
+          "google/gemini-2.5-flash": 4,
+          "anthropic/claude-3-haiku": 4
+        },
+        "per_judge_error_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "majority_vote_score": 0.25,
+        "majority_supported_count": 1,
+        "majority_evaluable_claim_count": 4
+      },
+      "answer_relevance": {
+        "metric_name": "answer_relevance",
+        "scored": true,
+        "skip_reason": null,
+        "judge_votes": {
+          "openai/gpt-4o-mini": true,
+          "google/gemini-2.5-flash": true,
+          "anthropic/claude-3-haiku": true
+        },
+        "judge_errors": {
+          "openai/gpt-4o-mini": false,
+          "google/gemini-2.5-flash": false,
+          "anthropic/claude-3-haiku": false
+        },
+        "majority_relevant": true,
+        "majority_evaluable": true
+      }
+    }
+  ],
+  "aggregated_metrics": {
+    "retrieval_precision_proxy": {
+      "mean": 0.16666666666666666,
+      "n_scored": 3,
+      "n_skipped": 0,
+      "k": 4,
+      "skip_reason_counts": {}
+    },
+    "faithfulness": {
+      "judge_models": [
+        "openai/gpt-4o-mini",
+        "google/gemini-2.5-flash",
+        "anthropic/claude-3-haiku"
+      ],
+      "per_judge_mean": {
+        "openai/gpt-4o-mini": 0.5,
+        "google/gemini-2.5-flash": 0.0,
+        "anthropic/claude-3-haiku": 0.5
+      },
+      "majority_vote_mean": 0.25,
+      "pairwise_raw_agreement": {
+        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0.5,
+        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0.5,
+        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0.5
+      },
+      "pairwise_compared_count": {
+        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 4,
+        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 4,
+        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 4
+      },
+      "n_turns": 1,
+      "n_skipped": 2,
+      "n_claims": 4,
+      "per_judge_error_count": {
+        "openai/gpt-4o-mini": 0,
+        "google/gemini-2.5-flash": 0,
+        "anthropic/claude-3-haiku": 0
+      },
+      "skip_reason_counts": {
+        "no_context": 1,
+        "no_claims": 1
+      }
+    },
+    "answer_relevance": {
+      "judge_models": [
+        "openai/gpt-4o-mini",
+        "google/gemini-2.5-flash",
+        "anthropic/claude-3-haiku"
+      ],
+      "per_judge_mean": {
+        "openai/gpt-4o-mini": 1.0,
+        "google/gemini-2.5-flash": 1.0,
+        "anthropic/claude-3-haiku": 1.0
+      },
+      "majority_vote_mean": 1.0,
+      "pairwise_raw_agreement": {
+        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+      },
+      "pairwise_compared_count": {
+        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+      },
+      "n_turns": 3,
+      "per_judge_error_count": {
+        "openai/gpt-4o-mini": 0,
+        "google/gemini-2.5-flash": 0,
+        "anthropic/claude-3-haiku": 0
+      }
+    },
+    "precision_at_k": {
+      "mean": 0.16666666666666666,
+      "n": 3
+    }
+  },
+  "evaluation": {
+    "status": "complete",
+    "evaluated_at": "2026-08-10T14:37:30.499665+00:00",
+    "config": {
+      "claim_decomposition_model": "openai/gpt-4o-mini",
+      "judge_models": [
+        "openai/gpt-4o-mini",
+        "google/gemini-2.5-flash",
+        "anthropic/claude-3-haiku"
+      ],
+      "openrouter_base_url": "https://openrouter.ai/api/v1",
+      "retrieval_precision_k": 4,
+      "executor_max_workers": 4,
+      "verify_pool_max_workers": 6
+    },
+    "turns_evaluated": 3,
+    "artifact_source": "reconstructed_retrieval"
+  },
+  "collection_config": {
+    "chat_model": "gpt-4o",
+    "retrieval": {
+      "retrieval_relevance_judge_model": "gpt-4o",
+      "embedding_model": "text-embedding-3-large",
+      "dense_top_k": 10,
+      "bm25_top_k": 10,
+      "candidate_pool": 8,
+      "max_results": 4
+    }
+  }
+}

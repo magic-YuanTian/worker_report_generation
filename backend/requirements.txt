@@ -9,3 +9,4 @@ llama-index-embeddings-openai
 pypdf
 rank-bm25
 python-dotenv
+matplotlib

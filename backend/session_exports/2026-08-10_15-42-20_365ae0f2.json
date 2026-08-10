@@ -1,0 +1,897 @@
+{
+  "session_id": "365ae0f2-d511-46b4-b96d-126849418746",
+  "saved_at": "2026-08-10T13:42:20.486864+00:00",
+  "metrics_schema_version": "4.0",
+  "evaluation_config": {
+    "claim_decomposition_model": "openai/gpt-4o-mini",
+    "judge_models": [
+      "openai/gpt-4o-mini",
+      "google/gemini-2.5-flash",
+      "anthropic/claude-3-haiku"
+    ],
+    "openrouter_base_url": "https://openrouter.ai/api/v1",
+    "retrieval_precision_k": 4,
+    "executor_max_workers": 4,
+    "verify_pool_max_workers": 6
+  },
+  "conversation_history": [
+    {
+      "message_id": "508f2c10-0887-4e68-b628-f0e1ed198c2c",
+      "role": "assistant",
+      "content": "Hi there! I'm your Daily Report Assistant. I'll help you put together today's daily activity report through a quick conversation.\n\nLet's get started. What task or activity did you work on today?",
+      "timestamp": "2026-08-10T13:42:00.290711+00:00",
+      "turn_index": 0,
+      "phase": "initial_prompt"
+    },
+    {
+      "message_id": "62f5d821-8a84-428c-a8a5-43139195aab7",
+      "role": "user",
+      "content": "Everyone kept joking about coffee and somebody's playlist, but the actual job was setting up and checking formwork around a small slab edge.",
+      "timestamp": "2026-08-10T13:42:00.290711+00:00",
+      "turn_index": 1,
+      "phase": "user_message"
+    },
+    {
+      "message_id": "9c0931c7-13c2-47fe-bf3d-b7007f053514",
+      "role": "assistant",
+      "content": "Sounds like an interesting day with good vibes! So, the main task was setting up and checking the formwork around a small slab edge. Was this task started or completed today?",
+      "timestamp": "2026-08-10T13:42:03.587467+00:00",
+      "turn_index": 1,
+      "phase": "assistant_response",
+      "source_count": 0
+    },
+    {
+      "message_id": "2762cc03-6df3-4dab-8bca-cb460d389406",
+      "role": "user",
+      "content": "Besides all the side talk, there were three students, one TA, and an instructor using plywood panels, bracing lumber, drills, and an impact driver.",
+      "timestamp": "2026-08-10T13:42:04.733676+00:00",
+      "turn_index": 2,
+      "phase": "user_message"
+    },
+    {
+      "message_id": "f176907c-c82a-4438-9215-d4a8e30930ee",
+      "role": "assistant",
+      "content": "Great, thanks for sharing that. It sounds like there was a team of three students, a TA, and an instructor on the task. You mentioned using plywood panels and bracing lumber as materials, along with drills and an impact driver for tools. Did you notice any safety hazards or was any PPE used today?",
+      "timestamp": "2026-08-10T13:42:08.051741+00:00",
+      "turn_index": 2,
+      "phase": "assistant_response",
+      "source_count": 0
+    },
+    {
+      "message_id": "409d2273-938d-4dd2-8c8e-4e73e3481d6d",
+      "role": "user",
+      "content": "The real safety issues were kickback while fastening, trips from cords and loose material, and making sure the braces would not shift. We had gloves and safety glasses on.",
+      "timestamp": "2026-08-10T13:42:10.399598+00:00",
+      "turn_index": 3,
+      "phase": "user_message"
+    },
+    {
+      "message_id": "df697677-a533-4248-b28c-e056ba77e0e9",
+      "role": "assistant",
+      "content": "Thanks for highlighting those safety hazards. It's important to be cautious of kickback when using power tools, and it sounds like you were aware of tripping risks from cords and loose materials. It's also good to hear that gloves and safety glasses were used for protection.\n\nI've gathered all the information for today's report: \n- Task Type: Setting up and checking formwork around a small slab edge\n- Workforce: 5 people (3 students, 1 TA, 1 instructor)\n- Materials: Plywood panels and bracing lumber\n- Equipment & Tools: Drills and an impact driver\n- Hazards: Kickback risks, tripping hazards, and shifting braces with PPE including gloves and safety glasses\n\nYou can download the report now. Let me know if there's anything else you need!",
+      "timestamp": "2026-08-10T13:42:16.157015+00:00",
+      "turn_index": 3,
+      "phase": "assistant_response",
+      "source_count": 0
+    }
+  ],
+  "turn_records": [
+    {
+      "round_id": "365ae0f2-d511-46b4-b96d-126849418746-turn-0001",
+      "turn_index": 1,
+      "user_message": "Everyone kept joking about coffee and somebody's playlist, but the actual job was setting up and checking formwork around a small slab edge.",
+      "user_timestamp": "2026-08-10T13:42:00.290711+00:00",
+      "assistant_response": "Sounds like an interesting day with good vibes! So, the main task was setting up and checking the formwork around a small slab edge. Was this task started or completed today?",
+      "assistant_timestamp": "2026-08-10T13:42:03.587467+00:00",
+      "retrieval": {
+        "query": "Everyone kept joking about coffee and somebody's playlist, but the actual job was setting up and checking formwork around a small slab edge.",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_file_names": [],
+        "sources": [],
+        "evaluation_snapshot": {
+          "context": "",
+          "candidates": [
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "2",
+              "score": 0.2754,
+              "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "2",
+              "score": 0.2708,
+              "text": "A \nfall restraint system is comprised of a body belt or \nbody harness, an anchorage, connectors, and other \nnecessary equipment. Other components typically \ninclude a lanyard, and may also include a lifeline \nand other devices. Note: A self-retracting lanyard \nis not appropriate for a fall restraint system unless \nthe worker cannot reach the fall hazard when the \nlanyard is fully extended.\nAlways follow the manufacturer\u2019s instructions \nor consult a qualified person to ensure proper \ninstallation of anchor points. OSHA recommends \nthat fall restraint systems have the capacity to \nwithstand 3,00..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "75",
+              "score": 0.2736,
+              "text": "SAFEGUARDS DURING CONSTRUCTION\n2018 INTERNATIONAL BUILDING CODE \u00ae 609\ndesigns, the roof and supporting structure of a covered\nwalkway are permitted to be constructed as follows:\n1. Footings shall be continuous 2-inch by 6-inch (51\nmm by 152 mm) members.\n2. Posts not less than 4 inches by 6 inches (102 mm by\n152 mm) shall be provided on both sides of the roof\nand spaced not more than 12 feet (3658 mm) on cen-\nter.\n3. Stringers not less than 4 inches by 12 inches (102\nmm by 305 mm) shall be placed on edge upon the\nposts.\n4. Joists resting on the stringers shall be not less than 2\ninches by 8 inc..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "1",
+              "score": 0.2827,
+              "text": "FactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "42",
+              "score": 0.2619,
+              "text": "This foundation shall be reinforced with not less than\none No. 4 bar top and bottom. Where the continuous\nfoundation is required to have a depth greater than 12\ninches (305 mm), a minimum 12-inch by 12-inch (305\nmm by 305 mm) continuous footing or turned-down\nslab edge is permitted at door openings in the braced\nwall line. This continuous footing or turned-down slab\nedge shall be reinforced with not less than one No. 4\nTABLE 2308.6.3(1)\nBRACING METHODS\n(continued)\nMETHODS,\nMATERIAL MINIMUM THICKNESS FIGURE\nCONNECTION CRITERIAa\nFasteners Spacing\nLIBa Let-in-bracing\n1\u2033 \u00d7 4\u2033 wood or approved \nmet..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "73",
+              "score": 0.2895,
+              "text": "2018 INTERNATIONAL BUILDING CODE \u00ae 607\nCHAPTER 33\nSAFEGUARDS DURING CONSTRUCTION\nUser notes:\nAbout this chapter: While the balance of the chapters in this code specify how a building is to be designed and constructed in order to be in\ncompliance with the code, Chapter 33 looks to the actual constr uction process. Parameters are provided for demolition and for p rotecting\nadjacent property during demolition and construc tion. Issues such as how to provide egr ess while the building is growing, the t iming of stand-\npipe and sprinkler installation, and protection of pedestrians are addressed. \nC..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "74",
+              "score": 0.2851,
+              "text": "SAFEGUARDS DURING CONSTRUCTION\n608 2018 INTERNATIONAL BUILDING CODE \u00ae\n3304.1.2 Surcharge.  Fill or other surcharge loads shall\nnot be placed adjacent to any building or structure unless\nsuch building or structure is capable of withstanding the\nadditional loads caused by the fill or surcharge. Existing\nfootings or foundations that can be affected by any exca-\nvation shall be underpinned adequately or otherwise pro-\ntected against settlement and shall be protected against\nlateral movement.\n3304.1.3 Footings on adjacent slopes.  For footings on\nadjacent slopes, see Chapter 18.\n3304.1.4 Fill suppo..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "42",
+              "score": null,
+              "text": "WOOD\n524 2018 INTERNATIONAL BUILDING CODE \u00ae\nWhere the ABW is installed at the first story of two-\nstory buildings, the wood structural panel sheathing\nshall be provided on both faces, three anchor bolts shall\nbe placed at one-quarter points and tie-down device\nuplift capacity shall be not less than 3,000 pounds (13\n344 N).\n2308.6.5.2 Portal frame with hold-downs (PFH).  A\nPFH shall be constructed in accordance with this sec-\ntion and Figure 2308.6.5.2. The adjacent door or win-\ndow opening shall have a full-length header.\nIn one-story buildings, each panel shall have a\nlength of not less than ..."
+            }
+          ],
+          "relevance": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "evaluation_status": "complete",
+      "evaluation_completed_at": "2026-08-10T14:35:14.100821+00:00",
+      "evaluation_failed_reason": null,
+      "metrics": {
+        "turn": {
+          "turn_index": 1,
+          "round_id": "365ae0f2-d511-46b4-b96d-126849418746-turn-0001",
+          "user_timestamp": "2026-08-10T13:42:00.290711+00:00",
+          "assistant_timestamp": "2026-08-10T13:42:03.587467+00:00",
+          "evaluated_at": "2026-08-10T14:35:14.100821+00:00",
+          "user_message": "Everyone kept joking about coffee and somebody's playlist, but the actual job was setting up and checking formwork around a small slab edge.",
+          "assistant_response": "Sounds like an interesting day with good vibes! So, the main task was setting up and checking the formwork around a small slab edge. Was this task started or completed today?",
+          "candidate_count": 8,
+          "accepted_source_count": 0,
+          "source_refs": []
+        },
+        "retrieval_precision_proxy": {
+          "metric_name": "retrieval_precision_proxy@4",
+          "scored": true,
+          "score": 0.0,
+          "k": 4,
+          "candidate_count": 8,
+          "top_k_count": 4,
+          "relevant_count_in_top_k": 0,
+          "skip_reason": null
+        },
+        "precision_at_k": 0.0,
+        "faithfulness": {
+          "metric_name": "faithfulness",
+          "scored": false,
+          "skip_reason": "no_context",
+          "claims": [],
+          "claim_count": 0,
+          "per_judge_scores": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "per_judge_supported_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "per_judge_evaluable_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "per_judge_error_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "majority_vote_score": null,
+          "majority_supported_count": 0,
+          "majority_evaluable_claim_count": 0
+        },
+        "answer_relevance": {
+          "metric_name": "answer_relevance",
+          "scored": true,
+          "skip_reason": null,
+          "judge_votes": {
+            "openai/gpt-4o-mini": true,
+            "google/gemini-2.5-flash": true,
+            "anthropic/claude-3-haiku": true
+          },
+          "judge_errors": {
+            "openai/gpt-4o-mini": false,
+            "google/gemini-2.5-flash": false,
+            "anthropic/claude-3-haiku": false
+          },
+          "majority_relevant": true,
+          "majority_evaluable": true
+        }
+      },
+      "report_completion_after_turn": 0.2
+    },
+    {
+      "round_id": "365ae0f2-d511-46b4-b96d-126849418746-turn-0002",
+      "turn_index": 2,
+      "user_message": "Besides all the side talk, there were three students, one TA, and an instructor using plywood panels, bracing lumber, drills, and an impact driver.",
+      "user_timestamp": "2026-08-10T13:42:04.733676+00:00",
+      "assistant_response": "Great, thanks for sharing that. It sounds like there was a team of three students, a TA, and an instructor on the task. You mentioned using plywood panels and bracing lumber as materials, along with drills and an impact driver for tools. Did you notice any safety hazards or was any PPE used today?",
+      "assistant_timestamp": "2026-08-10T13:42:08.051741+00:00",
+      "retrieval": {
+        "query": "Besides all the side talk, there were three students, one TA, and an instructor using plywood panels, bracing lumber, drills, and an impact driver.",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_file_names": [],
+        "sources": [],
+        "evaluation_snapshot": {
+          "context": "",
+          "candidates": [
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "39",
+              "score": 0.3253,
+              "text": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 521\n2308.6.2 Braced wall panels. Braced wall panels shall be\nplaced along braced wall lines  in accordance with Table\n2308.6.1 and Figure 2308.6.1 and as specified in Table\n2308.6.3(1). A braced wall panel  shall be located at each\nend of the braced wall line and at the corners of intersect-\ning braced wall lines  or shall begin within the maximum\ndistance from the end of the braced wall line  in accor-\ndance with Table 2308.6.1. Braced wall panels in a braced\nwall line shall not be offset from each other by more than\n4 feet (1219 mm). Braced wall panels..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "42",
+              "score": 0.3192,
+              "text": "WOOD\n524 2018 INTERNATIONAL BUILDING CODE \u00ae\nWhere the ABW is installed at the first story of two-\nstory buildings, the wood structural panel sheathing\nshall be provided on both faces, three anchor bolts shall\nbe placed at one-quarter points and tie-down device\nuplift capacity shall be not less than 3,000 pounds (13\n344 N).\n2308.6.5.2 Portal frame with hold-downs (PFH).  A\nPFH shall be constructed in accordance with this sec-\ntion and Figure 2308.6.5.2. The adjacent door or win-\ndow opening shall have a full-length header.\nIn one-story buildings, each panel shall have a\nlength of not less than ..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "43",
+              "score": 0.3286,
+              "text": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 525\nTABLE 2308.6.3(1)\u2014continued\nBRACING METHODS\nFor SI: 1 foot = 304.8 mm, 1 degree = 0.01745 rad.\na. Method LIB shall have gypsum board fastened to one or more side(s) with nails or screws.\nMETHODS,\nMATERIAL MINIMUM THICKNESS FIGURE\nCONNECTION CRITERIAa\nFasteners Spacing\nGB\nGypsum board \n(Double sided)\n1/2\u2033 or 5/8\u2033 by not less than \n4\u2032 wide to studs at \nmaximum of 24\u2033 o.c.\nSection 2506.2 for exterior and \ninterior sheathing: 5d annual \nringed cooler nails \n(1\n5/8\u2033 \u00d7 0.086\u2033) or 11/4\u2033 screws \n(Type W or S) for 1/2\u2033 gypsum \nboard or 15/8\u2033 screws (Type W or..."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "2",
+              "score": null,
+              "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "74",
+              "score": 0.3283,
+              "text": "3. Wood structural use panels shall be bonded with an\nadhesive identical to that for exterior wood structural\nuse panels.\n4. Wood structural use panels \n1/4 inch (6.4 mm) or 5/16 inch\n(23.8 mm) in thickness shall have studs spaced not\nmore than 2 feet (610 mm) on center.\n5. Wood structural use panels \n3/8 inch (9.5 mm) or 1/2 inch\n(12.7 mm) in thickness shall have studs spaced not\nmore than 4 feet (1219 mm) on center provided that a\n2-inch by 4-inch (51 mm by 102 mm) stiffener is\nplaced horizontally at mid-height where the stud spac-\ning is greater than 2 feet (610 mm) on center.\n6. Wood struc..."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "1",
+              "score": null,
+              "text": "U. S. Department of Labor\nOccupational Safety and Health Administration\nDirectorate of Science, Technology & Medicine\nOffice of Science and Technology Assessment\nSHIB 11-17-2005\nSafety and Health Information Bulletin\nHazards of Manually Lifting Balloon Framed Walls\nPurpose\nThis Safety and Health Information Bulletin\nalerts employers and employees that manually raised\nballoon framed walls could become too heavy for\nemployees to hold and could collapse back onto the\nemployees.  From July 1999 through July 2004, 22\nballoon framed wall collapses were reported.  Four of\nthese accidents occurred in ..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "20",
+              "score": null,
+              "text": "WOOD\n502 2018 INTERNATIONAL BUILDING CODE \u00ae\nAmerican Society of Agricultural and Biological \nEngineers.\nASABE EP 484.2 Diaphragm Design of Metal-clad, Post-\nFrame Rectangular Buildings\nASABE EP 486.2 Shallow Post Foundation Design\nASABE 559.1 Design Requirements and Bending\nProperties for Mechanically Laminated\nColumns\nAPA\u2014The Engineered Wood Association.\nANSI 117 Standard Specifications for Structural Glued \nLaminated Timber of Softwood Species\nANSI A190.1 Structural Glued Laminated Timber\nPanel Design Specification\nPlywood Design Specification Supplement 1\u2014\nDesign & Fabrication of Plywood Cu..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "45",
+              "score": 0.3252,
+              "text": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 527\nFOR PANEL SPLICE (IF NEEDED) ADJOINING PANEL\nEDGES SHALL MEET OVER AND BE FASTENED TO\nCOMMON FRAMING\n8d COMON OR GALVANIZED BOX NAILS AT 6\u2033 O.C.\nAT PANEL EDGES FOR SINGLE STORY AND AT 4\u2033 O.C.\nAT PANEL EDGES FOR THE FIRST OF 2 STORIES\nANCHOR BOLTS PER SECTION 2308.6.5.1\nHOLD-DOWN PER SECTION\n2308.6.5.1\nSTUDS UNDER HEADER AS\nREQUIRED\n10\u2032-0\u2033 MAX HEIGHT\n2\u2032-8\u2033 MIN PANEL\nLENGTH\nMIN. 2x4 FRAMING. MIN. DOUBLE\nSTUDS REQUIRED\nMIN. \n3/8\u2033 THICK WOOD\nSTRUCTURAL PANEL\nSHEATHING ON ONE FACE\nMINIMUM REINFORCING OF FOUNDATION, ONE\n#4 BAR TOP AND BOTTOM OF FOOTING.\nRE..."
+            }
+          ],
+          "relevance": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "evaluation_status": "complete",
+      "evaluation_completed_at": "2026-08-10T14:35:16.654892+00:00",
+      "evaluation_failed_reason": null,
+      "metrics": {
+        "turn": {
+          "turn_index": 2,
+          "round_id": "365ae0f2-d511-46b4-b96d-126849418746-turn-0002",
+          "user_timestamp": "2026-08-10T13:42:04.733676+00:00",
+          "assistant_timestamp": "2026-08-10T13:42:08.051741+00:00",
+          "evaluated_at": "2026-08-10T14:35:16.654892+00:00",
+          "user_message": "Besides all the side talk, there were three students, one TA, and an instructor using plywood panels, bracing lumber, drills, and an impact driver.",
+          "assistant_response": "Great, thanks for sharing that. It sounds like there was a team of three students, a TA, and an instructor on the task. You mentioned using plywood panels and bracing lumber as materials, along with drills and an impact driver for tools. Did you notice any safety hazards or was any PPE used today?",
+          "candidate_count": 8,
+          "accepted_source_count": 0,
+          "source_refs": []
+        },
+        "retrieval_precision_proxy": {
+          "metric_name": "retrieval_precision_proxy@4",
+          "scored": true,
+          "score": 0.0,
+          "k": 4,
+          "candidate_count": 8,
+          "top_k_count": 4,
+          "relevant_count_in_top_k": 0,
+          "skip_reason": null
+        },
+        "precision_at_k": 0.0,
+        "faithfulness": {
+          "metric_name": "faithfulness",
+          "scored": false,
+          "skip_reason": "no_context",
+          "claims": [],
+          "claim_count": 0,
+          "per_judge_scores": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "per_judge_supported_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "per_judge_evaluable_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "per_judge_error_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "majority_vote_score": null,
+          "majority_supported_count": 0,
+          "majority_evaluable_claim_count": 0
+        },
+        "answer_relevance": {
+          "metric_name": "answer_relevance",
+          "scored": true,
+          "skip_reason": null,
+          "judge_votes": {
+            "openai/gpt-4o-mini": true,
+            "google/gemini-2.5-flash": true,
+            "anthropic/claude-3-haiku": true
+          },
+          "judge_errors": {
+            "openai/gpt-4o-mini": false,
+            "google/gemini-2.5-flash": false,
+            "anthropic/claude-3-haiku": false
+          },
+          "majority_relevant": true,
+          "majority_evaluable": true
+        }
+      },
+      "report_completion_after_turn": 0.8
+    },
+    {
+      "round_id": "365ae0f2-d511-46b4-b96d-126849418746-turn-0003",
+      "turn_index": 3,
+      "user_message": "The real safety issues were kickback while fastening, trips from cords and loose material, and making sure the braces would not shift. We had gloves and safety glasses on.",
+      "user_timestamp": "2026-08-10T13:42:10.399598+00:00",
+      "assistant_response": "Thanks for highlighting those safety hazards. It's important to be cautious of kickback when using power tools, and it sounds like you were aware of tripping risks from cords and loose materials. It's also good to hear that gloves and safety glasses were used for protection.\n\nI've gathered all the information for today's report: \n- Task Type: Setting up and checking formwork around a small slab edge\n- Workforce: 5 people (3 students, 1 TA, 1 instructor)\n- Materials: Plywood panels and bracing lumber\n- Equipment & Tools: Drills and an impact driver\n- Hazards: Kickback risks, tripping hazards, and shifting braces with PPE including gloves and safety glasses\n\nYou can download the report now. Let me know if there's anything else you need!",
+      "assistant_timestamp": "2026-08-10T13:42:16.157015+00:00",
+      "retrieval": {
+        "query": "The real safety issues were kickback while fastening, trips from cords and loose material, and making sure the braces would not shift. We had gloves and safety glasses on.",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_file_names": [],
+        "sources": [],
+        "evaluation_snapshot": {
+          "context": "",
+          "candidates": [
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "2",
+              "score": 0.395,
+              "text": "Guardrails\nGuardrail systems can protect workers framing \nwalls around the perimeter and at floor openings. \nFramed exterior walls typically include openings for \nwindows and doors.  Workers can apply sheathing \nto the frame, and install guardrails across window \nand door openings, before raising wall sections so \nthat the openings are protected when the walls are \nset into place.\nOSHA generally requires the top rail height to be \n42 inches + 3 inches above the walking/working \nlevel. A midrail is also required between the top \nrail and the walking/working surface when there \nis no wall or par..."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "1",
+              "score": 0.3581,
+              "text": "U. S. Department of Labor\nOccupational Safety and Health Administration\nDirectorate of Science, Technology & Medicine\nOffice of Science and Technology Assessment\nSHIB 11-17-2005\nSafety and Health Information Bulletin\nHazards of Manually Lifting Balloon Framed Walls\nPurpose\nThis Safety and Health Information Bulletin\nalerts employers and employees that manually raised\nballoon framed walls could become too heavy for\nemployees to hold and could collapse back onto the\nemployees.  From July 1999 through July 2004, 22\nballoon framed wall collapses were reported.  Four of\nthese accidents occurred in ..."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "2",
+              "score": 0.3657,
+              "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "3",
+              "score": 0.3755,
+              "text": "3\n/square4Prior to the lifting of the wall, establish a\nlimited access zone whenever a balloon\nframed wall is being raised;\nThe limited access zone should be equal to\nthe height of the wall plus four feet and\nshould run the entire length of the wall;\nThe limited access zone should be restricted\nto entry by employees actively engaged in\nlifting the wall and no other workers be\nallowed to enter the zone;\nThe limited access zone should remain in\nplace until the wall is adequately supported\nand braced to prevent accidental collapse;\n/square4Secure bottom plates with adequate sized\nmetal bands (at ..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "3",
+              "score": 0.367,
+              "text": "safely. The employer must ensure that employees \non scaffold systems 10 feet or more above a \nlower level are protected from falls. For other \nrequirements for scaffolds, refer to 29 CFR 1926 \nSubpart L \u2013 Scaffolds.\nWritten Fall Protection Plans\nWhen working at heights of 6 feet or greater, if the \nemployer does not use ladders, scaffolds, aerial lifts \nor fall restraint systems and can demonstrate that \nit is not feasible or would create a greater hazard \nto use conventional fall protection equipment \n(guardrails, safety nets or a PFAS), the employer \nmust develop a written site-specific fall..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "73",
+              "score": 0.3382,
+              "text": "2018 INTERNATIONAL BUILDING CODE \u00ae 607\nCHAPTER 33\nSAFEGUARDS DURING CONSTRUCTION\nUser notes:\nAbout this chapter: While the balance of the chapters in this code specify how a building is to be designed and constructed in order to be in\ncompliance with the code, Chapter 33 looks to the actual constr uction process. Parameters are provided for demolition and for p rotecting\nadjacent property during demolition and construc tion. Issues such as how to provide egr ess while the building is growing, the t iming of stand-\npipe and sprinkler installation, and protection of pedestrians are addressed. \nC..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "75",
+              "score": 0.3448,
+              "text": "SAFEGUARDS DURING CONSTRUCTION\n2018 INTERNATIONAL BUILDING CODE \u00ae 609\ndesigns, the roof and supporting structure of a covered\nwalkway are permitted to be constructed as follows:\n1. Footings shall be continuous 2-inch by 6-inch (51\nmm by 152 mm) members.\n2. Posts not less than 4 inches by 6 inches (102 mm by\n152 mm) shall be provided on both sides of the roof\nand spaced not more than 12 feet (3658 mm) on cen-\nter.\n3. Stringers not less than 4 inches by 12 inches (102\nmm by 305 mm) shall be placed on edge upon the\nposts.\n4. Joists resting on the stringers shall be not less than 2\ninches by 8 inc..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "2",
+              "score": 0.3942,
+              "text": "A \nfall restraint system is comprised of a body belt or \nbody harness, an anchorage, connectors, and other \nnecessary equipment. Other components typically \ninclude a lanyard, and may also include a lifeline \nand other devices. Note: A self-retracting lanyard \nis not appropriate for a fall restraint system unless \nthe worker cannot reach the fall hazard when the \nlanyard is fully extended.\nAlways follow the manufacturer\u2019s instructions \nor consult a qualified person to ensure proper \ninstallation of anchor points. OSHA recommends \nthat fall restraint systems have the capacity to \nwithstand 3,00..."
+            }
+          ],
+          "relevance": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "evaluation_status": "complete",
+      "evaluation_completed_at": "2026-08-10T14:35:18.911710+00:00",
+      "evaluation_failed_reason": null,
+      "metrics": {
+        "turn": {
+          "turn_index": 3,
+          "round_id": "365ae0f2-d511-46b4-b96d-126849418746-turn-0003",
+          "user_timestamp": "2026-08-10T13:42:10.399598+00:00",
+          "assistant_timestamp": "2026-08-10T13:42:16.157015+00:00",
+          "evaluated_at": "2026-08-10T14:35:18.911710+00:00",
+          "user_message": "The real safety issues were kickback while fastening, trips from cords and loose material, and making sure the braces would not shift. We had gloves and safety glasses on.",
+          "assistant_response": "Thanks for highlighting those safety hazards. It's important to be cautious of kickback when using power tools, and it sounds like you were aware of tripping risks from cords and loose materials. It's also good to hear that gloves and safety glasses were used for protection.\n\nI've gathered all the information for today's report: \n- Task Type: Setting up and checking formwork around a small slab edge\n- Workforce: 5 people (3 students, 1 TA, 1 instructor)\n- Materials: Plywood panels and bracing lumber\n- Equipment & Tools: Drills and an impact driver\n- Hazards: Kickback risks, tripping hazards, and shifting braces with PPE including gloves and safety glasses\n\nYou can download the report now. Let me know if there's anything else you need!",
+          "candidate_count": 8,
+          "accepted_source_count": 0,
+          "source_refs": []
+        },
+        "retrieval_precision_proxy": {
+          "metric_name": "retrieval_precision_proxy@4",
+          "scored": true,
+          "score": 0.0,
+          "k": 4,
+          "candidate_count": 8,
+          "top_k_count": 4,
+          "relevant_count_in_top_k": 0,
+          "skip_reason": null
+        },
+        "precision_at_k": 0.0,
+        "faithfulness": {
+          "metric_name": "faithfulness",
+          "scored": false,
+          "skip_reason": "no_context",
+          "claims": [],
+          "claim_count": 0,
+          "per_judge_scores": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "per_judge_supported_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "per_judge_evaluable_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "per_judge_error_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "majority_vote_score": null,
+          "majority_supported_count": 0,
+          "majority_evaluable_claim_count": 0
+        },
+        "answer_relevance": {
+          "metric_name": "answer_relevance",
+          "scored": true,
+          "skip_reason": null,
+          "judge_votes": {
+            "openai/gpt-4o-mini": true,
+            "google/gemini-2.5-flash": true,
+            "anthropic/claude-3-haiku": true
+          },
+          "judge_errors": {
+            "openai/gpt-4o-mini": false,
+            "google/gemini-2.5-flash": false,
+            "anthropic/claude-3-haiku": false
+          },
+          "majority_relevant": true,
+          "majority_evaluable": true
+        }
+      },
+      "report_completion_after_turn": 1.0
+    }
+  ],
+  "report_data": {
+    "activity": {
+      "task_type": {
+        "label": "Task Type",
+        "value": "Setting up and checking formwork around a small slab edge",
+        "filled": true
+      },
+      "workforce": {
+        "label": "Workforce",
+        "value": "5 people (3 students, 1 TA, 1 instructor)",
+        "filled": true
+      },
+      "materials": {
+        "label": "Materials",
+        "value": "Plywood panels and bracing lumber",
+        "filled": true
+      },
+      "equipment_and_tools": {
+        "label": "Equipment & Tools",
+        "value": "Drills and an impact driver",
+        "filled": true
+      }
+    },
+    "safety": {
+      "hazard": {
+        "label": "Hazard",
+        "value": "Kickback risks, tripping hazards, and shifting braces with PPE including gloves and safety glasses",
+        "filled": true
+      }
+    }
+  },
+  "completion": 1.0,
+  "metrics_history": [
+    {
+      "turn": {
+        "turn_index": 1,
+        "round_id": "365ae0f2-d511-46b4-b96d-126849418746-turn-0001",
+        "user_timestamp": "2026-08-10T13:42:00.290711+00:00",
+        "assistant_timestamp": "2026-08-10T13:42:03.587467+00:00",
+        "evaluated_at": "2026-08-10T14:35:14.100821+00:00",
+        "user_message": "Everyone kept joking about coffee and somebody's playlist, but the actual job was setting up and checking formwork around a small slab edge.",
+        "assistant_response": "Sounds like an interesting day with good vibes! So, the main task was setting up and checking the formwork around a small slab edge. Was this task started or completed today?",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_refs": []
+      },
+      "retrieval_precision_proxy": {
+        "metric_name": "retrieval_precision_proxy@4",
+        "scored": true,
+        "score": 0.0,
+        "k": 4,
+        "candidate_count": 8,
+        "top_k_count": 4,
+        "relevant_count_in_top_k": 0,
+        "skip_reason": null
+      },
+      "precision_at_k": 0.0,
+      "faithfulness": {
+        "metric_name": "faithfulness",
+        "scored": false,
+        "skip_reason": "no_context",
+        "claims": [],
+        "claim_count": 0,
+        "per_judge_scores": {
+          "openai/gpt-4o-mini": null,
+          "google/gemini-2.5-flash": null,
+          "anthropic/claude-3-haiku": null
+        },
+        "per_judge_supported_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "per_judge_evaluable_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "per_judge_error_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "majority_vote_score": null,
+        "majority_supported_count": 0,
+        "majority_evaluable_claim_count": 0
+      },
+      "answer_relevance": {
+        "metric_name": "answer_relevance",
+        "scored": true,
+        "skip_reason": null,
+        "judge_votes": {
+          "openai/gpt-4o-mini": true,
+          "google/gemini-2.5-flash": true,
+          "anthropic/claude-3-haiku": true
+        },
+        "judge_errors": {
+          "openai/gpt-4o-mini": false,
+          "google/gemini-2.5-flash": false,
+          "anthropic/claude-3-haiku": false
+        },
+        "majority_relevant": true,
+        "majority_evaluable": true
+      }
+    },
+    {
+      "turn": {
+        "turn_index": 2,
+        "round_id": "365ae0f2-d511-46b4-b96d-126849418746-turn-0002",
+        "user_timestamp": "2026-08-10T13:42:04.733676+00:00",
+        "assistant_timestamp": "2026-08-10T13:42:08.051741+00:00",
+        "evaluated_at": "2026-08-10T14:35:16.654892+00:00",
+        "user_message": "Besides all the side talk, there were three students, one TA, and an instructor using plywood panels, bracing lumber, drills, and an impact driver.",
+        "assistant_response": "Great, thanks for sharing that. It sounds like there was a team of three students, a TA, and an instructor on the task. You mentioned using plywood panels and bracing lumber as materials, along with drills and an impact driver for tools. Did you notice any safety hazards or was any PPE used today?",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_refs": []
+      },
+      "retrieval_precision_proxy": {
+        "metric_name": "retrieval_precision_proxy@4",
+        "scored": true,
+        "score": 0.0,
+        "k": 4,
+        "candidate_count": 8,
+        "top_k_count": 4,
+        "relevant_count_in_top_k": 0,
+        "skip_reason": null
+      },
+      "precision_at_k": 0.0,
+      "faithfulness": {
+        "metric_name": "faithfulness",
+        "scored": false,
+        "skip_reason": "no_context",
+        "claims": [],
+        "claim_count": 0,
+        "per_judge_scores": {
+          "openai/gpt-4o-mini": null,
+          "google/gemini-2.5-flash": null,
+          "anthropic/claude-3-haiku": null
+        },
+        "per_judge_supported_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "per_judge_evaluable_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "per_judge_error_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "majority_vote_score": null,
+        "majority_supported_count": 0,
+        "majority_evaluable_claim_count": 0
+      },
+      "answer_relevance": {
+        "metric_name": "answer_relevance",
+        "scored": true,
+        "skip_reason": null,
+        "judge_votes": {
+          "openai/gpt-4o-mini": true,
+          "google/gemini-2.5-flash": true,
+          "anthropic/claude-3-haiku": true
+        },
+        "judge_errors": {
+          "openai/gpt-4o-mini": false,
+          "google/gemini-2.5-flash": false,
+          "anthropic/claude-3-haiku": false
+        },
+        "majority_relevant": true,
+        "majority_evaluable": true
+      }
+    },
+    {
+      "turn": {
+        "turn_index": 3,
+        "round_id": "365ae0f2-d511-46b4-b96d-126849418746-turn-0003",
+        "user_timestamp": "2026-08-10T13:42:10.399598+00:00",
+        "assistant_timestamp": "2026-08-10T13:42:16.157015+00:00",
+        "evaluated_at": "2026-08-10T14:35:18.911710+00:00",
+        "user_message": "The real safety issues were kickback while fastening, trips from cords and loose material, and making sure the braces would not shift. We had gloves and safety glasses on.",
+        "assistant_response": "Thanks for highlighting those safety hazards. It's important to be cautious of kickback when using power tools, and it sounds like you were aware of tripping risks from cords and loose materials. It's also good to hear that gloves and safety glasses were used for protection.\n\nI've gathered all the information for today's report: \n- Task Type: Setting up and checking formwork around a small slab edge\n- Workforce: 5 people (3 students, 1 TA, 1 instructor)\n- Materials: Plywood panels and bracing lumber\n- Equipment & Tools: Drills and an impact driver\n- Hazards: Kickback risks, tripping hazards, and shifting braces with PPE including gloves and safety glasses\n\nYou can download the report now. Let me know if there's anything else you need!",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_refs": []
+      },
+      "retrieval_precision_proxy": {
+        "metric_name": "retrieval_precision_proxy@4",
+        "scored": true,
+        "score": 0.0,
+        "k": 4,
+        "candidate_count": 8,
+        "top_k_count": 4,
+        "relevant_count_in_top_k": 0,
+        "skip_reason": null
+      },
+      "precision_at_k": 0.0,
+      "faithfulness": {
+        "metric_name": "faithfulness",
+        "scored": false,
+        "skip_reason": "no_context",
+        "claims": [],
+        "claim_count": 0,
+        "per_judge_scores": {
+          "openai/gpt-4o-mini": null,
+          "google/gemini-2.5-flash": null,
+          "anthropic/claude-3-haiku": null
+        },
+        "per_judge_supported_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "per_judge_evaluable_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "per_judge_error_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "majority_vote_score": null,
+        "majority_supported_count": 0,
+        "majority_evaluable_claim_count": 0
+      },
+      "answer_relevance": {
+        "metric_name": "answer_relevance",
+        "scored": true,
+        "skip_reason": null,
+        "judge_votes": {
+          "openai/gpt-4o-mini": true,
+          "google/gemini-2.5-flash": true,
+          "anthropic/claude-3-haiku": true
+        },
+        "judge_errors": {
+          "openai/gpt-4o-mini": false,
+          "google/gemini-2.5-flash": false,
+          "anthropic/claude-3-haiku": false
+        },
+        "majority_relevant": true,
+        "majority_evaluable": true
+      }
+    }
+  ],
+  "aggregated_metrics": {
+    "retrieval_precision_proxy": {
+      "mean": 0.0,
+      "n_scored": 3,
+      "n_skipped": 0,
+      "k": 4,
+      "skip_reason_counts": {}
+    },
+    "faithfulness": {
+      "judge_models": [
+        "openai/gpt-4o-mini",
+        "google/gemini-2.5-flash",
+        "anthropic/claude-3-haiku"
+      ],
+      "per_judge_mean": {
+        "openai/gpt-4o-mini": null,
+        "google/gemini-2.5-flash": null,
+        "anthropic/claude-3-haiku": null
+      },
+      "majority_vote_mean": null,
+      "pairwise_raw_agreement": {
+        "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+      },
+      "pairwise_compared_count": {
+        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+      },
+      "n_turns": 0,
+      "n_skipped": 3,
+      "n_claims": 0,
+      "per_judge_error_count": {
+        "openai/gpt-4o-mini": 0,
+        "google/gemini-2.5-flash": 0,
+        "anthropic/claude-3-haiku": 0
+      },
+      "skip_reason_counts": {
+        "no_context": 3
+      }
+    },
+    "answer_relevance": {
+      "judge_models": [
+        "openai/gpt-4o-mini",
+        "google/gemini-2.5-flash",
+        "anthropic/claude-3-haiku"
+      ],
+      "per_judge_mean": {
+        "openai/gpt-4o-mini": 1.0,
+        "google/gemini-2.5-flash": 1.0,
+        "anthropic/claude-3-haiku": 1.0
+      },
+      "majority_vote_mean": 1.0,
+      "pairwise_raw_agreement": {
+        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+      },
+      "pairwise_compared_count": {
+        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+      },
+      "n_turns": 3,
+      "per_judge_error_count": {
+        "openai/gpt-4o-mini": 0,
+        "google/gemini-2.5-flash": 0,
+        "anthropic/claude-3-haiku": 0
+      }
+    },
+    "precision_at_k": {
+      "mean": 0.0,
+      "n": 3
+    }
+  },
+  "evaluation": {
+    "status": "complete",
+    "evaluated_at": "2026-08-10T14:35:29.742822+00:00",
+    "config": {
+      "claim_decomposition_model": "openai/gpt-4o-mini",
+      "judge_models": [
+        "openai/gpt-4o-mini",
+        "google/gemini-2.5-flash",
+        "anthropic/claude-3-haiku"
+      ],
+      "openrouter_base_url": "https://openrouter.ai/api/v1",
+      "retrieval_precision_k": 4,
+      "executor_max_workers": 4,
+      "verify_pool_max_workers": 6
+    },
+    "turns_evaluated": 3,
+    "artifact_source": "reconstructed_retrieval"
+  },
+  "collection_config": {
+    "chat_model": "gpt-4o",
+    "retrieval": {
+      "retrieval_relevance_judge_model": "gpt-4o",
+      "embedding_model": "text-embedding-3-large",
+      "dense_top_k": 10,
+      "bm25_top_k": 10,
+      "candidate_pool": 8,
+      "max_results": 4
+    }
+  }
+}
