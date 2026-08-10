@@ -10,6 +10,7 @@ from flask_cors import CORS  # noqa: E402
 from rag_engine import init_rag  # noqa: E402
 from conversation_manager import ConversationManager  # noqa: E402
 from report_generator import generate_report_pdf  # noqa: E402
+from session_store import save_session  # noqa: E402
 
 app = Flask(__name__)
 CORS(app)
@@ -57,6 +58,20 @@ def get_report(session_id):
     )
 
 
+@app.route("/api/report/<session_id>/metrics", methods=["GET"])
+def get_metrics(session_id):
+    session = manager.get_session(session_id)
+    if not session:
+        return jsonify({"error": "Session not found"}), 404
+
+    return jsonify(
+        {
+            "metrics_history": session.metrics_history,
+            "aggregated": session.get_aggregated_metrics(),
+        }
+    )
+
+
 @app.route("/api/report/<session_id>/download", methods=["GET"])
 def download_report(session_id):
     session = manager.get_session(session_id)
@@ -68,6 +83,9 @@ def download_report(session_id):
     pdf_bytes = generate_report_pdf(
         session.report_data, session_id, explanation=explanation, analysis=analysis
     )
+
+    session.wait_for_pending_metrics()
+    save_session(session)
 
     return send_file(
         io.BytesIO(pdf_bytes),

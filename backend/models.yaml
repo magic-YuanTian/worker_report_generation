@@ -1,0 +1,39 @@
+# Model reference for the Worker Daily Report Generator.
+#
+# Documentation only - this file is not read by the app. The real values
+# live in the Python constants named below; keep this file in sync if
+# those change.
+
+rag:
+  dialogue_llm:
+    model: gpt-4o
+    file: backend/conversation_manager.py
+    constant: LLM_MODEL
+    purpose: Drives the chat conversation and report field extraction.
+
+  retrieval_relevance_judge:
+    model: gpt-4o
+    file: backend/rag_engine.py
+    constant: LLM_MODEL
+    purpose: Judges whether each retrieved chunk is relevant before it's included in chat context.
+
+  embedding:
+    model: text-embedding-3-large
+    file: backend/rag_engine.py
+    constant: EMBEDDING_MODEL
+    purpose: Embeds documents and queries for the vector index.
+
+judge:
+  openai:
+    model: gpt-4o-mini
+    file: backend/evaluator.py
+    constant: EVAL_MODEL_OPENAI
+    purpose: OpenAI-side judge for Faithfulness and Answer Relevance.
+
+  google:
+    model: google/gemini-2.5-flash
+    file: backend/evaluator.py
+    constant: EVAL_MODEL_GOOGLE
+    provider: OpenRouter
+    purpose: Google-side judge for Faithfulness and Answer Relevance (cross-model check against self-preference bias).
+    note: Slug not verified against a live OpenRouter catalog - recheck before running the study.

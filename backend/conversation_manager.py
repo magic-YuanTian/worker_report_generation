@@ -1,9 +1,11 @@
 import json
+import time
 import uuid
 import copy
 from openai import OpenAI
 from tenacity import retry, stop_after_attempt, wait_random_exponential
 from rag_engine import query_rag
+import evaluator
 
 LLM_MODEL = "gpt-4o"
 
@@ -135,6 +137,8 @@ class Session:
         self.id = str(uuid.uuid4())
         self.conversation_history = []
         self.report_data = copy.deepcopy(REPORT_TEMPLATE)
+        self.metrics_history = []
+        self.pending_metrics_futures = []
 
     def get_report_status_text(self):
         lines = []
@@ -167,6 +171,26 @@ class Session:
                     "filled": field["value"] is not None,
                 }
         return summary
+
+    def get_aggregated_metrics(self):
+        return evaluator.aggregate(self.metrics_history)
+
+    def wait_for_pending_metrics(self, timeout=20):
+        """Block until in-flight background evaluations finish, or timeout elapses.
+
+        Call this before persisting/exporting a session so the last turn's
+        metrics aren't missed just because evaluation hadn't finished yet.
+        Best-effort: gives up after timeout rather than hanging indefinitely.
+        """
+        deadline = time.monotonic() + timeout
+        for future in list(self.pending_metrics_futures):
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                break
+            try:
+                future.result(timeout=remaining)
+            except Exception:
+                pass  # already handled by the future's own done-callback
 
 
 class ConversationManager:
@@ -276,12 +300,32 @@ class ConversationManager:
 
         self._extract_report_data(session)
 
+        future = evaluator.evaluate_turn_async(
+            user_message, response, rag_result,
+            callback=lambda f, s=session: self._on_metrics_done(s, f),
+        )
+        session.pending_metrics_futures.append(future)
+
         return {
             "response": response,
             "report_data": session.get_report_summary(),
             "completion": session.get_completion_ratio(),
             "sources": sources,
         }
+
+    @staticmethod
+    def _on_metrics_done(session, future):
+        try:
+            metrics = future.result()
+        except Exception:
+            metrics = None
+        finally:
+            try:
+                session.pending_metrics_futures.remove(future)
+            except ValueError:
+                pass
+        if metrics is not None:
+            session.metrics_history.append(metrics)
 
     def get_conversation_summary(self, session_id: str) -> str | None:
         session = self.get_session(session_id)

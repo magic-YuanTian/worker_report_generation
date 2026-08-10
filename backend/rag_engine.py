@@ -226,9 +226,11 @@ def query_rag(retriever, query: str) -> dict:
     Returns a dict with:
       - context: concatenated text for the LLM system prompt
       - sources: list of dicts with file_name, page_label, text, score
+      - candidates: full judged pool (ranking order), for evaluation metrics
+      - relevance: bool list index-aligned to candidates, for evaluation metrics
     """
     if retriever is None:
-        return {"context": "", "sources": []}
+        return {"context": "", "sources": [], "candidates": [], "relevance": []}
 
     # Hybrid retrieval: dense (semantic) + BM25 (keyword), fused with RRF.
     # Falls back gracefully to plain vector retrieval for older retrievers.
@@ -241,7 +243,7 @@ def query_rag(retriever, query: str) -> dict:
         nodes = retriever.retrieve(query)
 
     if not nodes:
-        return {"context": "", "sources": []}
+        return {"context": "", "sources": [], "candidates": [], "relevance": []}
 
     # Prepare candidate data
     candidates = []
@@ -289,4 +291,4 @@ def query_rag(retriever, query: str) -> dict:
         chunks.append(cand["text"])
 
     context = "\n\n---\n\n".join(chunks) if chunks else ""
-    return {"context": context, "sources": sources}
+    return {"context": context, "sources": sources, "candidates": candidates, "relevance": relevance}
