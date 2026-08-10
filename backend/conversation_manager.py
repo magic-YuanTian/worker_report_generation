@@ -1,13 +1,22 @@
-import json
-import time
-import uuid
 import copy
+import json
+import uuid
+from datetime import datetime, timezone
+
 from openai import OpenAI
 from tenacity import retry, stop_after_attempt, wait_random_exponential
-from rag_engine import query_rag
-import evaluator
+
+from rag_engine import get_retrieval_config, query_rag
 
 LLM_MODEL = "gpt-4o"
+
+
+def get_collection_config() -> dict:
+    """Stable collection-time config saved with each exported session."""
+    return {
+        "chat_model": LLM_MODEL,
+        "retrieval": get_retrieval_config(),
+    }
 
 REPORT_TEMPLATE = {
     "activity": {
@@ -48,13 +57,13 @@ Your job is to help workers and students create their daily activity report thro
 ## Report Sections to Fill
 
 **Activity:**
-1. **Task Type** – What tasks were performed, descriptions, and progress status (started/completed?)
-2. **Workforce** – Who was working: crew size, roles (workers, students, TAs, instructors), absences
-3. **Materials** – What materials were used: types, specs, installation details
-4. **Equipment & Tools** – What tools and machinery were used
+1. **Task Type** - What tasks were performed, descriptions, and progress status (started/completed?)
+2. **Workforce** - Who was working: crew size, roles (workers, students, TAs, instructors), absences
+3. **Materials** - What materials were used: types, specs, installation details
+4. **Equipment & Tools** - What tools and machinery were used
 
 **Safety:**
-5. **Hazard** – Safety hazards observed, risks identified, incidents, PPE usage
+5. **Hazard** - Safety hazards observed, risks identified, incidents, PPE usage
 
 ## Conversation Guidelines
 
@@ -136,14 +145,135 @@ class Session:
     def __init__(self):
         self.id = str(uuid.uuid4())
         self.conversation_history = []
+        self.turn_records = []
         self.report_data = copy.deepcopy(REPORT_TEMPLATE)
         self.metrics_history = []
-        self.pending_metrics_futures = []
+        self.aggregated_metrics = {}
+        self.evaluation_state = {
+            "status": "not_run",
+            "evaluated_at": None,
+            "config": None,
+            "turns_evaluated": 0,
+            "artifact_source": None,
+        }
+        self.turn_counter = 0
+
+    @staticmethod
+    def _now_utc_iso() -> str:
+        return datetime.now(timezone.utc).isoformat()
+
+    def append_message(self, role, content, *, turn_index=None, phase=None, source_count=None):
+        """Store messages with enough metadata for later round reconstruction."""
+        entry = {
+            "message_id": str(uuid.uuid4()),
+            "role": role,
+            "content": content,
+            "timestamp": self._now_utc_iso(),
+            "turn_index": turn_index,
+            "phase": phase,
+        }
+        if source_count is not None:
+            entry["source_count"] = source_count
+        self.conversation_history.append(entry)
+        return entry
+
+    def begin_turn(self, user_message):
+        """Create one round record before retrieval and answer generation."""
+        self.turn_counter += 1
+        turn_index = self.turn_counter
+        user_entry = self.append_message(
+            "user",
+            user_message,
+            turn_index=turn_index,
+            phase="user_message",
+        )
+        turn_record = {
+            "round_id": f"{self.id}-turn-{turn_index:04d}",
+            "turn_index": turn_index,
+            "user_message": user_message,
+            "user_timestamp": user_entry["timestamp"],
+            "assistant_response": None,
+            "assistant_timestamp": None,
+            "retrieval": {
+                "query": user_message,
+                "candidate_count": 0,
+                "accepted_source_count": 0,
+                "sources": [],
+                "evaluation_snapshot": {
+                    "context": "",
+                    "candidates": [],
+                    "relevance": [],
+                },
+            },
+            "evaluation_status": "not_run",
+            "evaluation_completed_at": None,
+            "evaluation_failed_reason": None,
+            "metrics": None,
+            "report_completion_after_turn": None,
+        }
+        self.turn_records.append(turn_record)
+        return turn_record
+
+    @staticmethod
+    def _serialize_retrieval_items(items):
+        """Compact retrieval records saved for later offline evaluation."""
+        return [
+            {
+                "file_name": item.get("file_name"),
+                "page_label": item.get("page_label"),
+                "score": item.get("score"),
+                "text": item.get("text", ""),
+            }
+            for item in items
+        ]
+
+    def finalize_turn(self, turn_record, response, rag_result):
+        """Complete one round record after answer generation.
+
+        The saved retrieval snapshot is the contract between collection and
+        later offline evaluation. Future judge reruns use this stored context,
+        candidate pool, and relevance mask instead of touching live chat.
+        """
+        sources = rag_result.get("sources", [])
+        assistant_entry = self.append_message(
+            "assistant",
+            response,
+            turn_index=turn_record["turn_index"],
+            phase="assistant_response",
+            source_count=len(sources),
+        )
+        turn_record["assistant_response"] = response
+        turn_record["assistant_timestamp"] = assistant_entry["timestamp"]
+        serialized_sources = self._serialize_retrieval_items(sources)
+        turn_record["retrieval"] = {
+            "query": rag_result.get("query", turn_record["user_message"]),
+            "candidate_count": len(rag_result.get("candidates", [])),
+            "accepted_source_count": len(sources),
+            "source_file_names": [source.get("file_name") for source in sources],
+            "sources": serialized_sources,
+            "evaluation_snapshot": {
+                "context": rag_result.get("context", ""),
+                "candidates": self._serialize_retrieval_items(
+                    rag_result.get("candidates", [])
+                ),
+                # Key parameter: this relevance mask is saved so the retrieval
+                # proxy can be recomputed later without rerunning live retrieval.
+                "relevance": [bool(flag) for flag in rag_result.get("relevance", [])],
+            },
+        }
+        return assistant_entry
+
+    def chat_messages(self):
+        """Project rich stored messages down to API-safe role/content items."""
+        return [
+            {"role": message["role"], "content": message["content"]}
+            for message in self.conversation_history
+        ]
 
     def get_report_status_text(self):
         lines = []
-        for category, fields in self.report_data.items():
-            for field_key, field in fields.items():
+        for _category, fields in self.report_data.items():
+            for _field_key, field in fields.items():
                 filled = field["value"] is not None
                 marker = "FILLED" if filled else "EMPTY"
                 val = field["value"] or "Not yet collected"
@@ -153,8 +283,8 @@ class Session:
     def get_completion_ratio(self):
         total = 0
         filled = 0
-        for category, fields in self.report_data.items():
-            for field_key, field in fields.items():
+        for _category, fields in self.report_data.items():
+            for _field_key, field in fields.items():
                 total += 1
                 if field["value"]:
                     filled += 1
@@ -173,24 +303,14 @@ class Session:
         return summary
 
     def get_aggregated_metrics(self):
-        return evaluator.aggregate(self.metrics_history)
+        return self.aggregated_metrics
 
-    def wait_for_pending_metrics(self, timeout=20):
-        """Block until in-flight background evaluations finish, or timeout elapses.
+    def get_ordered_turn_records(self):
+        """Stable round ordering for export and later analysis."""
+        return sorted(self.turn_records, key=lambda record: record["turn_index"])
 
-        Call this before persisting/exporting a session so the last turn's
-        metrics aren't missed just because evaluation hadn't finished yet.
-        Best-effort: gives up after timeout rather than hanging indefinitely.
-        """
-        deadline = time.monotonic() + timeout
-        for future in list(self.pending_metrics_futures):
-            remaining = deadline - time.monotonic()
-            if remaining <= 0:
-                break
-            try:
-                future.result(timeout=remaining)
-            except Exception:
-                pass  # already handled by the future's own done-callback
+    def get_evaluation_state(self):
+        return dict(self.evaluation_state)
 
 
 class ConversationManager:
@@ -207,6 +327,10 @@ class ConversationManager:
     def get_session(self, session_id):
         return self.sessions.get(session_id)
 
+    def get_collection_config(self) -> dict:
+        """Expose the collection-time knobs independently from evaluator knobs."""
+        return get_collection_config()
+
     @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
     def _chat(self, messages, temperature=0.7):
         completion = self.client.chat.completions.create(
@@ -219,16 +343,14 @@ class ConversationManager:
     def _extract_report_data(self, session):
         conv_text = "\n".join(
             [
-                f"{'User' if m['role'] == 'user' else 'Assistant'}: {m['content']}"
-                for m in session.conversation_history
+                f"{'User' if message['role'] == 'user' else 'Assistant'}: {message['content']}"
+                for message in session.conversation_history
             ]
         )
         prompt = EXTRACTION_PROMPT.format(conversation=conv_text)
 
         try:
-            result = self._chat(
-                [{"role": "user", "content": prompt}], temperature=0
-            )
+            result = self._chat([{"role": "user", "content": prompt}], temperature=0)
 
             json_str = result.strip()
             if "```" in json_str:
@@ -263,8 +385,11 @@ class ConversationManager:
             "today's daily activity report through a quick conversation.\n\n"
             "Let's get started. What task or activity did you work on today?"
         )
-        session.conversation_history.append(
-            {"role": "assistant", "content": initial_msg}
+        session.append_message(
+            "assistant",
+            initial_msg,
+            turn_index=0,
+            phase="initial_prompt",
         )
 
         return {
@@ -278,9 +403,10 @@ class ConversationManager:
         if not session:
             return None
 
-        session.conversation_history.append({"role": "user", "content": user_message})
+        turn_record = session.begin_turn(user_message)
 
         rag_result = query_rag(self.retriever, user_message)
+        rag_result["query"] = user_message
         rag_context = rag_result["context"]
         sources = rag_result["sources"]
 
@@ -290,21 +416,13 @@ class ConversationManager:
         )
 
         messages = [{"role": "system", "content": system_prompt}]
-        messages.extend(session.conversation_history)
+        messages.extend(session.chat_messages())
 
         response = self._chat(messages)
-
-        session.conversation_history.append(
-            {"role": "assistant", "content": response}
-        )
+        session.finalize_turn(turn_record, response, rag_result)
 
         self._extract_report_data(session)
-
-        future = evaluator.evaluate_turn_async(
-            user_message, response, rag_result,
-            callback=lambda f, s=session: self._on_metrics_done(s, f),
-        )
-        session.pending_metrics_futures.append(future)
+        turn_record["report_completion_after_turn"] = session.get_completion_ratio()
 
         return {
             "response": response,
@@ -313,27 +431,14 @@ class ConversationManager:
             "sources": sources,
         }
 
-    @staticmethod
-    def _on_metrics_done(session, future):
-        try:
-            metrics = future.result()
-        except Exception:
-            metrics = None
-        finally:
-            try:
-                session.pending_metrics_futures.remove(future)
-            except ValueError:
-                pass
-        if metrics is not None:
-            session.metrics_history.append(metrics)
-
     def get_conversation_summary(self, session_id: str) -> str | None:
         session = self.get_session(session_id)
         if not session or not session.conversation_history:
             return None
+
         conv_text = "\n".join(
-            f"{'User' if m['role'] == 'user' else 'Assistant'}: {m['content']}"
-            for m in session.conversation_history
+            f"{'User' if message['role'] == 'user' else 'Assistant'}: {message['content']}"
+            for message in session.conversation_history
         )
         prompt = SUMMARY_PROMPT.format(conversation=conv_text)
         try:
@@ -342,17 +447,11 @@ class ConversationManager:
             return None
 
     def get_report_analysis(self, session_id: str) -> dict | None:
-        """Generate a RAG-grounded analysis with actionable recommendations.
-
-        Retrieves relevant code/safety passages based on the collected report,
-        then asks the LLM to produce a short assessment plus recommendations
-        that cite the reference documents.
-        """
+        """Generate a RAG-grounded analysis with actionable recommendations."""
         session = self.get_session(session_id)
         if not session:
             return None
 
-        # Build a retrieval query from the filled report fields.
         filled_parts = []
         for _category, fields in session.report_data.items():
             for _key, field in fields.items():
@@ -371,7 +470,9 @@ class ConversationManager:
             page = src.get("page_label")
             header = f"[Source: {name}{', p.' + str(page) if page else ''}]"
             labeled.append(f"{header}\n{src.get('text', '')}")
-        rag_context = "\n\n---\n\n".join(labeled) if labeled else "No reference documents found."
+        rag_context = (
+            "\n\n---\n\n".join(labeled) if labeled else "No reference documents found."
+        )
 
         prompt = ANALYSIS_PROMPT.format(
             report_status=session.get_report_status_text(),
@@ -394,11 +495,13 @@ class ConversationManager:
             recommendations = []
             for rec in data.get("recommendations", []):
                 if isinstance(rec, dict) and rec.get("text"):
-                    recommendations.append({
-                        "category": rec.get("category") or "General",
-                        "text": rec["text"],
-                        "source": rec.get("source") or "",
-                    })
+                    recommendations.append(
+                        {
+                            "category": rec.get("category") or "General",
+                            "text": rec["text"],
+                            "source": rec.get("source") or "",
+                        }
+                    )
 
             if not recommendations and not data.get("analysis"):
                 return None
@@ -411,16 +514,17 @@ class ConversationManager:
             return None
 
     @staticmethod
-    def _field_value_text(value) -> str:
+    def _field_value_text(value):
         if isinstance(value, str):
             return value
         if isinstance(value, (int, float, bool)):
             return str(value)
         if isinstance(value, list):
-            return ", ".join(ConversationManager._field_value_text(v) for v in value)
+            return ", ".join(ConversationManager._field_value_text(item) for item in value)
         if isinstance(value, dict):
             return "; ".join(
-                f"{k}: {ConversationManager._field_value_text(v)}" for k, v in value.items()
+                f"{key}: {ConversationManager._field_value_text(item)}"
+                for key, item in value.items()
             )
         return str(value)
 

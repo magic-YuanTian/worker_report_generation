@@ -1,0 +1,897 @@
+{
+  "session_id": "f2f66277-e1b6-438b-b82d-1ff262873871",
+  "saved_at": "2026-08-10T11:38:43.330381+00:00",
+  "metrics_schema_version": "4.0",
+  "evaluation_config": {
+    "claim_decomposition_model": "openai/gpt-4o-mini",
+    "judge_models": [
+      "openai/gpt-4o-mini",
+      "google/gemini-2.5-flash",
+      "anthropic/claude-3-haiku"
+    ],
+    "openrouter_base_url": "https://openrouter.ai/api/v1",
+    "retrieval_precision_k": 4,
+    "executor_max_workers": 4,
+    "verify_pool_max_workers": 6
+  },
+  "conversation_history": [
+    {
+      "message_id": "f79df93a-215e-45c6-af89-c3bbaa1ccb76",
+      "role": "assistant",
+      "content": "Hi there! I'm your Daily Report Assistant. I'll help you put together today's daily activity report through a quick conversation.\n\nLet's get started. What task or activity did you work on today?",
+      "timestamp": "2026-08-10T11:38:27.921122+00:00",
+      "turn_index": 0,
+      "phase": "initial_prompt"
+    },
+    {
+      "message_id": "677ae9f2-574f-415e-b816-e056223fb903",
+      "role": "user",
+      "content": "I mostly want to say the class playlist was good and everyone was joking around.",
+      "timestamp": "2026-08-10T11:38:27.921122+00:00",
+      "turn_index": 1,
+      "phase": "user_message"
+    },
+    {
+      "message_id": "b50f8a7c-03be-4c4e-85fa-ae7541295752",
+      "role": "assistant",
+      "content": "It sounds like you had a lively atmosphere today! Along with the good vibes, can you tell me about the main tasks or activities that were performed? Were there any specific projects or tasks that took place?",
+      "timestamp": "2026-08-10T11:38:32.972727+00:00",
+      "turn_index": 1,
+      "phase": "assistant_response",
+      "source_count": 0
+    },
+    {
+      "message_id": "ac4c8351-1cf6-43bd-b845-8faaadd7c114",
+      "role": "user",
+      "content": "People were chatting about football scores and phone chargers instead of work details.",
+      "timestamp": "2026-08-10T11:38:33.814717+00:00",
+      "turn_index": 2,
+      "phase": "user_message"
+    },
+    {
+      "message_id": "b5f86c16-88b2-4017-b2d7-bbffefa6ef85",
+      "role": "assistant",
+      "content": "It sounds like a relaxed day with plenty of conversation! When it comes to the main work activities, can you share what tasks or projects were officially on the agenda today, even if they weren't the main focus?",
+      "timestamp": "2026-08-10T11:38:38.436328+00:00",
+      "turn_index": 2,
+      "phase": "assistant_response",
+      "source_count": 0
+    },
+    {
+      "message_id": "a59a3d0b-b499-4d6a-a26b-4d007e4b0c5e",
+      "role": "user",
+      "content": "Sorry, I am not giving you much useful site information right now.",
+      "timestamp": "2026-08-10T11:38:39.278077+00:00",
+      "turn_index": 3,
+      "phase": "user_message"
+    },
+    {
+      "message_id": "79d6688f-5afd-4c70-9992-b52a731ce104",
+      "role": "assistant",
+      "content": "No worries at all! Let's take it step by step. Can you tell me if there were any specific tasks or projects that were started or completed today? Even just a little detail can help us get started on the report.",
+      "timestamp": "2026-08-10T11:38:41.320030+00:00",
+      "turn_index": 3,
+      "phase": "assistant_response",
+      "source_count": 0
+    }
+  ],
+  "turn_records": [
+    {
+      "round_id": "f2f66277-e1b6-438b-b82d-1ff262873871-turn-0001",
+      "turn_index": 1,
+      "user_message": "I mostly want to say the class playlist was good and everyone was joking around.",
+      "user_timestamp": "2026-08-10T11:38:27.921122+00:00",
+      "assistant_response": "It sounds like you had a lively atmosphere today! Along with the good vibes, can you tell me about the main tasks or activities that were performed? Were there any specific projects or tasks that took place?",
+      "assistant_timestamp": "2026-08-10T11:38:32.972727+00:00",
+      "retrieval": {
+        "query": "I mostly want to say the class playlist was good and everyone was joking around.",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_file_names": [],
+        "sources": [],
+        "evaluation_snapshot": {
+          "context": "",
+          "candidates": [
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "20",
+              "score": 0.0777,
+              "text": "WOOD\n502 2018 INTERNATIONAL BUILDING CODE \u00ae\nAmerican Society of Agricultural and Biological \nEngineers.\nASABE EP 484.2 Diaphragm Design of Metal-clad, Post-\nFrame Rectangular Buildings\nASABE EP 486.2 Shallow Post Foundation Design\nASABE 559.1 Design Requirements and Bending\nProperties for Mechanically Laminated\nColumns\nAPA\u2014The Engineered Wood Association.\nANSI 117 Standard Specifications for Structural Glued \nLaminated Timber of Softwood Species\nANSI A190.1 Structural Glued Laminated Timber\nPanel Design Specification\nPlywood Design Specification Supplement 1\u2014\nDesign & Fabrication of Plywood Cu..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "75",
+              "score": null,
+              "text": "SAFEGUARDS DURING CONSTRUCTION\n2018 INTERNATIONAL BUILDING CODE \u00ae 609\ndesigns, the roof and supporting structure of a covered\nwalkway are permitted to be constructed as follows:\n1. Footings shall be continuous 2-inch by 6-inch (51\nmm by 152 mm) members.\n2. Posts not less than 4 inches by 6 inches (102 mm by\n152 mm) shall be provided on both sides of the roof\nand spaced not more than 12 feet (3658 mm) on cen-\nter.\n3. Stringers not less than 4 inches by 12 inches (102\nmm by 305 mm) shall be placed on edge upon the\nposts.\n4. Joists resting on the stringers shall be not less than 2\ninches by 8 inc..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "57",
+              "score": 0.0665,
+              "text": "#1 10-4 16-3 21-0 25-8 Note b 9-10 14-4 18-2 22-3 25-9\nSpruce-Pine-Fir #2 10-4 16-3 21-0 25-8 Note b 9-10 14-4 18-2 22-3 25-9\nSpruce-Pine-Fir #3 8-7 12-6 15-10 19-5 22-6 7-5 10-10 13-9 16-9 19-6\n16\nDouglas Fir-Larch SS 10-5 16-4 21-7 Note b Note b 10-5 16-0 20-3 24-9 Note b\nDouglas Fir-Larch #1 10-0 15-4 19-5 23-9 Note b 9-1 13-3 16-10 20-7 23-10\nDouglas Fir-Larch #2 9-10 14-4 18-2 22-3 25-9 8-6 12-5 15-9 19-3 22-4\nDouglas Fir-Larch #3 7-5 10-10 13-9 16-9 19-6 6-5 9-5 11-11 14-6 16-10\nHem-Fir SS 9-10 15-6 20-5 Note b Note b 9-10 15-6 19-11 24-4 Note b\nHem-Fir #1 9-8 14-11 18-11 23-2 Note b 8-1..."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "2",
+              "score": null,
+              "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "29",
+              "score": 0.066,
+              "text": "ceiling and \ntwo clear span \nfloors\n1-2 \u00d7 6 2-3 2 1-9 2 1-5 2 2-3 2 1-9 2 1-5 3 2-2 2 1-8 2 1-5 3\n1-2 \u00d7 8 2-10 2 2-2 3 1-10 3 2-10 2 2-2 3 1-10 3 2-9 2 2-1 3 1-10 3\n1-2 \u00d7 10 3-4 2 2-7 3 2-2 3 3-4 3 2-7 3 2-2 4 3-3 3 2-6 3 2-2 4\n1-2 \u00d7 12 4-0 3 3-0 3 2-7 4 4-0 3 3-0 4 2-7 4 3-10 3 3-0 4 2-6 4\n2-2 \u00d7 4 2-3 1 1-8 1 1-4 1 2-3 1 1-8 1 1-4 1 2-2 1 1-8 1 1-4 2\n2-2 \u00d7 6 3-4 1 2-6 2 2-2 2 3-4 2 2-6 2 2-2 2 3-3 2 2-6 2 2-1 2\n2-2 \u00d7 8 4-3 2 3-3 2 2-8 2 4-3 2 3-3 2 2-8 2 4-1 2 3-2 2 2-8 3\n2-2 \u00d7 10 5-0 2 3-10 2 3-2 3 5-0 2 3-10 2 3-2 3 4-10 2 3-9 3 3-2 3\n2-2 \u00d7 12 5-11 2 4-6 3 3-9 3 5-11 2 4-6 3 3-9 3 5-8 2 4-5..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "2",
+              "score": null,
+              "text": "A \nfall restraint system is comprised of a body belt or \nbody harness, an anchorage, connectors, and other \nnecessary equipment. Other components typically \ninclude a lanyard, and may also include a lifeline \nand other devices. Note: A self-retracting lanyard \nis not appropriate for a fall restraint system unless \nthe worker cannot reach the fall hazard when the \nlanyard is fully extended.\nAlways follow the manufacturer\u2019s instructions \nor consult a qualified person to ensure proper \ninstallation of anchor points. OSHA recommends \nthat fall restraint systems have the capacity to \nwithstand 3,00..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "32",
+              "score": 0.0656,
+              "text": "9-1 11-6 14-1 16-3\nSpruce-Pine-Fir #2 9-8 12-9 15-8 18-3 9-1 11-6 14-1 16-3\nSpruce-Pine-Fir #3 7-8 9-9 11-10 13-9 6-10 8-8 10-7 12-4 \n 24\nDouglas Fir-Larch SS 9-11 13-1 16-8 20-3 9-11 13-1 16-2 18-9\nDouglas Fir-Larch #1 9-7 12-4 15-0 17-5 8-8 11-0 13-5 15-7\nDouglas Fir-Larch #2 9-1 11-6 14-1 16-3 8-1 10-3 12-7 14-7\nDouglas Fir-Larch #3 6-10 8-8 10-7 12-4 6-2 7-9 9-6 11-0\nHem-Fir SS 9-4 12-4 15-9 19-2 9-4 12-4 15-9 18-5\nHem-Fir #1 9-2 12-0 14-8 17-0 8-6 10-9 13-1 15-2\nHem-Fir #2 8-9 11-4 13-10 16-1 8-0 10-2 12-5 14-4\nHem-Fir #3 6-10 8-8 10-7 12-4 6-2 7-9 9-6 11-0 \nSouthern Pine SS 9-9 12-10 16-..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "2",
+              "score": null,
+              "text": "2303.1.9 Preservative-treated wood.  Lumber, timber,\nplywood, piles and poles supporting permanent structures\nrequired by Section 2304.12 to be preservative treated\nshall conform to AWPA U1 and M4. Lumber and ply-\nwood used in permanent wood foundation systems shall\nconform to Chapter 18.\n2303.1.9.1 Identification.  Wood required by Section\n2304.12 to be preservative treated shall bear the quality\nmark of an inspection agency that maintains continuing\nsupervision, testing and inspection over the quality of\nthe preservative-treated wood. Inspection agencies for\npreservative-treated wood shall b..."
+            }
+          ],
+          "relevance": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "evaluation_status": "complete",
+      "evaluation_completed_at": "2026-08-10T14:34:06.728071+00:00",
+      "evaluation_failed_reason": null,
+      "metrics": {
+        "turn": {
+          "turn_index": 1,
+          "round_id": "f2f66277-e1b6-438b-b82d-1ff262873871-turn-0001",
+          "user_timestamp": "2026-08-10T11:38:27.921122+00:00",
+          "assistant_timestamp": "2026-08-10T11:38:32.972727+00:00",
+          "evaluated_at": "2026-08-10T14:34:06.728071+00:00",
+          "user_message": "I mostly want to say the class playlist was good and everyone was joking around.",
+          "assistant_response": "It sounds like you had a lively atmosphere today! Along with the good vibes, can you tell me about the main tasks or activities that were performed? Were there any specific projects or tasks that took place?",
+          "candidate_count": 8,
+          "accepted_source_count": 0,
+          "source_refs": []
+        },
+        "retrieval_precision_proxy": {
+          "metric_name": "retrieval_precision_proxy@4",
+          "scored": true,
+          "score": 0.0,
+          "k": 4,
+          "candidate_count": 8,
+          "top_k_count": 4,
+          "relevant_count_in_top_k": 0,
+          "skip_reason": null
+        },
+        "precision_at_k": 0.0,
+        "faithfulness": {
+          "metric_name": "faithfulness",
+          "scored": false,
+          "skip_reason": "no_context",
+          "claims": [],
+          "claim_count": 0,
+          "per_judge_scores": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "per_judge_supported_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "per_judge_evaluable_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "per_judge_error_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "majority_vote_score": null,
+          "majority_supported_count": 0,
+          "majority_evaluable_claim_count": 0
+        },
+        "answer_relevance": {
+          "metric_name": "answer_relevance",
+          "scored": true,
+          "skip_reason": null,
+          "judge_votes": {
+            "openai/gpt-4o-mini": true,
+            "google/gemini-2.5-flash": true,
+            "anthropic/claude-3-haiku": true
+          },
+          "judge_errors": {
+            "openai/gpt-4o-mini": false,
+            "google/gemini-2.5-flash": false,
+            "anthropic/claude-3-haiku": false
+          },
+          "majority_relevant": true,
+          "majority_evaluable": true
+        }
+      },
+      "report_completion_after_turn": 0.0
+    },
+    {
+      "round_id": "f2f66277-e1b6-438b-b82d-1ff262873871-turn-0002",
+      "turn_index": 2,
+      "user_message": "People were chatting about football scores and phone chargers instead of work details.",
+      "user_timestamp": "2026-08-10T11:38:33.814717+00:00",
+      "assistant_response": "It sounds like a relaxed day with plenty of conversation! When it comes to the main work activities, can you share what tasks or projects were officially on the agenda today, even if they weren't the main focus?",
+      "assistant_timestamp": "2026-08-10T11:38:38.436328+00:00",
+      "retrieval": {
+        "query": "People were chatting about football scores and phone chargers instead of work details.",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_file_names": [],
+        "sources": [],
+        "evaluation_snapshot": {
+          "context": "",
+          "candidates": [
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "1",
+              "score": 0.1462,
+              "text": "FactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "23",
+              "score": 0.1539,
+              "text": "ALL RIGHTS RESERVED.  Accessed by Eric Fitch on Mar 21, 2018 8:11:26 AM  pursuant to License Agreement with ICC.  No further reproduction or\ndistribution authorized.  ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE\nAGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER."
+            },
+            {
+              "file_name": "6-1992BuildingRegulations-New Zealand_ClauseF5.pdf",
+              "page_label": "1",
+              "score": null,
+              "text": "Clause F5\u2014Construction and demolition hazards\nProvisions Limits on application\nObjective\nF5.1 The objective of this provision is to\nsafeguard people from injury, and\nother property from damage, caused\nby construction or demolition site\nhazards.\nFunctional requirement\nF5.2 Construction and demolition work on\nbuildings shall be performed in a\nmanner that avoids the likelihood of:\n(a) objects falling onto people on\nor off the site,\n(b) objects falling on property off\nthe site,\n(c) other hazards arising on the\nsite affecting people off the\nsite and other property, and\n(d) unauthorised entry of chi..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "69",
+              "score": 0.1521,
+              "text": "ALL RIGHTS RESERVED.  Accessed by Eric Fitch on Mar 21, 2018 8:11:26 AM  pursuant to License Agreement with ICC.  No further reproduction or\ndistribution authorized.  ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE\nAGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "2",
+              "score": null,
+              "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "56",
+              "score": 0.1514,
+              "text": "ALL RIGHTS RESERVED.  Accessed by Eric Fitch on Mar 21, 2018 8:11:26 AM  pursuant to License Agreement with ICC.  No further reproduction or\ndistribution authorized.  ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE\nAGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER."
+            },
+            {
+              "file_name": "6-1992BuildingRegulations-New Zealand_ClauseF5.pdf",
+              "page_label": "2",
+              "score": null,
+              "text": "Provisions Limits on application\n(f) be clearly marked where the\nbarrier itself may otherwise\npresent a hazard to traffic or\npassersby.\nF5.3.3 Where a construction or demolition\nsite contains any hazard which might\nbe expected to attract the\nunauthorised entry of children, the\nhazard shall be enclosed to restrict\naccess by children.\nF5.3.4 Suitable barriers shall be constructed\nto provide a safe route for people\nwhere lifting equipment creates a risk\nof accident from objects falling on a\nplace of public access, or where a\nsimilar risk results from the height at\nwhich construction or demolition..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "54",
+              "score": 0.1508,
+              "text": "ALL RIGHTS RESERVED.  Accessed by Eric Fitch on Mar 21, 2018 8:11:26 AM  pursuant to License Agreement with ICC.  No further reproduction or\ndistribution authorized.  ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE\nAGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER."
+            }
+          ],
+          "relevance": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "evaluation_status": "complete",
+      "evaluation_completed_at": "2026-08-10T14:34:09.480219+00:00",
+      "evaluation_failed_reason": null,
+      "metrics": {
+        "turn": {
+          "turn_index": 2,
+          "round_id": "f2f66277-e1b6-438b-b82d-1ff262873871-turn-0002",
+          "user_timestamp": "2026-08-10T11:38:33.814717+00:00",
+          "assistant_timestamp": "2026-08-10T11:38:38.436328+00:00",
+          "evaluated_at": "2026-08-10T14:34:09.480219+00:00",
+          "user_message": "People were chatting about football scores and phone chargers instead of work details.",
+          "assistant_response": "It sounds like a relaxed day with plenty of conversation! When it comes to the main work activities, can you share what tasks or projects were officially on the agenda today, even if they weren't the main focus?",
+          "candidate_count": 8,
+          "accepted_source_count": 0,
+          "source_refs": []
+        },
+        "retrieval_precision_proxy": {
+          "metric_name": "retrieval_precision_proxy@4",
+          "scored": true,
+          "score": 0.0,
+          "k": 4,
+          "candidate_count": 8,
+          "top_k_count": 4,
+          "relevant_count_in_top_k": 0,
+          "skip_reason": null
+        },
+        "precision_at_k": 0.0,
+        "faithfulness": {
+          "metric_name": "faithfulness",
+          "scored": false,
+          "skip_reason": "no_context",
+          "claims": [],
+          "claim_count": 0,
+          "per_judge_scores": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "per_judge_supported_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "per_judge_evaluable_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "per_judge_error_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "majority_vote_score": null,
+          "majority_supported_count": 0,
+          "majority_evaluable_claim_count": 0
+        },
+        "answer_relevance": {
+          "metric_name": "answer_relevance",
+          "scored": true,
+          "skip_reason": null,
+          "judge_votes": {
+            "openai/gpt-4o-mini": true,
+            "google/gemini-2.5-flash": true,
+            "anthropic/claude-3-haiku": true
+          },
+          "judge_errors": {
+            "openai/gpt-4o-mini": false,
+            "google/gemini-2.5-flash": false,
+            "anthropic/claude-3-haiku": false
+          },
+          "majority_relevant": true,
+          "majority_evaluable": true
+        }
+      },
+      "report_completion_after_turn": 0.0
+    },
+    {
+      "round_id": "f2f66277-e1b6-438b-b82d-1ff262873871-turn-0003",
+      "turn_index": 3,
+      "user_message": "Sorry, I am not giving you much useful site information right now.",
+      "user_timestamp": "2026-08-10T11:38:39.278077+00:00",
+      "assistant_response": "No worries at all! Let's take it step by step. Can you tell me if there were any specific tasks or projects that were started or completed today? Even just a little detail can help us get started on the report.",
+      "assistant_timestamp": "2026-08-10T11:38:41.320030+00:00",
+      "retrieval": {
+        "query": "Sorry, I am not giving you much useful site information right now.",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_file_names": [],
+        "sources": [],
+        "evaluation_snapshot": {
+          "context": "",
+          "candidates": [
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "20",
+              "score": 0.1483,
+              "text": "WOOD\n502 2018 INTERNATIONAL BUILDING CODE \u00ae\nAmerican Society of Agricultural and Biological \nEngineers.\nASABE EP 484.2 Diaphragm Design of Metal-clad, Post-\nFrame Rectangular Buildings\nASABE EP 486.2 Shallow Post Foundation Design\nASABE 559.1 Design Requirements and Bending\nProperties for Mechanically Laminated\nColumns\nAPA\u2014The Engineered Wood Association.\nANSI 117 Standard Specifications for Structural Glued \nLaminated Timber of Softwood Species\nANSI A190.1 Structural Glued Laminated Timber\nPanel Design Specification\nPlywood Design Specification Supplement 1\u2014\nDesign & Fabrication of Plywood Cu..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "3",
+              "score": null,
+              "text": "safely. The employer must ensure that employees \non scaffold systems 10 feet or more above a \nlower level are protected from falls. For other \nrequirements for scaffolds, refer to 29 CFR 1926 \nSubpart L \u2013 Scaffolds.\nWritten Fall Protection Plans\nWhen working at heights of 6 feet or greater, if the \nemployer does not use ladders, scaffolds, aerial lifts \nor fall restraint systems and can demonstrate that \nit is not feasible or would create a greater hazard \nto use conventional fall protection equipment \n(guardrails, safety nets or a PFAS), the employer \nmust develop a written site-specific fall..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "63",
+              "score": 0.1443,
+              "text": "SS 7-1 11-2 14-8 18-0 20-11 7-1 10-9 13-8 15-11 19-4\nSpruce-Pine-Fir #1 6-8 9-9 12-4 15-1 17-6 6-2 9-0 11-5 13-11 16-2\nSpruce-Pine-Fir #2 6-8 9-9 12-4 15-1 17-6 6-2 9-0 11-5 13-11 16-2\nSpruce-Pine-Fir #3 5-0 7-4 9-4 11-5 13-2 4-8 6-10 8-8 10-6 12-3\n19.2\nDouglas Fir-Larch SS 7-3 11-4 14-6 17-8 20-6 7-3 10-7 13-5 16-5 19-0\nDouglas Fir-Larch #1 6-6 9-6 12-0 14-8 17-1 6-0 8-10 11-2 13-7 15-9\nDouglas Fir-Larch #2 6-1 8-11 11-3 13-9 15-11 5-7 8-3 10-5 12-9 14-9\nDouglas Fir-Larch #3 4-7 6-9 8-6 10-5 12-1 4-3 6-3 7-11 9-7 11-2\nHem-Fir SS 6-10 10-9 14-2 17-5 20-2 6-10 10-5 13-2 16-1 18-8\nHem-Fir #1 6-4..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "2",
+              "score": null,
+              "text": "A \nfall restraint system is comprised of a body belt or \nbody harness, an anchorage, connectors, and other \nnecessary equipment. Other components typically \ninclude a lanyard, and may also include a lifeline \nand other devices. Note: A self-retracting lanyard \nis not appropriate for a fall restraint system unless \nthe worker cannot reach the fall hazard when the \nlanyard is fully extended.\nAlways follow the manufacturer\u2019s instructions \nor consult a qualified person to ensure proper \ninstallation of anchor points. OSHA recommends \nthat fall restraint systems have the capacity to \nwithstand 3,00..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "60",
+              "score": 0.1435,
+              "text": "WOOD\n542 2018 INTERNATIONAL BUILDING CODE \u00ae\nTABLE 2308.7.2(2)\u2014continued\nRAFTER SPANS FOR COMMON LUMBER SPECIES \n(Roof live load = 20 psf, ceiling attached to rafters, L/ \u2206 = 240)\nCheck sources for availability of lumber in lengths greater than 20 feet.\nFor SI: 1 inch = 25.4 mm, 1 foot = 304.8 mm, 1 pound per square foot = 0.0479 kPa.\na. The tabulated rafter spans assume that ceiling joists are located at the bottom of the attic space or that some other method of resisting the outward push of the\nrafters on the bearing walls, such as rafter ties, is provided at that location. Where ceiling jois..."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "1",
+              "score": null,
+              "text": "U. S. Department of Labor\nOccupational Safety and Health Administration\nDirectorate of Science, Technology & Medicine\nOffice of Science and Technology Assessment\nSHIB 11-17-2005\nSafety and Health Information Bulletin\nHazards of Manually Lifting Balloon Framed Walls\nPurpose\nThis Safety and Health Information Bulletin\nalerts employers and employees that manually raised\nballoon framed walls could become too heavy for\nemployees to hold and could collapse back onto the\nemployees.  From July 1999 through July 2004, 22\nballoon framed wall collapses were reported.  Four of\nthese accidents occurred in ..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "23",
+              "score": 0.142,
+              "text": "ALL RIGHTS RESERVED.  Accessed by Eric Fitch on Mar 21, 2018 8:11:26 AM  pursuant to License Agreement with ICC.  No further reproduction or\ndistribution authorized.  ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE\nAGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "73",
+              "score": null,
+              "text": "2018 INTERNATIONAL BUILDING CODE \u00ae 607\nCHAPTER 33\nSAFEGUARDS DURING CONSTRUCTION\nUser notes:\nAbout this chapter: While the balance of the chapters in this code specify how a building is to be designed and constructed in order to be in\ncompliance with the code, Chapter 33 looks to the actual constr uction process. Parameters are provided for demolition and for p rotecting\nadjacent property during demolition and construc tion. Issues such as how to provide egr ess while the building is growing, the t iming of stand-\npipe and sprinkler installation, and protection of pedestrians are addressed. \nC..."
+            }
+          ],
+          "relevance": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "evaluation_status": "complete",
+      "evaluation_completed_at": "2026-08-10T14:34:11.396795+00:00",
+      "evaluation_failed_reason": null,
+      "metrics": {
+        "turn": {
+          "turn_index": 3,
+          "round_id": "f2f66277-e1b6-438b-b82d-1ff262873871-turn-0003",
+          "user_timestamp": "2026-08-10T11:38:39.278077+00:00",
+          "assistant_timestamp": "2026-08-10T11:38:41.320030+00:00",
+          "evaluated_at": "2026-08-10T14:34:11.396795+00:00",
+          "user_message": "Sorry, I am not giving you much useful site information right now.",
+          "assistant_response": "No worries at all! Let's take it step by step. Can you tell me if there were any specific tasks or projects that were started or completed today? Even just a little detail can help us get started on the report.",
+          "candidate_count": 8,
+          "accepted_source_count": 0,
+          "source_refs": []
+        },
+        "retrieval_precision_proxy": {
+          "metric_name": "retrieval_precision_proxy@4",
+          "scored": true,
+          "score": 0.0,
+          "k": 4,
+          "candidate_count": 8,
+          "top_k_count": 4,
+          "relevant_count_in_top_k": 0,
+          "skip_reason": null
+        },
+        "precision_at_k": 0.0,
+        "faithfulness": {
+          "metric_name": "faithfulness",
+          "scored": false,
+          "skip_reason": "no_context",
+          "claims": [],
+          "claim_count": 0,
+          "per_judge_scores": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "per_judge_supported_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "per_judge_evaluable_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "per_judge_error_counts": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "majority_vote_score": null,
+          "majority_supported_count": 0,
+          "majority_evaluable_claim_count": 0
+        },
+        "answer_relevance": {
+          "metric_name": "answer_relevance",
+          "scored": true,
+          "skip_reason": null,
+          "judge_votes": {
+            "openai/gpt-4o-mini": true,
+            "google/gemini-2.5-flash": true,
+            "anthropic/claude-3-haiku": true
+          },
+          "judge_errors": {
+            "openai/gpt-4o-mini": false,
+            "google/gemini-2.5-flash": false,
+            "anthropic/claude-3-haiku": false
+          },
+          "majority_relevant": true,
+          "majority_evaluable": true
+        }
+      },
+      "report_completion_after_turn": 0.0
+    }
+  ],
+  "report_data": {
+    "activity": {
+      "task_type": {
+        "label": "Task Type",
+        "value": null,
+        "filled": false
+      },
+      "workforce": {
+        "label": "Workforce",
+        "value": null,
+        "filled": false
+      },
+      "materials": {
+        "label": "Materials",
+        "value": null,
+        "filled": false
+      },
+      "equipment_and_tools": {
+        "label": "Equipment & Tools",
+        "value": null,
+        "filled": false
+      }
+    },
+    "safety": {
+      "hazard": {
+        "label": "Hazard",
+        "value": null,
+        "filled": false
+      }
+    }
+  },
+  "completion": 0.0,
+  "metrics_history": [
+    {
+      "turn": {
+        "turn_index": 1,
+        "round_id": "f2f66277-e1b6-438b-b82d-1ff262873871-turn-0001",
+        "user_timestamp": "2026-08-10T11:38:27.921122+00:00",
+        "assistant_timestamp": "2026-08-10T11:38:32.972727+00:00",
+        "evaluated_at": "2026-08-10T14:34:06.728071+00:00",
+        "user_message": "I mostly want to say the class playlist was good and everyone was joking around.",
+        "assistant_response": "It sounds like you had a lively atmosphere today! Along with the good vibes, can you tell me about the main tasks or activities that were performed? Were there any specific projects or tasks that took place?",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_refs": []
+      },
+      "retrieval_precision_proxy": {
+        "metric_name": "retrieval_precision_proxy@4",
+        "scored": true,
+        "score": 0.0,
+        "k": 4,
+        "candidate_count": 8,
+        "top_k_count": 4,
+        "relevant_count_in_top_k": 0,
+        "skip_reason": null
+      },
+      "precision_at_k": 0.0,
+      "faithfulness": {
+        "metric_name": "faithfulness",
+        "scored": false,
+        "skip_reason": "no_context",
+        "claims": [],
+        "claim_count": 0,
+        "per_judge_scores": {
+          "openai/gpt-4o-mini": null,
+          "google/gemini-2.5-flash": null,
+          "anthropic/claude-3-haiku": null
+        },
+        "per_judge_supported_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "per_judge_evaluable_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "per_judge_error_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "majority_vote_score": null,
+        "majority_supported_count": 0,
+        "majority_evaluable_claim_count": 0
+      },
+      "answer_relevance": {
+        "metric_name": "answer_relevance",
+        "scored": true,
+        "skip_reason": null,
+        "judge_votes": {
+          "openai/gpt-4o-mini": true,
+          "google/gemini-2.5-flash": true,
+          "anthropic/claude-3-haiku": true
+        },
+        "judge_errors": {
+          "openai/gpt-4o-mini": false,
+          "google/gemini-2.5-flash": false,
+          "anthropic/claude-3-haiku": false
+        },
+        "majority_relevant": true,
+        "majority_evaluable": true
+      }
+    },
+    {
+      "turn": {
+        "turn_index": 2,
+        "round_id": "f2f66277-e1b6-438b-b82d-1ff262873871-turn-0002",
+        "user_timestamp": "2026-08-10T11:38:33.814717+00:00",
+        "assistant_timestamp": "2026-08-10T11:38:38.436328+00:00",
+        "evaluated_at": "2026-08-10T14:34:09.480219+00:00",
+        "user_message": "People were chatting about football scores and phone chargers instead of work details.",
+        "assistant_response": "It sounds like a relaxed day with plenty of conversation! When it comes to the main work activities, can you share what tasks or projects were officially on the agenda today, even if they weren't the main focus?",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_refs": []
+      },
+      "retrieval_precision_proxy": {
+        "metric_name": "retrieval_precision_proxy@4",
+        "scored": true,
+        "score": 0.0,
+        "k": 4,
+        "candidate_count": 8,
+        "top_k_count": 4,
+        "relevant_count_in_top_k": 0,
+        "skip_reason": null
+      },
+      "precision_at_k": 0.0,
+      "faithfulness": {
+        "metric_name": "faithfulness",
+        "scored": false,
+        "skip_reason": "no_context",
+        "claims": [],
+        "claim_count": 0,
+        "per_judge_scores": {
+          "openai/gpt-4o-mini": null,
+          "google/gemini-2.5-flash": null,
+          "anthropic/claude-3-haiku": null
+        },
+        "per_judge_supported_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "per_judge_evaluable_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "per_judge_error_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "majority_vote_score": null,
+        "majority_supported_count": 0,
+        "majority_evaluable_claim_count": 0
+      },
+      "answer_relevance": {
+        "metric_name": "answer_relevance",
+        "scored": true,
+        "skip_reason": null,
+        "judge_votes": {
+          "openai/gpt-4o-mini": true,
+          "google/gemini-2.5-flash": true,
+          "anthropic/claude-3-haiku": true
+        },
+        "judge_errors": {
+          "openai/gpt-4o-mini": false,
+          "google/gemini-2.5-flash": false,
+          "anthropic/claude-3-haiku": false
+        },
+        "majority_relevant": true,
+        "majority_evaluable": true
+      }
+    },
+    {
+      "turn": {
+        "turn_index": 3,
+        "round_id": "f2f66277-e1b6-438b-b82d-1ff262873871-turn-0003",
+        "user_timestamp": "2026-08-10T11:38:39.278077+00:00",
+        "assistant_timestamp": "2026-08-10T11:38:41.320030+00:00",
+        "evaluated_at": "2026-08-10T14:34:11.396795+00:00",
+        "user_message": "Sorry, I am not giving you much useful site information right now.",
+        "assistant_response": "No worries at all! Let's take it step by step. Can you tell me if there were any specific tasks or projects that were started or completed today? Even just a little detail can help us get started on the report.",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_refs": []
+      },
+      "retrieval_precision_proxy": {
+        "metric_name": "retrieval_precision_proxy@4",
+        "scored": true,
+        "score": 0.0,
+        "k": 4,
+        "candidate_count": 8,
+        "top_k_count": 4,
+        "relevant_count_in_top_k": 0,
+        "skip_reason": null
+      },
+      "precision_at_k": 0.0,
+      "faithfulness": {
+        "metric_name": "faithfulness",
+        "scored": false,
+        "skip_reason": "no_context",
+        "claims": [],
+        "claim_count": 0,
+        "per_judge_scores": {
+          "openai/gpt-4o-mini": null,
+          "google/gemini-2.5-flash": null,
+          "anthropic/claude-3-haiku": null
+        },
+        "per_judge_supported_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "per_judge_evaluable_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "per_judge_error_counts": {
+          "openai/gpt-4o-mini": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-3-haiku": 0
+        },
+        "majority_vote_score": null,
+        "majority_supported_count": 0,
+        "majority_evaluable_claim_count": 0
+      },
+      "answer_relevance": {
+        "metric_name": "answer_relevance",
+        "scored": true,
+        "skip_reason": null,
+        "judge_votes": {
+          "openai/gpt-4o-mini": true,
+          "google/gemini-2.5-flash": true,
+          "anthropic/claude-3-haiku": true
+        },
+        "judge_errors": {
+          "openai/gpt-4o-mini": false,
+          "google/gemini-2.5-flash": false,
+          "anthropic/claude-3-haiku": false
+        },
+        "majority_relevant": true,
+        "majority_evaluable": true
+      }
+    }
+  ],
+  "aggregated_metrics": {
+    "retrieval_precision_proxy": {
+      "mean": 0.0,
+      "n_scored": 3,
+      "n_skipped": 0,
+      "k": 4,
+      "skip_reason_counts": {}
+    },
+    "faithfulness": {
+      "judge_models": [
+        "openai/gpt-4o-mini",
+        "google/gemini-2.5-flash",
+        "anthropic/claude-3-haiku"
+      ],
+      "per_judge_mean": {
+        "openai/gpt-4o-mini": null,
+        "google/gemini-2.5-flash": null,
+        "anthropic/claude-3-haiku": null
+      },
+      "majority_vote_mean": null,
+      "pairwise_raw_agreement": {
+        "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+      },
+      "pairwise_compared_count": {
+        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+      },
+      "n_turns": 0,
+      "n_skipped": 3,
+      "n_claims": 0,
+      "per_judge_error_count": {
+        "openai/gpt-4o-mini": 0,
+        "google/gemini-2.5-flash": 0,
+        "anthropic/claude-3-haiku": 0
+      },
+      "skip_reason_counts": {
+        "no_context": 3
+      }
+    },
+    "answer_relevance": {
+      "judge_models": [
+        "openai/gpt-4o-mini",
+        "google/gemini-2.5-flash",
+        "anthropic/claude-3-haiku"
+      ],
+      "per_judge_mean": {
+        "openai/gpt-4o-mini": 1.0,
+        "google/gemini-2.5-flash": 1.0,
+        "anthropic/claude-3-haiku": 1.0
+      },
+      "majority_vote_mean": 1.0,
+      "pairwise_raw_agreement": {
+        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+      },
+      "pairwise_compared_count": {
+        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+      },
+      "n_turns": 3,
+      "per_judge_error_count": {
+        "openai/gpt-4o-mini": 0,
+        "google/gemini-2.5-flash": 0,
+        "anthropic/claude-3-haiku": 0
+      }
+    },
+    "precision_at_k": {
+      "mean": 0.0,
+      "n": 3
+    }
+  },
+  "evaluation": {
+    "status": "complete",
+    "evaluated_at": "2026-08-10T14:34:12.570037+00:00",
+    "config": {
+      "claim_decomposition_model": "openai/gpt-4o-mini",
+      "judge_models": [
+        "openai/gpt-4o-mini",
+        "google/gemini-2.5-flash",
+        "anthropic/claude-3-haiku"
+      ],
+      "openrouter_base_url": "https://openrouter.ai/api/v1",
+      "retrieval_precision_k": 4,
+      "executor_max_workers": 4,
+      "verify_pool_max_workers": 6
+    },
+    "turns_evaluated": 3,
+    "artifact_source": "reconstructed_retrieval"
+  },
+  "collection_config": {
+    "chat_model": "gpt-4o",
+    "retrieval": {
+      "retrieval_relevance_judge_model": "gpt-4o",
+      "embedding_model": "text-embedding-3-large",
+      "dense_top_k": 10,
+      "bm25_top_k": 10,
+      "candidate_pool": 8,
+      "max_results": 4
+    }
+  }
+}

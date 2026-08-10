@@ -25,15 +25,34 @@ rag:
 
 judge:
   openai:
-    model: gpt-4o-mini
+    model: openai/gpt-4o-mini
     file: backend/evaluator.py
-    constant: EVAL_MODEL_OPENAI
-    purpose: OpenAI-side judge for Faithfulness and Answer Relevance.
+    constant: JUDGE_MODELS[0]
+    provider: OpenRouter
+    auth: OPENROUTER_API_KEY
+    purpose: OpenAI-family judge for Faithfulness and Answer Relevance, routed through OpenRouter as part of the three-judge panel.
 
   google:
     model: google/gemini-2.5-flash
     file: backend/evaluator.py
-    constant: EVAL_MODEL_GOOGLE
+    constant: JUDGE_MODELS[1]
     provider: OpenRouter
-    purpose: Google-side judge for Faithfulness and Answer Relevance (cross-model check against self-preference bias).
+    auth: OPENROUTER_API_KEY
+    purpose: Google-family judge for Faithfulness and Answer Relevance, routed through OpenRouter for cross-model comparison.
     note: Slug not verified against a live OpenRouter catalog - recheck before running the study.
+
+  anthropic:
+    model: anthropic/claude-3-haiku
+    file: backend/evaluator.py
+    constant: JUDGE_MODELS[2]
+    provider: OpenRouter
+    auth: OPENROUTER_API_KEY
+    purpose: Anthropic-family judge for Faithfulness and Answer Relevance, routed through OpenRouter as the third panel member.
+
+  claim_decomposition:
+    model: openai/gpt-4o-mini
+    file: backend/evaluator.py
+    constant: CLAIM_DECOMPOSITION_MODEL
+    provider: OpenRouter
+    auth: OPENROUTER_API_KEY
+    purpose: Shared claim decomposition model used before the three judges verify support claim-by-claim.

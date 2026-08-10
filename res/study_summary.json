@@ -1,0 +1,2365 @@
+{
+  "n_sessions": 22,
+  "n_rounds_total": 72,
+  "n_turns_total": 72,
+  "mean_report_completion": 0.7636363636363638,
+  "pooled_metrics": {
+    "retrieval_precision_proxy": {
+      "mean": 0.1701388888888889,
+      "n_scored": 72,
+      "n_skipped": 0,
+      "k": 4,
+      "skip_reason_counts": {}
+    },
+    "faithfulness": {
+      "judge_models": [
+        "openai/gpt-4o-mini",
+        "google/gemini-2.5-flash",
+        "anthropic/claude-3-haiku"
+      ],
+      "per_judge_mean": {
+        "openai/gpt-4o-mini": 0.7708333333333334,
+        "google/gemini-2.5-flash": 0.3125,
+        "anthropic/claude-3-haiku": 0.7708333333333334
+      },
+      "majority_vote_mean": 0.7395833333333334,
+      "pairwise_raw_agreement": {
+        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0.5217391304347826,
+        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0.9130434782608695,
+        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0.5217391304347826
+      },
+      "pairwise_compared_count": {
+        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 23,
+        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 23,
+        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 23
+      },
+      "n_turns": 8,
+      "n_skipped": 64,
+      "n_claims": 23,
+      "per_judge_error_count": {
+        "openai/gpt-4o-mini": 0,
+        "google/gemini-2.5-flash": 0,
+        "anthropic/claude-3-haiku": 0
+      },
+      "skip_reason_counts": {
+        "no_claims": 16,
+        "no_context": 48
+      }
+    },
+    "answer_relevance": {
+      "judge_models": [
+        "openai/gpt-4o-mini",
+        "google/gemini-2.5-flash",
+        "anthropic/claude-3-haiku"
+      ],
+      "per_judge_mean": {
+        "openai/gpt-4o-mini": 0.9861111111111112,
+        "google/gemini-2.5-flash": 0.9861111111111112,
+        "anthropic/claude-3-haiku": 1.0
+      },
+      "majority_vote_mean": 1.0,
+      "pairwise_raw_agreement": {
+        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0.9722222222222222,
+        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0.9861111111111112,
+        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0.9861111111111112
+      },
+      "pairwise_compared_count": {
+        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 72,
+        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 72,
+        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 72
+      },
+      "n_turns": 72,
+      "per_judge_error_count": {
+        "openai/gpt-4o-mini": 0,
+        "google/gemini-2.5-flash": 0,
+        "anthropic/claude-3-haiku": 0
+      }
+    },
+    "precision_at_k": {
+      "mean": 0.1701388888888889,
+      "n": 72
+    }
+  },
+  "evaluation_config": {
+    "claim_decomposition_model": "openai/gpt-4o-mini",
+    "judge_models": [
+      "openai/gpt-4o-mini",
+      "google/gemini-2.5-flash",
+      "anthropic/claude-3-haiku"
+    ],
+    "openrouter_base_url": "https://openrouter.ai/api/v1",
+    "retrieval_precision_k": 4,
+    "executor_max_workers": 4,
+    "verify_pool_max_workers": 6
+  },
+  "schema_versions": {
+    "3.0": 22
+  },
+  "result_dir": "C:\\dev\\auto-report\\worker_report_generation\\res",
+  "figure_generation_status": "generated",
+  "figure_paths": [
+    "C:\\dev\\auto-report\\worker_report_generation\\res\\figures\\pooled_metric_means.png",
+    "C:\\dev\\auto-report\\worker_report_generation\\res\\figures\\faithfulness_panel_means.png",
+    "C:\\dev\\auto-report\\worker_report_generation\\res\\figures\\answer_relevance_panel_means.png",
+    "C:\\dev\\auto-report\\worker_report_generation\\res\\figures\\metric_trends_by_turn.png"
+  ],
+  "per_session": [
+    {
+      "session_id": "ce465b5c-bc96-43d3-9755-9cf8ef33815b",
+      "saved_at": "2026-08-10T11:36:41.897262+00:00",
+      "completion": 0.8,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:32:14.856471+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.6666666666666666,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 0.5,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0.5,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0.5
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 2,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 2,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 2
+          },
+          "n_turns": 1,
+          "n_skipped": 2,
+          "n_claims": 2,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_claims": 1,
+            "no_context": 1
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.6666666666666666,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "d5bfef9c-bc0c-4a52-9706-a4afc06cb7bf",
+      "saved_at": "2026-08-10T11:36:53.304444+00:00",
+      "completion": 0.8,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:32:27.429906+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.16666666666666666,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "majority_vote_mean": null,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+          },
+          "n_turns": 0,
+          "n_skipped": 3,
+          "n_claims": 0,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_claims": 1,
+            "no_context": 2
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.16666666666666666,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "e9ac8ebb-7e8a-46cd-ab01-8b9684cc142c",
+      "saved_at": "2026-08-10T11:37:12.289905+00:00",
+      "completion": 0.8,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:32:41.917054+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.16666666666666666,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 0.6666666666666666,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0.6666666666666666,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0.6666666666666666
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 1,
+          "n_skipped": 2,
+          "n_claims": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_claims": 1,
+            "no_context": 1
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.16666666666666666,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "df269be1-d94a-43bd-8c30-c742cf6be0de",
+      "saved_at": "2026-08-10T11:37:24.092431+00:00",
+      "completion": 1.0,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:32:54.895911+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.0,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "majority_vote_mean": null,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+          },
+          "n_turns": 0,
+          "n_skipped": 3,
+          "n_claims": 0,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_context": 3
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.0,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "67e18787-0fde-47c3-b393-2643a50abc17",
+      "saved_at": "2026-08-10T11:37:39.323316+00:00",
+      "completion": 1.0,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:33:13.856008+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.0,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 0.6666666666666666,
+            "google/gemini-2.5-flash": 0.0,
+            "anthropic/claude-3-haiku": 0.6666666666666666
+          },
+          "majority_vote_mean": 0.6666666666666666,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0.3333333333333333,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0.3333333333333333
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 1,
+          "n_skipped": 2,
+          "n_claims": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_context": 2
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.0,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "c0275b08-098f-4fbd-b099-9369306581ff",
+      "saved_at": "2026-08-10T11:37:52.220431+00:00",
+      "completion": 0.8,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:33:31.564688+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.25,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "majority_vote_mean": null,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+          },
+          "n_turns": 0,
+          "n_skipped": 3,
+          "n_claims": 0,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_claims": 1,
+            "no_context": 2
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.25,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "d07f17d5-f373-494e-87cf-d5f2d97756ec",
+      "saved_at": "2026-08-10T11:38:03.125863+00:00",
+      "completion": 0.6,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:33:40.724416+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.16666666666666666,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "majority_vote_mean": null,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+          },
+          "n_turns": 0,
+          "n_skipped": 3,
+          "n_claims": 0,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_claims": 1,
+            "no_context": 2
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 0.6666666666666666,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0.6666666666666666,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0.6666666666666666
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.16666666666666666,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "49d19d7b-a316-41c6-bc30-386abb2948b3",
+      "saved_at": "2026-08-10T11:38:15.633032+00:00",
+      "completion": 0.4,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:33:58.231991+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.16666666666666666,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "majority_vote_mean": null,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+          },
+          "n_turns": 0,
+          "n_skipped": 3,
+          "n_claims": 0,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_context": 2,
+            "no_claims": 1
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.16666666666666666,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "65f5ba91-7101-4d62-9a27-cb4809d42d04",
+      "saved_at": "2026-08-10T11:38:27.910263+00:00",
+      "completion": 0.0,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:34:05.583774+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.0,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "majority_vote_mean": null,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+          },
+          "n_turns": 0,
+          "n_skipped": 3,
+          "n_claims": 0,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_context": 3
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 0.6666666666666666,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0.6666666666666666,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0.6666666666666666,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.0,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "f2f66277-e1b6-438b-b82d-1ff262873871",
+      "saved_at": "2026-08-10T11:38:43.330381+00:00",
+      "completion": 0.0,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:34:12.570037+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.0,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "majority_vote_mean": null,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+          },
+          "n_turns": 0,
+          "n_skipped": 3,
+          "n_claims": 0,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_context": 3
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.0,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "23ea1f37-44a8-4cd6-993e-5f5dca29fc2e",
+      "saved_at": "2026-08-10T13:41:37.205725+00:00",
+      "completion": 1.0,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:34:57.813975+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.3333333333333333,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 0.3333333333333333,
+            "google/gemini-2.5-flash": 0.0,
+            "anthropic/claude-3-haiku": 0.3333333333333333
+          },
+          "majority_vote_mean": 0.3333333333333333,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0.6666666666666666,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0.6666666666666666
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 1,
+          "n_skipped": 2,
+          "n_claims": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_claims": 1,
+            "no_context": 1
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.3333333333333333,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "719d6129-e41b-4cc7-9f42-21a11491fcc2",
+      "saved_at": "2026-08-10T13:42:00.285256+00:00",
+      "completion": 1.0,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:35:10.670731+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.0,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "majority_vote_mean": null,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+          },
+          "n_turns": 0,
+          "n_skipped": 3,
+          "n_claims": 0,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_context": 3
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.0,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "365ae0f2-d511-46b4-b96d-126849418746",
+      "saved_at": "2026-08-10T13:42:20.486864+00:00",
+      "completion": 1.0,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:35:29.742822+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.0,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "majority_vote_mean": null,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+          },
+          "n_turns": 0,
+          "n_skipped": 3,
+          "n_claims": 0,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_context": 3
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.0,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "7c3395a7-c160-4b69-ba96-2a64338799ff",
+      "saved_at": "2026-08-10T13:42:48.871614+00:00",
+      "completion": 1.0,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:35:44.661297+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.0,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 0.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 1,
+          "n_skipped": 2,
+          "n_claims": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_context": 2
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.0,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "4a46d7c8-0ff1-46e9-9dca-6362715ae1ce",
+      "saved_at": "2026-08-10T13:43:35.595013+00:00",
+      "completion": 1.0,
+      "n_turns": 6,
+      "n_rounds": 6,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:36:13.985740+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 6,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.125,
+          "n_scored": 6,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "majority_vote_mean": null,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+          },
+          "n_turns": 0,
+          "n_skipped": 6,
+          "n_claims": 0,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_context": 4,
+            "no_claims": 2
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 6,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 6,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 6
+          },
+          "n_turns": 6,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.125,
+          "n": 6
+        }
+      }
+    },
+    {
+      "session_id": "90fba916-59b0-4a8e-955e-57c195a99524",
+      "saved_at": "2026-08-10T13:44:19.607340+00:00",
+      "completion": 0.8,
+      "n_turns": 6,
+      "n_rounds": 6,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:36:54.127954+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 6,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.4166666666666667,
+          "n_scored": 6,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 0.8333333333333333,
+            "google/gemini-2.5-flash": 0.6666666666666666,
+            "anthropic/claude-3-haiku": 0.8333333333333333
+          },
+          "majority_vote_mean": 0.8333333333333333,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0.8,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0.8
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 5,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 5,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 5
+          },
+          "n_turns": 2,
+          "n_skipped": 4,
+          "n_claims": 5,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_claims": 2,
+            "no_context": 2
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 6,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 6,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 6
+          },
+          "n_turns": 6,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.4166666666666667,
+          "n": 6
+        }
+      }
+    },
+    {
+      "session_id": "af538003-7db1-4b81-8889-48abd25fe9e3",
+      "saved_at": "2026-08-10T13:44:43.446106+00:00",
+      "completion": 0.8,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:37:03.042638+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.0,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "majority_vote_mean": null,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+          },
+          "n_turns": 0,
+          "n_skipped": 3,
+          "n_claims": 0,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_context": 3
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.0,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "4337da8f-05f6-4881-9004-a7146ebd0885",
+      "saved_at": "2026-08-10T13:44:59.547959+00:00",
+      "completion": 0.8,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:37:13.353903+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.25,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "majority_vote_mean": null,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+          },
+          "n_turns": 0,
+          "n_skipped": 3,
+          "n_claims": 0,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_claims": 1,
+            "no_context": 2
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.25,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "ee2cd04f-6f1e-4fb9-bf52-586a278142bc",
+      "saved_at": "2026-08-10T13:45:22.118227+00:00",
+      "completion": 0.8,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:37:30.499665+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.16666666666666666,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 0.5,
+            "google/gemini-2.5-flash": 0.0,
+            "anthropic/claude-3-haiku": 0.5
+          },
+          "majority_vote_mean": 0.25,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0.5,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0.5,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0.5
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 4,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 4,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 4
+          },
+          "n_turns": 1,
+          "n_skipped": 2,
+          "n_claims": 4,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_context": 1,
+            "no_claims": 1
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.16666666666666666,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "36ff23f5-eba4-453a-9d1e-e9551b099145",
+      "saved_at": "2026-08-10T13:45:39.957448+00:00",
+      "completion": 0.8,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:37:47.895917+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.0,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "majority_vote_mean": null,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+          },
+          "n_turns": 0,
+          "n_skipped": 3,
+          "n_claims": 0,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_context": 3
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.0,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "e24e1f0a-ce5e-4eef-a01e-e4495820dc70",
+      "saved_at": "2026-08-10T13:46:01.044308+00:00",
+      "completion": 0.8,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:38:08.488173+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.5,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "majority_vote_mean": null,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+          },
+          "n_turns": 0,
+          "n_skipped": 3,
+          "n_claims": 0,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_claims": 2,
+            "no_context": 1
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.5,
+          "n": 3
+        }
+      }
+    },
+    {
+      "session_id": "26a77bbc-1110-48db-bad0-9a9a9f920f5d",
+      "saved_at": "2026-08-10T13:46:26.648670+00:00",
+      "completion": 0.8,
+      "n_turns": 3,
+      "n_rounds": 3,
+      "metrics_schema_version": "3.0",
+      "evaluation": {
+        "status": "complete",
+        "evaluated_at": "2026-08-10T14:38:24.113716+00:00",
+        "config": {
+          "claim_decomposition_model": "openai/gpt-4o-mini",
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "openrouter_base_url": "https://openrouter.ai/api/v1",
+          "retrieval_precision_k": 4,
+          "executor_max_workers": 4,
+          "verify_pool_max_workers": 6
+        },
+        "turns_evaluated": 3,
+        "artifact_source": "reconstructed_retrieval"
+      },
+      "aggregated_metrics": {
+        "retrieval_precision_proxy": {
+          "mean": 0.16666666666666666,
+          "n_scored": 3,
+          "n_skipped": 0,
+          "k": 4,
+          "skip_reason_counts": {}
+        },
+        "faithfulness": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-3-haiku": null
+          },
+          "majority_vote_mean": null,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+          },
+          "n_turns": 0,
+          "n_skipped": 3,
+          "n_claims": 0,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          },
+          "skip_reason_counts": {
+            "no_claims": 1,
+            "no_context": 2
+          }
+        },
+        "answer_relevance": {
+          "judge_models": [
+            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
+            "anthropic/claude-3-haiku"
+          ],
+          "per_judge_mean": {
+            "openai/gpt-4o-mini": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-3-haiku": 1.0
+          },
+          "majority_vote_mean": 1.0,
+          "pairwise_raw_agreement": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+          },
+          "pairwise_compared_count": {
+            "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
+            "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
+            "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+          },
+          "n_turns": 3,
+          "per_judge_error_count": {
+            "openai/gpt-4o-mini": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-3-haiku": 0
+          }
+        },
+        "precision_at_k": {
+          "mean": 0.16666666666666666,
+          "n": 3
+        }
+      }
+    }
+  ]
+}
