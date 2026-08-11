@@ -1,13 +1,42 @@
 {
   "session_id": "4337da8f-05f6-4881-9004-a7146ebd0885",
-  "saved_at": "2026-08-10T13:44:59.547959+00:00",
+  "saved_at": "2026-08-11T10:02:04.681864+00:00",
   "metrics_schema_version": "4.0",
+  "collection_config": {
+    "chat_model": "gpt-4o",
+    "retrieval": {
+      "retrieval_relevance_judge_model": "gpt-4o",
+      "embedding_model": "text-embedding-3-large",
+      "dense_top_k": 10,
+      "bm25_top_k": 10,
+      "candidate_pool": 8,
+      "max_results": 4
+    }
+  },
+  "evaluation": {
+    "status": "complete",
+    "evaluated_at": "2026-08-11T10:49:26.315310+00:00",
+    "config": {
+      "claim_decomposition_model": "openai/gpt-4.1-mini",
+      "judge_models": [
+        "openai/gpt-4.1",
+        "google/gemini-2.5-flash",
+        "anthropic/claude-sonnet-4.5"
+      ],
+      "openrouter_base_url": "https://openrouter.ai/api/v1",
+      "retrieval_precision_k": 4,
+      "executor_max_workers": 4,
+      "verify_pool_max_workers": 6
+    },
+    "turns_evaluated": 4,
+    "artifact_source": "saved_turn_snapshot"
+  },
   "evaluation_config": {
-    "claim_decomposition_model": "openai/gpt-4o-mini",
+    "claim_decomposition_model": "openai/gpt-4.1-mini",
     "judge_models": [
-      "openai/gpt-4o-mini",
+      "openai/gpt-4.1",
       "google/gemini-2.5-flash",
-      "anthropic/claude-3-haiku"
+      "anthropic/claude-sonnet-4.5"
     ],
     "openrouter_base_url": "https://openrouter.ai/api/v1",
     "retrieval_precision_k": 4,
@@ -16,75 +45,612 @@
   },
   "conversation_history": [
     {
-      "message_id": "394dadd3-2f46-41ca-8e1e-c666f0ccfa66",
+      "message_id": "45a4f141-e2cd-40f7-a272-dfde33e2e77d",
       "role": "assistant",
       "content": "Hi there! I'm your Daily Report Assistant. I'll help you put together today's daily activity report through a quick conversation.\n\nLet's get started. What task or activity did you work on today?",
-      "timestamp": "2026-08-10T13:44:43.449085+00:00",
+      "timestamp": "2026-08-11T10:01:35.783666+00:00",
       "turn_index": 0,
       "phase": "initial_prompt"
     },
     {
-      "message_id": "f0149745-d63a-411d-8541-23262cf3508b",
+      "message_id": "57346a88-63e5-437a-a53e-8afacff077df",
       "role": "user",
-      "content": "We were laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run.",
-      "timestamp": "2026-08-10T13:44:43.449085+00:00",
+      "content": "We got most of the cuts made and finished the layout for the next partition run before the end of the day.",
+      "timestamp": "2026-08-11T10:01:35.783666+00:00",
       "turn_index": 1,
       "phase": "user_message"
     },
     {
-      "message_id": "699ec897-9280-400b-8a27-6cf9f13daded",
+      "message_id": "09cb6940-9c9a-473d-b92a-791fda1c0905",
       "role": "assistant",
-      "content": "Thanks for sharing that. It sounds like you were working on some framing tasks for an interior wall. Now, who was involved in today's work? How many people were on the team, and what roles did they have?",
-      "timestamp": "2026-08-10T13:44:47.071189+00:00",
+      "content": "Great work getting the cuts made and the layout finished for the next partition run! Now, let's talk about who was involved. How many people were on your team today, and were there any particular roles or absences?",
+      "timestamp": "2026-08-11T10:01:43.493347+00:00",
       "turn_index": 1,
+      "phase": "assistant_response",
+      "source_count": 0
+    },
+    {
+      "message_id": "15ef9373-57fb-4228-a7cc-58c8b88a1b84",
+      "role": "user",
+      "content": "Three students and one TA. We used Chalk line, speed square, tape measures, circular saw, palm nailer.",
+      "timestamp": "2026-08-11T10:01:44.516842+00:00",
+      "turn_index": 2,
+      "phase": "user_message"
+    },
+    {
+      "message_id": "cdff002b-3d61-481c-966e-a35c56ad3a57",
+      "role": "assistant",
+      "content": "Thanks for the information! So, you had a team of three students and one TA. And I see you used a variety of tools today: chalk line, speed square, tape measures, circular saw, and a palm nailer. \n\nNow, let's move on to the materials. What types of materials did you use for today's work?",
+      "timestamp": "2026-08-11T10:01:48.139829+00:00",
+      "turn_index": 2,
+      "phase": "assistant_response",
+      "source_count": 0
+    },
+    {
+      "message_id": "ffc9f2ef-a2c3-40e2-a38f-05097aa78973",
+      "role": "user",
+      "content": "We used 2x4 studs, blocking pieces, and layout lumber for the openings. Blade contact, kickback on cuts, hand placement while toenailing the blocking. That came up while we were Laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run. Keep hands clear of the cut path.",
+      "timestamp": "2026-08-11T10:01:49.461232+00:00",
+      "turn_index": 3,
+      "phase": "user_message"
+    },
+    {
+      "message_id": "0fdeb3b9-ae1d-4ad1-a5fd-b19e6f46455d",
+      "role": "assistant",
+      "content": "You used 2x4 studs, blocking pieces, and layout lumber for the openings. While you were laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run, you encountered some safety considerations such as blade contact, kickback on cuts, and paying attention to hand placement while toenailing the blocking. It's important to keep hands clear of the cut path to prevent accidents.\n\nWith all this information, your report is almost complete. You can download it whenever you're ready. If there's anything else you'd like to add or adjust, feel free to let me know!",
+      "timestamp": "2026-08-11T10:01:56.382501+00:00",
+      "turn_index": 3,
+      "phase": "assistant_response",
+      "source_count": 1
+    },
+    {
+      "message_id": "531f3d95-c409-4d6f-8da1-1a3b5333f63a",
+      "role": "user",
+      "content": "We were Laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run.",
+      "timestamp": "2026-08-11T10:01:57.679456+00:00",
+      "turn_index": 4,
+      "phase": "user_message"
+    },
+    {
+      "message_id": "3299ea6d-271e-4ec0-b0b6-7a50586cb307",
+      "role": "assistant",
+      "content": "Thanks for the additional detail! Laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run sounds like a crucial part of your task today. This aligns with the building code guidelines for ensuring proper support and framing for openings in walls. \n\nYour report is now complete, and you can download it at your convenience. If there's anything else you need help with, just let me know!",
+      "timestamp": "2026-08-11T10:02:03.242524+00:00",
+      "turn_index": 4,
       "phase": "assistant_response",
       "source_count": 3
-    },
-    {
-      "message_id": "4fa4b4f8-ae74-42c0-8869-2ab6d52cccc7",
-      "role": "user",
-      "content": "There were three students and one TA using a chalk line, speed square, tape measures, circular saw, and palm nailer.",
-      "timestamp": "2026-08-10T13:44:48.216204+00:00",
-      "turn_index": 2,
-      "phase": "user_message"
-    },
-    {
-      "message_id": "a89a3072-04a9-4a05-b0d4-cdac8f0f8a1f",
-      "role": "assistant",
-      "content": "Great, so we had a team of three students guided by a TA. It sounds like you had a good mix of tools there. Now, let's talk about materials. What materials did you use for today's task?",
-      "timestamp": "2026-08-10T13:44:50.983278+00:00",
-      "turn_index": 2,
-      "phase": "assistant_response",
-      "source_count": 0
-    },
-    {
-      "message_id": "5e7a942e-a6e2-43b1-b726-ac87a315dd82",
-      "role": "user",
-      "content": "The main hazards were blade contact, kickback on cuts, and hand placement while toenailing the blocking. We wore eye and hearing protection.",
-      "timestamp": "2026-08-10T13:44:52.328670+00:00",
-      "turn_index": 3,
-      "phase": "user_message"
-    },
-    {
-      "message_id": "a21b84b5-afef-4924-9eb9-0f2f618afe10",
-      "role": "assistant",
-      "content": "Thank you for the information on safety hazards. It's good to hear that you were using personal protective equipment like eye and hearing protection to mitigate those risks. Now, if you could just let me know about the materials used today, we can wrap up the report.",
-      "timestamp": "2026-08-10T13:44:55.573120+00:00",
-      "turn_index": 3,
-      "phase": "assistant_response",
-      "source_count": 0
     }
   ],
   "turn_records": [
     {
       "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0001",
       "turn_index": 1,
-      "user_message": "We were laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run.",
-      "user_timestamp": "2026-08-10T13:44:43.449085+00:00",
-      "assistant_response": "Thanks for sharing that. It sounds like you were working on some framing tasks for an interior wall. Now, who was involved in today's work? How many people were on the team, and what roles did they have?",
-      "assistant_timestamp": "2026-08-10T13:44:47.071189+00:00",
+      "user_message": "We got most of the cuts made and finished the layout for the next partition run before the end of the day.",
+      "user_timestamp": "2026-08-11T10:01:35.783666+00:00",
+      "assistant_response": "Great work getting the cuts made and the layout finished for the next partition run! Now, let's talk about who was involved. How many people were on your team today, and were there any particular roles or absences?",
+      "assistant_timestamp": "2026-08-11T10:01:43.493347+00:00",
       "retrieval": {
-        "query": "We were laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run.",
+        "query": "We got most of the cuts made and finished the layout for the next partition run before the end of the day.",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_file_names": [],
+        "sources": [],
+        "evaluation_snapshot": {
+          "context": "",
+          "candidates": [
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "38",
+              "score": 0.2808,
+              "text": "WOOD\n520 2018 INTERNATIONAL BUILDING CODE \u00ae\n2308.5.5.2 Openings in interior bearing partitions.\nHeaders shall be provided over each opening in interior\nbearing partitions as required in Section 2308.5.5.1.\nThe spans in Table 2308.4.1.1(2) are permitted to be\nused. Wall studs shall support the ends of the header in\naccordance with Table 2308.4.1.1(1) or 2308.4.1.1(2),\nas applicable.\n2308.5.5.3 Openings in in terior nonbearing parti-\ntions. Openings in nonbearing partitions are permitted\nto be framed with single studs and headers. Each end of\na lintel or header shall have a bearing length of not..."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "3",
+              "score": null,
+              "text": "3\n/square4Prior to the lifting of the wall, establish a\nlimited access zone whenever a balloon\nframed wall is being raised;\nThe limited access zone should be equal to\nthe height of the wall plus four feet and\nshould run the entire length of the wall;\nThe limited access zone should be restricted\nto entry by employees actively engaged in\nlifting the wall and no other workers be\nallowed to enter the zone;\nThe limited access zone should remain in\nplace until the wall is adequately supported\nand braced to prevent accidental collapse;\n/square4Secure bottom plates with adequate sized\nmetal bands (at ..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "29",
+              "score": 0.2776,
+              "text": "ceiling and \ntwo center-bearing \nfloors\n1-2 \u00d7 6 2-8 2 2-1 2 1-10 2 2-7 2 2-0 2 1-9 2 2-5 2 1-11 2 1-8 2\n1-2 \u00d7 8 3-5 2 2-8 2 2-4 3 3-3 2 2-7 2 2-2 3 3-1 2 2-5 3 2-1 3\n1-2 \u00d7 10 4-0 2 3-2 3 2-9 3 3-10 2 3-1 3 2-7 3 3-8 2 2-11 3 2-5 3\n1-2 \u00d7 12 4-9 3 3-9 3 3-2 4 4-6 3 3-7 3 3-1 4 4-3 3 3-5 3 2-11 4\n2-2 \u00d7 4 2-8 1 2-1 1 1-9 1 2-6 1 2-0 1 1-8 1 2-5 1 1-11 1 1-7 1\n2-2 \u00d7 6 4-0 1 3-2 2 2-8 2 3-9 1 3-0 2 2-7 2 3-7 1 2-10 2 2-5 2\n2-2 \u00d7 8 5-0 2 4-0 2 3-5 2 4-10 2 3-10 2 3-3 2 4-7 2 3-7 2 3-1 2\n2-2 \u00d7 10 6-0 2 4-9 2 4-0 2 5-8 2 4-6 2 3-10 3 5-5 2 4-3 2 3-8 3\n2-2 \u00d7 12 7-0 2 5-7 2 4-9 3 6-8 2 5-4 3 4-6 3 6-4 2 ..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "73",
+              "score": null,
+              "text": "2018 INTERNATIONAL BUILDING CODE \u00ae 607\nCHAPTER 33\nSAFEGUARDS DURING CONSTRUCTION\nUser notes:\nAbout this chapter: While the balance of the chapters in this code specify how a building is to be designed and constructed in order to be in\ncompliance with the code, Chapter 33 looks to the actual constr uction process. Parameters are provided for demolition and for p rotecting\nadjacent property during demolition and construc tion. Issues such as how to provide egr ess while the building is growing, the t iming of stand-\npipe and sprinkler installation, and protection of pedestrians are addressed. \nC..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "28",
+              "score": 0.2752,
+              "text": "2\n4-2 \u00d7 12 15-3 1 11-8 1 9-10 2 13-0 1 10-0 2 8-5 2 11-7 1 8-11 2 7-6 2\nRoof, ceiling and \none center-bearing \nfloor\n1-2 \u00d7 6 3-3 1 2-7 2 2-2 2 3-0 2 2-4 2 2-0 2 2-9 2 2-2 2 1-10 2\n1-2 \u00d7 8 4-1 2 3-3 2 2-9 2 3-9 2 3-0 2 2-6 3 3-6 2 2-9 2 2-4 3\n1-2 \u00d7 10 4-11 2 3-10 2 3-3 3 4-6 2 3-6 3 3-0 3 4-1 2 3-3 3 2-9 3\n1-2 \u00d7 12 5-9 2 4-6 3 3-10 3 5-3 2 4-2 3 3-6 3 4-10 3 3-10 3 3-3 4\n2-2 \u00d7 4 3-3 1 2-6 1 2-2 1 3-0 1 2-4 1 2-0 1 2-8 1 2-2 1 1-10 1\n2-2 \u00d7 6 4-10 1 3-9 1 3-3 2 4-5 1 3-6 2 3-0 2 4-1 1 3-3 2 2-9 2\n2-2 \u00d7 8 6-1 1 4-10 2 4-1 2 5-7 2 4-5 2 3-9 2 5-2 2 4-1 2 3-6 2\n2-2 \u00d7 10 7-3 2 5-8 2 4-10 2 6-8 2 5-3 ..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "75",
+              "score": null,
+              "text": "SAFEGUARDS DURING CONSTRUCTION\n2018 INTERNATIONAL BUILDING CODE \u00ae 609\ndesigns, the roof and supporting structure of a covered\nwalkway are permitted to be constructed as follows:\n1. Footings shall be continuous 2-inch by 6-inch (51\nmm by 152 mm) members.\n2. Posts not less than 4 inches by 6 inches (102 mm by\n152 mm) shall be provided on both sides of the roof\nand spaced not more than 12 feet (3658 mm) on cen-\nter.\n3. Stringers not less than 4 inches by 12 inches (102\nmm by 305 mm) shall be placed on edge upon the\nposts.\n4. Joists resting on the stringers shall be not less than 2\ninches by 8 inc..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "38",
+              "score": 0.2665,
+              "text": "Bored holes not greater than 60 percent of the\nstud width are permitted in nonbearing partitions or in any\nwall where each bored stud is doubled, provided that not\nmore than two such successive doubled studs are so bored.\nThe edge of a bored hole shall not be nearer than \n5/8 inch\n(15.9 mm) to the edge of the stud. Bored holes shall not be\nlocated at the same section of stud as a cut or notch.\n2308.5.11 Exterior wall sheathing.  Except where stucco\nconstruction that complies with Section 2510 is installed,\nthe outside of exterior walls, including gables, of enclosed\nbuildings shall be sheathed..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "28",
+              "score": 0.2619,
+              "text": "ceiling and \none clear span \nfloor\n1-2 \u00d7 6 2-11 2 2-3 2 1-11 2 2-9 2 2-1 2 1-9 2 2-7 2 2-0 2 1-8 2\n1-2 \u00d7 8 3-9 2 2-10 2 2-5 3 3-6 2 2-8 2 2-3 3 3-3 2 2-6 3 2-2 3\n1-2 \u00d7 10 4-5 2 3-5 3 2-10 3 4-2 2 3-2 3 2-8 3 3-11 2 3-0 3 2-6 3\n1 - 2  \u00d7  1 25 - 224 - 033 - 43 4 - 1 0 33 - 933 - 244 - 733 - 633 - 04\n2-2 \u00d7 4 2-11 1 2-3 1 1-10 1 2-9 1 2-1 1 1-9 1 2-7 1 2-0 1 1-8 1\n2-2 \u00d7 6 4-4 1 3-4 2 2-10 2 4-1 1 3-2 2 2-8 2 3-10 1 3-0 2 2-6 2\n2-2 \u00d7 8 5-6 2 4-3 2 3-7 2 5-2 2 4-0 2 3-4 2 4-10 2 3-9 2 3-2 2\n2-2 \u00d7 10 6-7 2 5-0 2 4-2 2 6-1 2 4-9 2 4-0 2 5-9 2 4-5 2 3-9 3\n2-2 \u00d7 12 7-9 2 5-11 2 4-11 3 7-2 2 5-7 2 4-8 3 ..."
+            }
+          ],
+          "relevance": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "evaluation_status": "complete",
+      "evaluation_completed_at": "2026-08-11T10:49:09.036392+00:00",
+      "evaluation_failed_reason": null,
+      "metrics": {
+        "turn": {
+          "turn_index": 1,
+          "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0001",
+          "user_timestamp": "2026-08-11T10:01:35.783666+00:00",
+          "assistant_timestamp": "2026-08-11T10:01:43.493347+00:00",
+          "evaluated_at": "2026-08-11T10:49:09.036392+00:00",
+          "user_message": "We got most of the cuts made and finished the layout for the next partition run before the end of the day.",
+          "assistant_response": "Great work getting the cuts made and the layout finished for the next partition run! Now, let's talk about who was involved. How many people were on your team today, and were there any particular roles or absences?",
+          "candidate_count": 8,
+          "accepted_source_count": 0,
+          "source_refs": []
+        },
+        "retrieval_precision_proxy": {
+          "metric_name": "retrieval_precision_proxy@4",
+          "scored": true,
+          "score": 0.0,
+          "k": 4,
+          "candidate_count": 8,
+          "top_k_count": 4,
+          "relevant_count_in_top_k": 0,
+          "skip_reason": null
+        },
+        "precision_at_k": 0.0,
+        "faithfulness": {
+          "metric_name": "faithfulness",
+          "scored": false,
+          "skip_reason": "no_context",
+          "claims": [],
+          "claim_count": 0,
+          "per_judge_scores": {
+            "openai/gpt-4.1": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-sonnet-4.5": null
+          },
+          "per_judge_supported_counts": {
+            "openai/gpt-4.1": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-sonnet-4.5": 0
+          },
+          "per_judge_evaluable_counts": {
+            "openai/gpt-4.1": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-sonnet-4.5": 0
+          },
+          "per_judge_error_counts": {
+            "openai/gpt-4.1": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-sonnet-4.5": 0
+          },
+          "majority_vote_score": null,
+          "majority_supported_count": 0,
+          "majority_evaluable_claim_count": 0
+        },
+        "answer_relevance": {
+          "metric_name": "answer_relevance",
+          "scored": true,
+          "skip_reason": null,
+          "judge_votes": {
+            "openai/gpt-4.1": true,
+            "google/gemini-2.5-flash": true,
+            "anthropic/claude-sonnet-4.5": true
+          },
+          "judge_errors": {
+            "openai/gpt-4.1": false,
+            "google/gemini-2.5-flash": false,
+            "anthropic/claude-sonnet-4.5": false
+          },
+          "majority_relevant": true,
+          "majority_evaluable": true
+        }
+      },
+      "report_completion_after_turn": 0.2
+    },
+    {
+      "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0002",
+      "turn_index": 2,
+      "user_message": "Three students and one TA. We used Chalk line, speed square, tape measures, circular saw, palm nailer.",
+      "user_timestamp": "2026-08-11T10:01:44.516842+00:00",
+      "assistant_response": "Thanks for the information! So, you had a team of three students and one TA. And I see you used a variety of tools today: chalk line, speed square, tape measures, circular saw, and a palm nailer. \n\nNow, let's move on to the materials. What types of materials did you use for today's work?",
+      "assistant_timestamp": "2026-08-11T10:01:48.139829+00:00",
+      "retrieval": {
+        "query": "Three students and one TA. We used Chalk line, speed square, tape measures, circular saw, palm nailer.",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_file_names": [],
+        "sources": [],
+        "evaluation_snapshot": {
+          "context": "",
+          "candidates": [
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "2",
+              "score": 0.3353,
+              "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "13",
+              "score": 0.3405,
+              "text": "face nail at top and bot-\ntom staggered on opposite sides\nAnd:\n2-20d common (4\u2033 \u00d7 0.192\u2033); or \n3-10d box (3\u2033 \u00d7 0.128\u2033); or \n3-3\u2033 \u00d7 0.131\u2033 nails; or\n3-3\u2033 14 gage staples, 7/16\u2033 crown\nEnds and at each splice, face nail\n27. Ledger strip supporting joists or rafters\n3-16d common (31/2\u2033 \u00d7 0.162\u2033); or\n4-10d box (3\u2033 \u00d7 0.128\u2033); or\n4-3\u2033 \u00d7 0.131\u2033 nails; or\n4-3\u2033 14 gage staples, 7/16\u2033 crown\nEach joist or rafter, face nail\n28. Joist to band joist or rim joist\n3-16d common (31/2\u2033 \u00d7 0.162\u2033); or \n4-10d box (3\u2033 \u00d7 0.128\u2033); or\n4-3\u2033 \u00d7 0.131\u2033 nails; or\n4-3\u2033 14 gage staples, 7/16\u2033 crown\nEnd nail\n29. Bridging or bl..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "6",
+              "score": null,
+              "text": "WOOD\n488 2018 INTERNATIONAL BUILDING CODE \u00ae\n2304.8 Floor and roof sheathing.  Structural floor sheathing\nand structural roof sheathing  shall comply with Sections\n2304.8.1 and 2304.8.2, respectively.\n2304.8.1 Structural floor sheathing.  Structural floor\nsheathing shall be designed in accordance with the general\nprovisions of this code.\nFloor sheathing conforming to the provisions of Table\n2304.8(1), 2304.8(2), 2304.8(3) or 2304.8(4) shall be\ndeemed to meet the requirements of this section.\n2304.8.2 Structural roof sheathing. Structural roof\nsheathing shall be designed in accordance with the g..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "12",
+              "score": 0.3376,
+              "text": "face nail\n16d box (31/2\u2033 \u00d7 0.135\u2033); or\n3\u2033 \u00d7 0.131\u2033 nails; or\n3\u2033 14 gage staples, 7/16\u2033 crown\n12\u2033 o.c. face nail\n15. Bottom plate to joist, rim joist, band joist or block-\ning at braced wall panels\n2-16d common (31/2\u2033 \u00d7 0.162\u2033); or\n3-16d box (31/2\u2033 \u00d7 0.135\u2033); or\n4-3\u2033 \u00d7 0.131\u2033 nails; or\n4-3\u2033 14 gage staples, 7/16\u2033 crown\n16\u2033 o.c. face nail\n16. Stud to top or bottom plate\n4-8d common (21/2\u2033 \u00d7 0.131\u2033); or\n4-10d box (3\u2033 \u00d7 0.128\u2033); or\n4-3\u2033 \u00d7 0.131\u2033 nails; or\n4-3\u2033 14 gage staples, 7/16\u2033 crown; or\nToenail\n2-16d common (31/2\u2033 \u00d7 0.162\u2033); or\n3-10d box (3\u2033 \u00d7 0.128\u2033); or\n3-3\u2033 \u00d7 0.131\u2033 nails; or\n3-3\u2033 14 gage..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "48",
+              "score": null,
+              "text": "2308.6.8.3 Stepped footings in Seismic Design Cate-\ngories B, C, D and E. In Seismic Design Categories B,\nC, D and E, where the height of a required braced wall\npanel extending from foundation to floor above varies\nmore than 4 feet (1219 mm), the following construction\nshall be used:\n1. Where the bottom of the footing is stepped and\nthe lowest floor framing rests directly on a sill\nbolted to the footings, the sill shall be anchored\nas required in Section 2308.3. \n2. Where the lowest floor framing rests directly on a\nsill bolted to a footing not less than 8 feet (2438\nmm) in length along a line..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "7",
+              "score": null,
+              "text": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 489\n2304.9.2.1 Simple span pattern.  All pieces shall be\nsupported on their ends (in other words, by two sup-\nports).\n2304.9.2.2 Two-span continuous pattern.  All pieces\nshall be supported by three supports, and all end joints\nshall occur in line on alternating supports. Supporting\nmembers shall be designed  to accommodate the load\nredistribution caused by this pattern.\n2304.9.2.3 Combination simple and two-span con-\ntinuous pattern.  Courses in end spans shall be alter-\nnating simple-span pattern and two-span continuous\npattern. End joints shall be stag..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "12",
+              "score": 0.3263,
+              "text": "WOOD\n494 2018 INTERNATIONAL BUILDING CODE \u00ae\nTABLE 2304.10.1\u2014continued\nFASTENING SCHEDULE\n(continued)\nDESCRIPTION OF BUILDING ELEMENTS NUMBER AND TYPE OF FASTENER SPACING AND LOCATION\nWall\n8. Stud to stud (not at braced wall panels)\n16d common (31/2\u2033 \u00d7 0.162\u2033); 24\u2033 o.c. face nail\n10d box (3\u2033 \u00d7 0.128\u2033); or\n3\u2033 \u00d7 0.131\u2033 nails; or\n3-3\u2033 14 gage staples, 7/16\u2033 crown\n16\u2033 o.c. face nail\n9. Stud to stud and abutting studs at intersecting wall \ncorners (at braced wall panels)\n16d common (31/2\u2033 \u00d7 0.162\u2033); or 16\u2033 o.c. face nail\n16d box (31/2\u2033 \u00d7 0.135\u2033); or 12 \u2033 o.c. face nail\n3\u2033 \u00d7 0.131\u2033 nails; or\n3-3\u2033 14 ..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "21",
+              "score": null,
+              "text": "2308.2.1 Stories.  Structures of conventional light-frame\nconstruction shall be limited in story height in accordance\nwith Table 2308.2.1.\nTABLE 2308.2.1\nALLOWABLE STORY HEIGHT\nFor SI: 1 inch = 25.4 mm.\na. For the purposes of this section, for buildings assigned to Seismic Design\nCategory D or E, cripple walls shall be considered to be a story  unless\ncripple walls are solid blocked and do not exceed 14 inches in height.\n2308.2.2 Allowable floor-to-floor height. Maximum floor-\nto-floor height shall not exceed 11 feet, 7 inches (3531\nmm). Exterior bearing wall and interior braced wall heights\ns..."
+            }
+          ],
+          "relevance": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "evaluation_status": "complete",
+      "evaluation_completed_at": "2026-08-11T10:49:11.804646+00:00",
+      "evaluation_failed_reason": null,
+      "metrics": {
+        "turn": {
+          "turn_index": 2,
+          "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0002",
+          "user_timestamp": "2026-08-11T10:01:44.516842+00:00",
+          "assistant_timestamp": "2026-08-11T10:01:48.139829+00:00",
+          "evaluated_at": "2026-08-11T10:49:11.804646+00:00",
+          "user_message": "Three students and one TA. We used Chalk line, speed square, tape measures, circular saw, palm nailer.",
+          "assistant_response": "Thanks for the information! So, you had a team of three students and one TA. And I see you used a variety of tools today: chalk line, speed square, tape measures, circular saw, and a palm nailer. \n\nNow, let's move on to the materials. What types of materials did you use for today's work?",
+          "candidate_count": 8,
+          "accepted_source_count": 0,
+          "source_refs": []
+        },
+        "retrieval_precision_proxy": {
+          "metric_name": "retrieval_precision_proxy@4",
+          "scored": true,
+          "score": 0.0,
+          "k": 4,
+          "candidate_count": 8,
+          "top_k_count": 4,
+          "relevant_count_in_top_k": 0,
+          "skip_reason": null
+        },
+        "precision_at_k": 0.0,
+        "faithfulness": {
+          "metric_name": "faithfulness",
+          "scored": false,
+          "skip_reason": "no_context",
+          "claims": [],
+          "claim_count": 0,
+          "per_judge_scores": {
+            "openai/gpt-4.1": null,
+            "google/gemini-2.5-flash": null,
+            "anthropic/claude-sonnet-4.5": null
+          },
+          "per_judge_supported_counts": {
+            "openai/gpt-4.1": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-sonnet-4.5": 0
+          },
+          "per_judge_evaluable_counts": {
+            "openai/gpt-4.1": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-sonnet-4.5": 0
+          },
+          "per_judge_error_counts": {
+            "openai/gpt-4.1": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-sonnet-4.5": 0
+          },
+          "majority_vote_score": null,
+          "majority_supported_count": 0,
+          "majority_evaluable_claim_count": 0
+        },
+        "answer_relevance": {
+          "metric_name": "answer_relevance",
+          "scored": true,
+          "skip_reason": null,
+          "judge_votes": {
+            "openai/gpt-4.1": true,
+            "google/gemini-2.5-flash": true,
+            "anthropic/claude-sonnet-4.5": true
+          },
+          "judge_errors": {
+            "openai/gpt-4.1": false,
+            "google/gemini-2.5-flash": false,
+            "anthropic/claude-sonnet-4.5": false
+          },
+          "majority_relevant": true,
+          "majority_evaluable": true
+        }
+      },
+      "report_completion_after_turn": 0.6
+    },
+    {
+      "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0003",
+      "turn_index": 3,
+      "user_message": "We used 2x4 studs, blocking pieces, and layout lumber for the openings. Blade contact, kickback on cuts, hand placement while toenailing the blocking. That came up while we were Laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run. Keep hands clear of the cut path.",
+      "user_timestamp": "2026-08-11T10:01:49.461232+00:00",
+      "assistant_response": "You used 2x4 studs, blocking pieces, and layout lumber for the openings. While you were laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run, you encountered some safety considerations such as blade contact, kickback on cuts, and paying attention to hand placement while toenailing the blocking. It's important to keep hands clear of the cut path to prevent accidents.\n\nWith all this information, your report is almost complete. You can download it whenever you're ready. If there's anything else you'd like to add or adjust, feel free to let me know!",
+      "assistant_timestamp": "2026-08-11T10:01:56.382501+00:00",
+      "retrieval": {
+        "query": "We used 2x4 studs, blocking pieces, and layout lumber for the openings. Blade contact, kickback on cuts, hand placement while toenailing the blocking. That came up while we were Laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run. Keep hands clear of the cut path.",
+        "candidate_count": 8,
+        "accepted_source_count": 1,
+        "source_file_names": [
+          "5-2018IBC-International Building Code_Chapter23-33.pdf"
+        ],
+        "sources": [
+          {
+            "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+            "page_label": "37",
+            "score": 0.5253,
+            "text": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 519\nStuds shall be continuous from a support at the sole\nplate to a support at the top plate to resist loads perpendic-\nular to the wall. The support shall be a foundation or floor,\nceiling or roof diaphragm or shall be designed in accor-\ndance with accepted engineering practice.\nException: Jack studs, trimmer studs and cripple studs at\nopenings in walls that comply with Table 2308.4.1.1(1)\nor 2308.4.1.1(2).\n2308.5.2 Framing details.  Studs shall be placed with\ntheir wide dimension perpendicular to the wall. Not less\nthan three studs shall be installed a..."
+          }
+        ],
+        "evaluation_snapshot": {
+          "context": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 519\nStuds shall be continuous from a support at the sole\nplate to a support at the top plate to resist loads perpendic-\nular to the wall. The support shall be a foundation or floor,\nceiling or roof diaphragm or shall be designed in accor-\ndance with accepted engineering practice.\nException: Jack studs, trimmer studs and cripple studs at\nopenings in walls that comply with Table 2308.4.1.1(1)\nor 2308.4.1.1(2).\n2308.5.2 Framing details.  Studs shall be placed with\ntheir wide dimension perpendicular to the wall. Not less\nthan three studs shall be installed a...",
+          "candidates": [
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "38",
+              "score": 0.5111,
+              "text": "WOOD\n520 2018 INTERNATIONAL BUILDING CODE \u00ae\n2308.5.5.2 Openings in interior bearing partitions.\nHeaders shall be provided over each opening in interior\nbearing partitions as required in Section 2308.5.5.1.\nThe spans in Table 2308.4.1.1(2) are permitted to be\nused. Wall studs shall support the ends of the header in\naccordance with Table 2308.4.1.1(1) or 2308.4.1.1(2),\nas applicable.\n2308.5.5.3 Openings in in terior nonbearing parti-\ntions. Openings in nonbearing partitions are permitted\nto be framed with single studs and headers. Each end of\na lintel or header shall have a bearing length of not..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "37",
+              "score": 0.5253,
+              "text": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 519\nStuds shall be continuous from a support at the sole\nplate to a support at the top plate to resist loads perpendic-\nular to the wall. The support shall be a foundation or floor,\nceiling or roof diaphragm or shall be designed in accor-\ndance with accepted engineering practice.\nException: Jack studs, trimmer studs and cripple studs at\nopenings in walls that comply with Table 2308.4.1.1(1)\nor 2308.4.1.1(2).\n2308.5.2 Framing details.  Studs shall be placed with\ntheir wide dimension perpendicular to the wall. Not less\nthan three studs shall be installed a..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "37",
+              "score": 0.4684,
+              "text": "The top plate shall not be\nrequired over headers that are in the same plane and\nin line with the upper surface of the adjacent top\nplates and are tied to adjacent wall sections as\nrequired for the butt joint splice between adjacent\nsingle top plates.\nWhere bearing studs are spaced at 24-inch (610\nmm) intervals, top plates are less than two 2-inch by 6-\ninch (51 mm by 152 mm) or two 3-inch by 4-inch (76\nmm by 102 mm) members and the floor joists, floor\ntrusses or roof trusses that they support are spaced at\nmore than 16-inch (406 mm) intervals, such joists or\ntrusses shall bear within 5 inches ..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "5",
+              "score": 0.4725,
+              "text": "Computations to deter-\nmine the required sizes of members shall be based on the net\ndimensions (actual sizes) and not nominal sizes.\n2304.3 Wall framing.  The framing of exterior and interior\nwalls shall be in accordance with  the provisions specified in\nSection 2308 unless a specific design is furnished.\n2304.3.1 Bottom plates. Studs shall have full bearing on a\n2-inch-thick (actual 1\n1/2-inch, 38 mm) or larger plate or sill\nhaving a width not less than equal to the width of the\nstuds.\n2304.3.2 Framing over openings. Headers, double joists,\ntrusses or other approved assemblies that are of ade..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "35",
+              "score": 0.4831,
+              "text": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 517\n2308.4.4.1 Openings in floor diaphragms in Seismic\nDesign Categories B, C, D and E.  Openings in hori-\nzontal diaphragms in Seismic Design Categories B, C, D\nand E with a dimension that is greater than 4 feet (1219\nmm) shall be constructed with metal ties and blocking in\naccordance with this section and Figure 2308.4.4.1(1).\nMetal ties shall be not less than 0.058 inch [1.47 mm (16\ngalvanized gage)] in thickness by 1\n1/2 inches (38 mm) in\nwidth and shall have a yield stress not less than 33,000\npsi (227 Mpa). Blocking shall extend not less than the\nd..."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "2",
+              "score": null,
+              "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "1",
+              "score": null,
+              "text": "FactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "46",
+              "score": 0.4847,
+              "text": "Notching or drilling of holes in block-\ning in accordance with the requirements of Section\n2308.4.2.4 or 2308.7.4 shall be permitted.\nAt exterior gable end walls, braced wall panel\nsheathing in the top story shall be extended and fas-\ntened to the roof framing where the spacing between\nparallel exterior braced wall lines is greater than 50 feet\n(15 240 mm).\nWhere roof trusses are used and are installed per-\npendicular to an exterior braced wall line, lateral forces\nshall be transferred from the roof diaphragm to the\nbraced wall over the full length of the braced wall line\nby blocking of the en..."
+            }
+          ],
+          "relevance": [
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "evaluation_status": "complete",
+      "evaluation_completed_at": "2026-08-11T10:49:13.472129+00:00",
+      "evaluation_failed_reason": null,
+      "metrics": {
+        "turn": {
+          "turn_index": 3,
+          "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0003",
+          "user_timestamp": "2026-08-11T10:01:49.461232+00:00",
+          "assistant_timestamp": "2026-08-11T10:01:56.382501+00:00",
+          "evaluated_at": "2026-08-11T10:49:13.472129+00:00",
+          "user_message": "We used 2x4 studs, blocking pieces, and layout lumber for the openings. Blade contact, kickback on cuts, hand placement while toenailing the blocking. That came up while we were Laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run. Keep hands clear of the cut path.",
+          "assistant_response": "You used 2x4 studs, blocking pieces, and layout lumber for the openings. While you were laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run, you encountered some safety considerations such as blade contact, kickback on cuts, and paying attention to hand placement while toenailing the blocking. It's important to keep hands clear of the cut path to prevent accidents.\n\nWith all this information, your report is almost complete. You can download it whenever you're ready. If there's anything else you'd like to add or adjust, feel free to let me know!",
+          "candidate_count": 8,
+          "accepted_source_count": 1,
+          "source_refs": [
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "37",
+              "score": 0.5253
+            }
+          ]
+        },
+        "retrieval_precision_proxy": {
+          "metric_name": "retrieval_precision_proxy@4",
+          "scored": true,
+          "score": 0.25,
+          "k": 4,
+          "candidate_count": 8,
+          "top_k_count": 4,
+          "relevant_count_in_top_k": 1,
+          "skip_reason": null
+        },
+        "precision_at_k": 0.25,
+        "faithfulness": {
+          "metric_name": "faithfulness",
+          "scored": true,
+          "skip_reason": null,
+          "claims": [
+            {
+              "claim": "You used 2x4 studs, blocking pieces, and layout lumber for the openings.",
+              "judge_votes": {
+                "openai/gpt-4.1": false,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-sonnet-4.5": false
+              },
+              "judge_errors": {
+                "openai/gpt-4.1": false,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-sonnet-4.5": false
+              },
+              "majority_supported": false
+            },
+            {
+              "claim": "While you were laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run, you encountered some safety considerations such as blade contact, kickback on cuts, and paying attention to hand placement while toenailing the blocking.",
+              "judge_votes": {
+                "openai/gpt-4.1": false,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-sonnet-4.5": false
+              },
+              "judge_errors": {
+                "openai/gpt-4.1": false,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-sonnet-4.5": false
+              },
+              "majority_supported": false
+            },
+            {
+              "claim": "It's important to keep hands clear of the cut path to prevent accidents.",
+              "judge_votes": {
+                "openai/gpt-4.1": false,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-sonnet-4.5": false
+              },
+              "judge_errors": {
+                "openai/gpt-4.1": false,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-sonnet-4.5": false
+              },
+              "majority_supported": false
+            }
+          ],
+          "claim_count": 3,
+          "per_judge_scores": {
+            "openai/gpt-4.1": 0.0,
+            "google/gemini-2.5-flash": 0.0,
+            "anthropic/claude-sonnet-4.5": 0.0
+          },
+          "per_judge_supported_counts": {
+            "openai/gpt-4.1": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-sonnet-4.5": 0
+          },
+          "per_judge_evaluable_counts": {
+            "openai/gpt-4.1": 3,
+            "google/gemini-2.5-flash": 3,
+            "anthropic/claude-sonnet-4.5": 3
+          },
+          "per_judge_error_counts": {
+            "openai/gpt-4.1": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-sonnet-4.5": 0
+          },
+          "majority_vote_score": 0.0,
+          "majority_supported_count": 0,
+          "majority_evaluable_claim_count": 3
+        },
+        "answer_relevance": {
+          "metric_name": "answer_relevance",
+          "scored": true,
+          "skip_reason": null,
+          "judge_votes": {
+            "openai/gpt-4.1": true,
+            "google/gemini-2.5-flash": true,
+            "anthropic/claude-sonnet-4.5": true
+          },
+          "judge_errors": {
+            "openai/gpt-4.1": false,
+            "google/gemini-2.5-flash": false,
+            "anthropic/claude-sonnet-4.5": false
+          },
+          "majority_relevant": true,
+          "majority_evaluable": true
+        }
+      },
+      "report_completion_after_turn": 1.0
+    },
+    {
+      "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0004",
+      "turn_index": 4,
+      "user_message": "We were Laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run.",
+      "user_timestamp": "2026-08-11T10:01:57.679456+00:00",
+      "assistant_response": "Thanks for the additional detail! Laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run sounds like a crucial part of your task today. This aligns with the building code guidelines for ensuring proper support and framing for openings in walls. \n\nYour report is now complete, and you can download it at your convenience. If there's anything else you need help with, just let me know!",
+      "assistant_timestamp": "2026-08-11T10:02:03.242524+00:00",
+      "retrieval": {
+        "query": "We were Laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run.",
         "candidate_count": 8,
         "accepted_source_count": 3,
         "source_file_names": [
@@ -96,19 +662,19 @@
           {
             "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
             "page_label": "38",
-            "score": 0.501,
+            "score": 0.4982,
             "text": "WOOD\n520 2018 INTERNATIONAL BUILDING CODE \u00ae\n2308.5.5.2 Openings in interior bearing partitions.\nHeaders shall be provided over each opening in interior\nbearing partitions as required in Section 2308.5.5.1.\nThe spans in Table 2308.4.1.1(2) are permitted to be\nused. Wall studs shall support the ends of the header in\naccordance with Table 2308.4.1.1(1) or 2308.4.1.1(2),\nas applicable.\n2308.5.5.3 Openings in in terior nonbearing parti-\ntions. Openings in nonbearing partitions are permitted\nto be framed with single studs and headers. Each end of\na lintel or header shall have a bearing length of not..."
           },
           {
             "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
             "page_label": "37",
-            "score": 0.534,
+            "score": 0.53,
             "text": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 519\nStuds shall be continuous from a support at the sole\nplate to a support at the top plate to resist loads perpendic-\nular to the wall. The support shall be a foundation or floor,\nceiling or roof diaphragm or shall be designed in accor-\ndance with accepted engineering practice.\nException: Jack studs, trimmer studs and cripple studs at\nopenings in walls that comply with Table 2308.4.1.1(1)\nor 2308.4.1.1(2).\n2308.5.2 Framing details.  Studs shall be placed with\ntheir wide dimension perpendicular to the wall. Not less\nthan three studs shall be installed a..."
           },
           {
             "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
             "page_label": "5",
-            "score": 0.4966,
+            "score": 0.4934,
             "text": "Computations to deter-\nmine the required sizes of members shall be based on the net\ndimensions (actual sizes) and not nominal sizes.\n2304.3 Wall framing.  The framing of exterior and interior\nwalls shall be in accordance with  the provisions specified in\nSection 2308 unless a specific design is furnished.\n2304.3.1 Bottom plates. Studs shall have full bearing on a\n2-inch-thick (actual 1\n1/2-inch, 38 mm) or larger plate or sill\nhaving a width not less than equal to the width of the\nstuds.\n2304.3.2 Framing over openings. Headers, double joists,\ntrusses or other approved assemblies that are of ade..."
           }
         ],
@@ -118,25 +684,25 @@
             {
               "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
               "page_label": "38",
-              "score": 0.501,
+              "score": 0.4982,
               "text": "WOOD\n520 2018 INTERNATIONAL BUILDING CODE \u00ae\n2308.5.5.2 Openings in interior bearing partitions.\nHeaders shall be provided over each opening in interior\nbearing partitions as required in Section 2308.5.5.1.\nThe spans in Table 2308.4.1.1(2) are permitted to be\nused. Wall studs shall support the ends of the header in\naccordance with Table 2308.4.1.1(1) or 2308.4.1.1(2),\nas applicable.\n2308.5.5.3 Openings in in terior nonbearing parti-\ntions. Openings in nonbearing partitions are permitted\nto be framed with single studs and headers. Each end of\na lintel or header shall have a bearing length of not..."
             },
             {
               "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
               "page_label": "37",
-              "score": 0.534,
+              "score": 0.53,
               "text": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 519\nStuds shall be continuous from a support at the sole\nplate to a support at the top plate to resist loads perpendic-\nular to the wall. The support shall be a foundation or floor,\nceiling or roof diaphragm or shall be designed in accor-\ndance with accepted engineering practice.\nException: Jack studs, trimmer studs and cripple studs at\nopenings in walls that comply with Table 2308.4.1.1(1)\nor 2308.4.1.1(2).\n2308.5.2 Framing details.  Studs shall be placed with\ntheir wide dimension perpendicular to the wall. Not less\nthan three studs shall be installed a..."
             },
             {
               "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
               "page_label": "5",
-              "score": 0.4966,
+              "score": 0.4934,
               "text": "Computations to deter-\nmine the required sizes of members shall be based on the net\ndimensions (actual sizes) and not nominal sizes.\n2304.3 Wall framing.  The framing of exterior and interior\nwalls shall be in accordance with  the provisions specified in\nSection 2308 unless a specific design is furnished.\n2304.3.1 Bottom plates. Studs shall have full bearing on a\n2-inch-thick (actual 1\n1/2-inch, 38 mm) or larger plate or sill\nhaving a width not less than equal to the width of the\nstuds.\n2304.3.2 Framing over openings. Headers, double joists,\ntrusses or other approved assemblies that are of ade..."
             },
             {
               "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
               "page_label": "37",
-              "score": 0.4783,
+              "score": 0.4767,
               "text": "The top plate shall not be\nrequired over headers that are in the same plane and\nin line with the upper surface of the adjacent top\nplates and are tied to adjacent wall sections as\nrequired for the butt joint splice between adjacent\nsingle top plates.\nWhere bearing studs are spaced at 24-inch (610\nmm) intervals, top plates are less than two 2-inch by 6-\ninch (51 mm by 152 mm) or two 3-inch by 4-inch (76\nmm by 102 mm) members and the floor joists, floor\ntrusses or roof trusses that they support are spaced at\nmore than 16-inch (406 mm) intervals, such joists or\ntrusses shall bear within 5 inches ..."
             },
             {
@@ -148,13 +714,13 @@
             {
               "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
               "page_label": "38",
-              "score": 0.4833,
+              "score": 0.4803,
               "text": "Bored holes not greater than 60 percent of the\nstud width are permitted in nonbearing partitions or in any\nwall where each bored stud is doubled, provided that not\nmore than two such successive doubled studs are so bored.\nThe edge of a bored hole shall not be nearer than \n5/8 inch\n(15.9 mm) to the edge of the stud. Bored holes shall not be\nlocated at the same section of stud as a cut or notch.\n2308.5.11 Exterior wall sheathing.  Except where stucco\nconstruction that complies with Section 2510 is installed,\nthe outside of exterior walls, including gables, of enclosed\nbuildings shall be sheathed..."
             },
             {
               "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
               "page_label": "46",
-              "score": 0.4463,
+              "score": 0.4471,
               "text": "Notching or drilling of holes in block-\ning in accordance with the requirements of Section\n2308.4.2.4 or 2308.7.4 shall be permitted.\nAt exterior gable end walls, braced wall panel\nsheathing in the top story shall be extended and fas-\ntened to the roof framing where the spacing between\nparallel exterior braced wall lines is greater than 50 feet\n(15 240 mm).\nWhere roof trusses are used and are installed per-\npendicular to an exterior braced wall line, lateral forces\nshall be transferred from the roof diaphragm to the\nbraced wall over the full length of the braced wall line\nby blocking of the en..."
             },
             {
@@ -177,34 +743,34 @@
         }
       },
       "evaluation_status": "complete",
-      "evaluation_completed_at": "2026-08-10T14:37:05.267695+00:00",
+      "evaluation_completed_at": "2026-08-11T10:49:20.700876+00:00",
       "evaluation_failed_reason": null,
       "metrics": {
         "turn": {
-          "turn_index": 1,
-          "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0001",
-          "user_timestamp": "2026-08-10T13:44:43.449085+00:00",
-          "assistant_timestamp": "2026-08-10T13:44:47.071189+00:00",
-          "evaluated_at": "2026-08-10T14:37:05.267695+00:00",
-          "user_message": "We were laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run.",
-          "assistant_response": "Thanks for sharing that. It sounds like you were working on some framing tasks for an interior wall. Now, who was involved in today's work? How many people were on the team, and what roles did they have?",
+          "turn_index": 4,
+          "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0004",
+          "user_timestamp": "2026-08-11T10:01:57.679456+00:00",
+          "assistant_timestamp": "2026-08-11T10:02:03.242524+00:00",
+          "evaluated_at": "2026-08-11T10:49:20.700876+00:00",
+          "user_message": "We were Laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run.",
+          "assistant_response": "Thanks for the additional detail! Laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run sounds like a crucial part of your task today. This aligns with the building code guidelines for ensuring proper support and framing for openings in walls. \n\nYour report is now complete, and you can download it at your convenience. If there's anything else you need help with, just let me know!",
           "candidate_count": 8,
           "accepted_source_count": 3,
           "source_refs": [
             {
               "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
               "page_label": "38",
-              "score": 0.501
+              "score": 0.4982
             },
             {
               "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
               "page_label": "37",
-              "score": 0.534
+              "score": 0.53
             },
             {
               "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
               "page_label": "5",
-              "score": 0.4966
+              "score": 0.4934
             }
           ]
         },
@@ -221,361 +787,82 @@
         "precision_at_k": 0.75,
         "faithfulness": {
           "metric_name": "faithfulness",
-          "scored": false,
-          "skip_reason": "no_claims",
-          "claims": [],
-          "claim_count": 0,
-          "per_judge_scores": {
-            "openai/gpt-4o-mini": null,
-            "google/gemini-2.5-flash": null,
-            "anthropic/claude-3-haiku": null
-          },
-          "per_judge_supported_counts": {
-            "openai/gpt-4o-mini": 0,
-            "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
-          },
-          "per_judge_evaluable_counts": {
-            "openai/gpt-4o-mini": 0,
-            "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
-          },
-          "per_judge_error_counts": {
-            "openai/gpt-4o-mini": 0,
-            "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
-          },
-          "majority_vote_score": null,
-          "majority_supported_count": 0,
-          "majority_evaluable_claim_count": 0
-        },
-        "answer_relevance": {
-          "metric_name": "answer_relevance",
           "scored": true,
           "skip_reason": null,
-          "judge_votes": {
-            "openai/gpt-4o-mini": true,
-            "google/gemini-2.5-flash": true,
-            "anthropic/claude-3-haiku": true
-          },
-          "judge_errors": {
-            "openai/gpt-4o-mini": false,
-            "google/gemini-2.5-flash": false,
-            "anthropic/claude-3-haiku": false
-          },
-          "majority_relevant": true,
-          "majority_evaluable": true
-        }
-      },
-      "report_completion_after_turn": 0.2
-    },
-    {
-      "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0002",
-      "turn_index": 2,
-      "user_message": "There were three students and one TA using a chalk line, speed square, tape measures, circular saw, and palm nailer.",
-      "user_timestamp": "2026-08-10T13:44:48.216204+00:00",
-      "assistant_response": "Great, so we had a team of three students guided by a TA. It sounds like you had a good mix of tools there. Now, let's talk about materials. What materials did you use for today's task?",
-      "assistant_timestamp": "2026-08-10T13:44:50.983278+00:00",
-      "retrieval": {
-        "query": "There were three students and one TA using a chalk line, speed square, tape measures, circular saw, and palm nailer.",
-        "candidate_count": 8,
-        "accepted_source_count": 0,
-        "source_file_names": [],
-        "sources": [],
-        "evaluation_snapshot": {
-          "context": "",
-          "candidates": [
+          "claims": [
             {
-              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
-              "page_label": "2",
-              "score": 0.3316,
-              "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
+              "claim": "Laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run is a crucial part of ensuring proper support and framing for openings in walls.",
+              "judge_votes": {
+                "openai/gpt-4.1": true,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-sonnet-4.5": true
+              },
+              "judge_errors": {
+                "openai/gpt-4.1": false,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-sonnet-4.5": false
+              },
+              "majority_supported": true
             },
             {
-              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "9",
-              "score": 0.3166,
-              "text": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 491\n2304.9.4.2 Nailing. Each piece of decking shall be toe-\nnailed at each support with one 16d common nail\nthrough the tongue and face-nailed with one 16d com-\nmon nail.\n2304.9.4.3 Controlled random pattern. There shall be\na minimum distance of 24 inches (610 mm) between end\njoints in adjacent courses. The pieces in the first and sec-\nond courses shall bear on not fewer than two supports\nwith end joints in these two courses occurring on alter-\nTABLE 2304.8(5)\nALLOWABLE LOAD (PSF) FOR WOOD STRUCTU RAL PANEL ROOF SHEATHING CONTINUOUS \nOVER TWO OR MORE SPA..."
-            },
-            {
-              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "13",
-              "score": 0.3389,
-              "text": "face nail at top and bot-\ntom staggered on opposite sides\nAnd:\n2-20d common (4\u2033 \u00d7 0.192\u2033); or \n3-10d box (3\u2033 \u00d7 0.128\u2033); or \n3-3\u2033 \u00d7 0.131\u2033 nails; or\n3-3\u2033 14 gage staples, 7/16\u2033 crown\nEnds and at each splice, face nail\n27. Ledger strip supporting joists or rafters\n3-16d common (31/2\u2033 \u00d7 0.162\u2033); or\n4-10d box (3\u2033 \u00d7 0.128\u2033); or\n4-3\u2033 \u00d7 0.131\u2033 nails; or\n4-3\u2033 14 gage staples, 7/16\u2033 crown\nEach joist or rafter, face nail\n28. Joist to band joist or rim joist\n3-16d common (31/2\u2033 \u00d7 0.162\u2033); or \n4-10d box (3\u2033 \u00d7 0.128\u2033); or\n4-3\u2033 \u00d7 0.131\u2033 nails; or\n4-3\u2033 14 gage staples, 7/16\u2033 crown\nEnd nail\n29. Bridging or bl..."
-            },
-            {
-              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "12",
-              "score": 0.3334,
-              "text": "face nail\n16d box (31/2\u2033 \u00d7 0.135\u2033); or\n3\u2033 \u00d7 0.131\u2033 nails; or\n3\u2033 14 gage staples, 7/16\u2033 crown\n12\u2033 o.c. face nail\n15. Bottom plate to joist, rim joist, band joist or block-\ning at braced wall panels\n2-16d common (31/2\u2033 \u00d7 0.162\u2033); or\n3-16d box (31/2\u2033 \u00d7 0.135\u2033); or\n4-3\u2033 \u00d7 0.131\u2033 nails; or\n4-3\u2033 14 gage staples, 7/16\u2033 crown\n16\u2033 o.c. face nail\n16. Stud to top or bottom plate\n4-8d common (21/2\u2033 \u00d7 0.131\u2033); or\n4-10d box (3\u2033 \u00d7 0.128\u2033); or\n4-3\u2033 \u00d7 0.131\u2033 nails; or\n4-3\u2033 14 gage staples, 7/16\u2033 crown; or\nToenail\n2-16d common (31/2\u2033 \u00d7 0.162\u2033); or\n3-10d box (3\u2033 \u00d7 0.128\u2033); or\n3-3\u2033 \u00d7 0.131\u2033 nails; or\n3-3\u2033 14 gage..."
-            },
-            {
-              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
-              "page_label": "1",
-              "score": null,
-              "text": "U. S. Department of Labor\nOccupational Safety and Health Administration\nDirectorate of Science, Technology & Medicine\nOffice of Science and Technology Assessment\nSHIB 11-17-2005\nSafety and Health Information Bulletin\nHazards of Manually Lifting Balloon Framed Walls\nPurpose\nThis Safety and Health Information Bulletin\nalerts employers and employees that manually raised\nballoon framed walls could become too heavy for\nemployees to hold and could collapse back onto the\nemployees.  From July 1999 through July 2004, 22\nballoon framed wall collapses were reported.  Four of\nthese accidents occurred in ..."
-            },
-            {
-              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "6",
-              "score": null,
-              "text": "WOOD\n488 2018 INTERNATIONAL BUILDING CODE \u00ae\n2304.8 Floor and roof sheathing.  Structural floor sheathing\nand structural roof sheathing  shall comply with Sections\n2304.8.1 and 2304.8.2, respectively.\n2304.8.1 Structural floor sheathing.  Structural floor\nsheathing shall be designed in accordance with the general\nprovisions of this code.\nFloor sheathing conforming to the provisions of Table\n2304.8(1), 2304.8(2), 2304.8(3) or 2304.8(4) shall be\ndeemed to meet the requirements of this section.\n2304.8.2 Structural roof sheathing. Structural roof\nsheathing shall be designed in accordance with the g..."
-            },
-            {
-              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "12",
-              "score": 0.321,
-              "text": "WOOD\n494 2018 INTERNATIONAL BUILDING CODE \u00ae\nTABLE 2304.10.1\u2014continued\nFASTENING SCHEDULE\n(continued)\nDESCRIPTION OF BUILDING ELEMENTS NUMBER AND TYPE OF FASTENER SPACING AND LOCATION\nWall\n8. Stud to stud (not at braced wall panels)\n16d common (31/2\u2033 \u00d7 0.162\u2033); 24\u2033 o.c. face nail\n10d box (3\u2033 \u00d7 0.128\u2033); or\n3\u2033 \u00d7 0.131\u2033 nails; or\n3-3\u2033 14 gage staples, 7/16\u2033 crown\n16\u2033 o.c. face nail\n9. Stud to stud and abutting studs at intersecting wall \ncorners (at braced wall panels)\n16d common (31/2\u2033 \u00d7 0.162\u2033); or 16\u2033 o.c. face nail\n16d box (31/2\u2033 \u00d7 0.135\u2033); or 12 \u2033 o.c. face nail\n3\u2033 \u00d7 0.131\u2033 nails; or\n3-3\u2033 14 ..."
-            },
-            {
-              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "50",
-              "score": null,
-              "text": "WOOD\n532 2018 INTERNATIONAL BUILDING CODE \u00ae\nshall be provided at the ends of each\nbraced wall panel for the first story to\nthe foundation connection. In all cases,\nthe hold-down connector force shall be\ntransferred to the foundation.\n3.4. Cripple walls shall not be permitted.\n2308.6.10.2 Limitations of concrete or masonry in\nSeismic Design Categories D and E.  In Seismic\nDesign Categories D and E, concrete or masonry walls\nand stone or masonry veneer shall not extend above a\nbasement.\nException: In structures assigned to Seismic Design\nCategory D, stone and masonry veneer is permitted\nto be us..."
+              "claim": "This aligns with the building code guidelines for ensuring proper support and framing for openings in walls.",
+              "judge_votes": {
+                "openai/gpt-4.1": true,
+                "google/gemini-2.5-flash": true,
+                "anthropic/claude-sonnet-4.5": true
+              },
+              "judge_errors": {
+                "openai/gpt-4.1": false,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-sonnet-4.5": false
+              },
+              "majority_supported": true
             }
           ],
-          "relevance": [
-            false,
-            false,
-            false,
-            false,
-            false,
-            false,
-            false,
-            false
-          ]
-        }
-      },
-      "evaluation_status": "complete",
-      "evaluation_completed_at": "2026-08-10T14:37:09.349071+00:00",
-      "evaluation_failed_reason": null,
-      "metrics": {
-        "turn": {
-          "turn_index": 2,
-          "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0002",
-          "user_timestamp": "2026-08-10T13:44:48.216204+00:00",
-          "assistant_timestamp": "2026-08-10T13:44:50.983278+00:00",
-          "evaluated_at": "2026-08-10T14:37:09.349071+00:00",
-          "user_message": "There were three students and one TA using a chalk line, speed square, tape measures, circular saw, and palm nailer.",
-          "assistant_response": "Great, so we had a team of three students guided by a TA. It sounds like you had a good mix of tools there. Now, let's talk about materials. What materials did you use for today's task?",
-          "candidate_count": 8,
-          "accepted_source_count": 0,
-          "source_refs": []
-        },
-        "retrieval_precision_proxy": {
-          "metric_name": "retrieval_precision_proxy@4",
-          "scored": true,
-          "score": 0.0,
-          "k": 4,
-          "candidate_count": 8,
-          "top_k_count": 4,
-          "relevant_count_in_top_k": 0,
-          "skip_reason": null
-        },
-        "precision_at_k": 0.0,
-        "faithfulness": {
-          "metric_name": "faithfulness",
-          "scored": false,
-          "skip_reason": "no_context",
-          "claims": [],
-          "claim_count": 0,
+          "claim_count": 2,
           "per_judge_scores": {
-            "openai/gpt-4o-mini": null,
-            "google/gemini-2.5-flash": null,
-            "anthropic/claude-3-haiku": null
+            "openai/gpt-4.1": 1.0,
+            "google/gemini-2.5-flash": 0.5,
+            "anthropic/claude-sonnet-4.5": 1.0
           },
           "per_judge_supported_counts": {
-            "openai/gpt-4o-mini": 0,
-            "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
+            "openai/gpt-4.1": 2,
+            "google/gemini-2.5-flash": 1,
+            "anthropic/claude-sonnet-4.5": 2
           },
           "per_judge_evaluable_counts": {
-            "openai/gpt-4o-mini": 0,
-            "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
+            "openai/gpt-4.1": 2,
+            "google/gemini-2.5-flash": 2,
+            "anthropic/claude-sonnet-4.5": 2
           },
           "per_judge_error_counts": {
-            "openai/gpt-4o-mini": 0,
+            "openai/gpt-4.1": 0,
             "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
+            "anthropic/claude-sonnet-4.5": 0
           },
-          "majority_vote_score": null,
-          "majority_supported_count": 0,
-          "majority_evaluable_claim_count": 0
+          "majority_vote_score": 1.0,
+          "majority_supported_count": 2,
+          "majority_evaluable_claim_count": 2
         },
         "answer_relevance": {
           "metric_name": "answer_relevance",
           "scored": true,
           "skip_reason": null,
           "judge_votes": {
-            "openai/gpt-4o-mini": true,
+            "openai/gpt-4.1": true,
             "google/gemini-2.5-flash": true,
-            "anthropic/claude-3-haiku": true
+            "anthropic/claude-sonnet-4.5": true
           },
           "judge_errors": {
-            "openai/gpt-4o-mini": false,
+            "openai/gpt-4.1": false,
             "google/gemini-2.5-flash": false,
-            "anthropic/claude-3-haiku": false
+            "anthropic/claude-sonnet-4.5": false
           },
           "majority_relevant": true,
           "majority_evaluable": true
         }
       },
-      "report_completion_after_turn": 0.6
-    },
-    {
-      "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0003",
-      "turn_index": 3,
-      "user_message": "The main hazards were blade contact, kickback on cuts, and hand placement while toenailing the blocking. We wore eye and hearing protection.",
-      "user_timestamp": "2026-08-10T13:44:52.328670+00:00",
-      "assistant_response": "Thank you for the information on safety hazards. It's good to hear that you were using personal protective equipment like eye and hearing protection to mitigate those risks. Now, if you could just let me know about the materials used today, we can wrap up the report.",
-      "assistant_timestamp": "2026-08-10T13:44:55.573120+00:00",
-      "retrieval": {
-        "query": "The main hazards were blade contact, kickback on cuts, and hand placement while toenailing the blocking. We wore eye and hearing protection.",
-        "candidate_count": 8,
-        "accepted_source_count": 0,
-        "source_file_names": [],
-        "sources": [],
-        "evaluation_snapshot": {
-          "context": "",
-          "candidates": [
-            {
-              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
-              "page_label": "1",
-              "score": 0.4209,
-              "text": "FactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine..."
-            },
-            {
-              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "73",
-              "score": 0.3815,
-              "text": "2018 INTERNATIONAL BUILDING CODE \u00ae 607\nCHAPTER 33\nSAFEGUARDS DURING CONSTRUCTION\nUser notes:\nAbout this chapter: While the balance of the chapters in this code specify how a building is to be designed and constructed in order to be in\ncompliance with the code, Chapter 33 looks to the actual constr uction process. Parameters are provided for demolition and for p rotecting\nadjacent property during demolition and construc tion. Issues such as how to provide egr ess while the building is growing, the t iming of stand-\npipe and sprinkler installation, and protection of pedestrians are addressed. \nC..."
-            },
-            {
-              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
-              "page_label": "2",
-              "score": 0.3765,
-              "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
-            },
-            {
-              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
-              "page_label": "3",
-              "score": 0.3846,
-              "text": "safely. The employer must ensure that employees \non scaffold systems 10 feet or more above a \nlower level are protected from falls. For other \nrequirements for scaffolds, refer to 29 CFR 1926 \nSubpart L \u2013 Scaffolds.\nWritten Fall Protection Plans\nWhen working at heights of 6 feet or greater, if the \nemployer does not use ladders, scaffolds, aerial lifts \nor fall restraint systems and can demonstrate that \nit is not feasible or would create a greater hazard \nto use conventional fall protection equipment \n(guardrails, safety nets or a PFAS), the employer \nmust develop a written site-specific fall..."
-            },
-            {
-              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
-              "page_label": "2",
-              "score": 0.3954,
-              "text": "Guardrails\nGuardrail systems can protect workers framing \nwalls around the perimeter and at floor openings. \nFramed exterior walls typically include openings for \nwindows and doors.  Workers can apply sheathing \nto the frame, and install guardrails across window \nand door openings, before raising wall sections so \nthat the openings are protected when the walls are \nset into place.\nOSHA generally requires the top rail height to be \n42 inches + 3 inches above the walking/working \nlevel. A midrail is also required between the top \nrail and the walking/working surface when there \nis no wall or par..."
-            },
-            {
-              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
-              "page_label": "1",
-              "score": null,
-              "text": "U. S. Department of Labor\nOccupational Safety and Health Administration\nDirectorate of Science, Technology & Medicine\nOffice of Science and Technology Assessment\nSHIB 11-17-2005\nSafety and Health Information Bulletin\nHazards of Manually Lifting Balloon Framed Walls\nPurpose\nThis Safety and Health Information Bulletin\nalerts employers and employees that manually raised\nballoon framed walls could become too heavy for\nemployees to hold and could collapse back onto the\nemployees.  From July 1999 through July 2004, 22\nballoon framed wall collapses were reported.  Four of\nthese accidents occurred in ..."
-            },
-            {
-              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "13",
-              "score": 0.3936,
-              "text": "face nail at top and bot-\ntom staggered on opposite sides\nAnd:\n2-20d common (4\u2033 \u00d7 0.192\u2033); or \n3-10d box (3\u2033 \u00d7 0.128\u2033); or \n3-3\u2033 \u00d7 0.131\u2033 nails; or\n3-3\u2033 14 gage staples, 7/16\u2033 crown\nEnds and at each splice, face nail\n27. Ledger strip supporting joists or rafters\n3-16d common (31/2\u2033 \u00d7 0.162\u2033); or\n4-10d box (3\u2033 \u00d7 0.128\u2033); or\n4-3\u2033 \u00d7 0.131\u2033 nails; or\n4-3\u2033 14 gage staples, 7/16\u2033 crown\nEach joist or rafter, face nail\n28. Joist to band joist or rim joist\n3-16d common (31/2\u2033 \u00d7 0.162\u2033); or \n4-10d box (3\u2033 \u00d7 0.128\u2033); or\n4-3\u2033 \u00d7 0.131\u2033 nails; or\n4-3\u2033 14 gage staples, 7/16\u2033 crown\nEnd nail\n29. Bridging or bl..."
-            },
-            {
-              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
-              "page_label": "2",
-              "score": 0.3867,
-              "text": "A \nfall restraint system is comprised of a body belt or \nbody harness, an anchorage, connectors, and other \nnecessary equipment. Other components typically \ninclude a lanyard, and may also include a lifeline \nand other devices. Note: A self-retracting lanyard \nis not appropriate for a fall restraint system unless \nthe worker cannot reach the fall hazard when the \nlanyard is fully extended.\nAlways follow the manufacturer\u2019s instructions \nor consult a qualified person to ensure proper \ninstallation of anchor points. OSHA recommends \nthat fall restraint systems have the capacity to \nwithstand 3,00..."
-            }
-          ],
-          "relevance": [
-            false,
-            false,
-            false,
-            false,
-            false,
-            false,
-            false,
-            false
-          ]
-        }
-      },
-      "evaluation_status": "complete",
-      "evaluation_completed_at": "2026-08-10T14:37:12.456535+00:00",
-      "evaluation_failed_reason": null,
-      "metrics": {
-        "turn": {
-          "turn_index": 3,
-          "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0003",
-          "user_timestamp": "2026-08-10T13:44:52.328670+00:00",
-          "assistant_timestamp": "2026-08-10T13:44:55.573120+00:00",
-          "evaluated_at": "2026-08-10T14:37:12.456535+00:00",
-          "user_message": "The main hazards were blade contact, kickback on cuts, and hand placement while toenailing the blocking. We wore eye and hearing protection.",
-          "assistant_response": "Thank you for the information on safety hazards. It's good to hear that you were using personal protective equipment like eye and hearing protection to mitigate those risks. Now, if you could just let me know about the materials used today, we can wrap up the report.",
-          "candidate_count": 8,
-          "accepted_source_count": 0,
-          "source_refs": []
-        },
-        "retrieval_precision_proxy": {
-          "metric_name": "retrieval_precision_proxy@4",
-          "scored": true,
-          "score": 0.0,
-          "k": 4,
-          "candidate_count": 8,
-          "top_k_count": 4,
-          "relevant_count_in_top_k": 0,
-          "skip_reason": null
-        },
-        "precision_at_k": 0.0,
-        "faithfulness": {
-          "metric_name": "faithfulness",
-          "scored": false,
-          "skip_reason": "no_context",
-          "claims": [],
-          "claim_count": 0,
-          "per_judge_scores": {
-            "openai/gpt-4o-mini": null,
-            "google/gemini-2.5-flash": null,
-            "anthropic/claude-3-haiku": null
-          },
-          "per_judge_supported_counts": {
-            "openai/gpt-4o-mini": 0,
-            "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
-          },
-          "per_judge_evaluable_counts": {
-            "openai/gpt-4o-mini": 0,
-            "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
-          },
-          "per_judge_error_counts": {
-            "openai/gpt-4o-mini": 0,
-            "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
-          },
-          "majority_vote_score": null,
-          "majority_supported_count": 0,
-          "majority_evaluable_claim_count": 0
-        },
-        "answer_relevance": {
-          "metric_name": "answer_relevance",
-          "scored": true,
-          "skip_reason": null,
-          "judge_votes": {
-            "openai/gpt-4o-mini": true,
-            "google/gemini-2.5-flash": true,
-            "anthropic/claude-3-haiku": true
-          },
-          "judge_errors": {
-            "openai/gpt-4o-mini": false,
-            "google/gemini-2.5-flash": false,
-            "anthropic/claude-3-haiku": false
-          },
-          "majority_relevant": true,
-          "majority_evaluable": true
-        }
-      },
-      "report_completion_after_turn": 0.8
+      "report_completion_after_turn": 1.0
     }
   ],
   "report_data": {
@@ -592,8 +879,8 @@
       },
       "materials": {
         "label": "Materials",
-        "value": null,
-        "filled": false
+        "value": "2x4 studs, blocking pieces, and layout lumber for the openings.",
+        "filled": true
       },
       "equipment_and_tools": {
         "label": "Equipment & Tools",
@@ -604,39 +891,304 @@
     "safety": {
       "hazard": {
         "label": "Hazard",
-        "value": "Blade contact, kickback on cuts, hand placement while toenailing the blocking. PPE: eye and hearing protection.",
+        "value": "Blade contact, kickback on cuts, hand placement while toenailing the blocking. Keep hands clear of the cut path.",
         "filled": true
       }
     }
   },
-  "completion": 0.8,
+  "completion": 1.0,
   "metrics_history": [
     {
       "turn": {
         "turn_index": 1,
         "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0001",
-        "user_timestamp": "2026-08-10T13:44:43.449085+00:00",
-        "assistant_timestamp": "2026-08-10T13:44:47.071189+00:00",
-        "evaluated_at": "2026-08-10T14:37:05.267695+00:00",
-        "user_message": "We were laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run.",
-        "assistant_response": "Thanks for sharing that. It sounds like you were working on some framing tasks for an interior wall. Now, who was involved in today's work? How many people were on the team, and what roles did they have?",
+        "user_timestamp": "2026-08-11T10:01:35.783666+00:00",
+        "assistant_timestamp": "2026-08-11T10:01:43.493347+00:00",
+        "evaluated_at": "2026-08-11T10:49:09.036392+00:00",
+        "user_message": "We got most of the cuts made and finished the layout for the next partition run before the end of the day.",
+        "assistant_response": "Great work getting the cuts made and the layout finished for the next partition run! Now, let's talk about who was involved. How many people were on your team today, and were there any particular roles or absences?",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_refs": []
+      },
+      "retrieval_precision_proxy": {
+        "metric_name": "retrieval_precision_proxy@4",
+        "scored": true,
+        "score": 0.0,
+        "k": 4,
+        "candidate_count": 8,
+        "top_k_count": 4,
+        "relevant_count_in_top_k": 0,
+        "skip_reason": null
+      },
+      "precision_at_k": 0.0,
+      "faithfulness": {
+        "metric_name": "faithfulness",
+        "scored": false,
+        "skip_reason": "no_context",
+        "claims": [],
+        "claim_count": 0,
+        "per_judge_scores": {
+          "openai/gpt-4.1": null,
+          "google/gemini-2.5-flash": null,
+          "anthropic/claude-sonnet-4.5": null
+        },
+        "per_judge_supported_counts": {
+          "openai/gpt-4.1": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-sonnet-4.5": 0
+        },
+        "per_judge_evaluable_counts": {
+          "openai/gpt-4.1": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-sonnet-4.5": 0
+        },
+        "per_judge_error_counts": {
+          "openai/gpt-4.1": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-sonnet-4.5": 0
+        },
+        "majority_vote_score": null,
+        "majority_supported_count": 0,
+        "majority_evaluable_claim_count": 0
+      },
+      "answer_relevance": {
+        "metric_name": "answer_relevance",
+        "scored": true,
+        "skip_reason": null,
+        "judge_votes": {
+          "openai/gpt-4.1": true,
+          "google/gemini-2.5-flash": true,
+          "anthropic/claude-sonnet-4.5": true
+        },
+        "judge_errors": {
+          "openai/gpt-4.1": false,
+          "google/gemini-2.5-flash": false,
+          "anthropic/claude-sonnet-4.5": false
+        },
+        "majority_relevant": true,
+        "majority_evaluable": true
+      }
+    },
+    {
+      "turn": {
+        "turn_index": 2,
+        "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0002",
+        "user_timestamp": "2026-08-11T10:01:44.516842+00:00",
+        "assistant_timestamp": "2026-08-11T10:01:48.139829+00:00",
+        "evaluated_at": "2026-08-11T10:49:11.804646+00:00",
+        "user_message": "Three students and one TA. We used Chalk line, speed square, tape measures, circular saw, palm nailer.",
+        "assistant_response": "Thanks for the information! So, you had a team of three students and one TA. And I see you used a variety of tools today: chalk line, speed square, tape measures, circular saw, and a palm nailer. \n\nNow, let's move on to the materials. What types of materials did you use for today's work?",
+        "candidate_count": 8,
+        "accepted_source_count": 0,
+        "source_refs": []
+      },
+      "retrieval_precision_proxy": {
+        "metric_name": "retrieval_precision_proxy@4",
+        "scored": true,
+        "score": 0.0,
+        "k": 4,
+        "candidate_count": 8,
+        "top_k_count": 4,
+        "relevant_count_in_top_k": 0,
+        "skip_reason": null
+      },
+      "precision_at_k": 0.0,
+      "faithfulness": {
+        "metric_name": "faithfulness",
+        "scored": false,
+        "skip_reason": "no_context",
+        "claims": [],
+        "claim_count": 0,
+        "per_judge_scores": {
+          "openai/gpt-4.1": null,
+          "google/gemini-2.5-flash": null,
+          "anthropic/claude-sonnet-4.5": null
+        },
+        "per_judge_supported_counts": {
+          "openai/gpt-4.1": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-sonnet-4.5": 0
+        },
+        "per_judge_evaluable_counts": {
+          "openai/gpt-4.1": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-sonnet-4.5": 0
+        },
+        "per_judge_error_counts": {
+          "openai/gpt-4.1": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-sonnet-4.5": 0
+        },
+        "majority_vote_score": null,
+        "majority_supported_count": 0,
+        "majority_evaluable_claim_count": 0
+      },
+      "answer_relevance": {
+        "metric_name": "answer_relevance",
+        "scored": true,
+        "skip_reason": null,
+        "judge_votes": {
+          "openai/gpt-4.1": true,
+          "google/gemini-2.5-flash": true,
+          "anthropic/claude-sonnet-4.5": true
+        },
+        "judge_errors": {
+          "openai/gpt-4.1": false,
+          "google/gemini-2.5-flash": false,
+          "anthropic/claude-sonnet-4.5": false
+        },
+        "majority_relevant": true,
+        "majority_evaluable": true
+      }
+    },
+    {
+      "turn": {
+        "turn_index": 3,
+        "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0003",
+        "user_timestamp": "2026-08-11T10:01:49.461232+00:00",
+        "assistant_timestamp": "2026-08-11T10:01:56.382501+00:00",
+        "evaluated_at": "2026-08-11T10:49:13.472129+00:00",
+        "user_message": "We used 2x4 studs, blocking pieces, and layout lumber for the openings. Blade contact, kickback on cuts, hand placement while toenailing the blocking. That came up while we were Laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run. Keep hands clear of the cut path.",
+        "assistant_response": "You used 2x4 studs, blocking pieces, and layout lumber for the openings. While you were laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run, you encountered some safety considerations such as blade contact, kickback on cuts, and paying attention to hand placement while toenailing the blocking. It's important to keep hands clear of the cut path to prevent accidents.\n\nWith all this information, your report is almost complete. You can download it whenever you're ready. If there's anything else you'd like to add or adjust, feel free to let me know!",
+        "candidate_count": 8,
+        "accepted_source_count": 1,
+        "source_refs": [
+          {
+            "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+            "page_label": "37",
+            "score": 0.5253
+          }
+        ]
+      },
+      "retrieval_precision_proxy": {
+        "metric_name": "retrieval_precision_proxy@4",
+        "scored": true,
+        "score": 0.25,
+        "k": 4,
+        "candidate_count": 8,
+        "top_k_count": 4,
+        "relevant_count_in_top_k": 1,
+        "skip_reason": null
+      },
+      "precision_at_k": 0.25,
+      "faithfulness": {
+        "metric_name": "faithfulness",
+        "scored": true,
+        "skip_reason": null,
+        "claims": [
+          {
+            "claim": "You used 2x4 studs, blocking pieces, and layout lumber for the openings.",
+            "judge_votes": {
+              "openai/gpt-4.1": false,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-sonnet-4.5": false
+            },
+            "judge_errors": {
+              "openai/gpt-4.1": false,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-sonnet-4.5": false
+            },
+            "majority_supported": false
+          },
+          {
+            "claim": "While you were laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run, you encountered some safety considerations such as blade contact, kickback on cuts, and paying attention to hand placement while toenailing the blocking.",
+            "judge_votes": {
+              "openai/gpt-4.1": false,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-sonnet-4.5": false
+            },
+            "judge_errors": {
+              "openai/gpt-4.1": false,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-sonnet-4.5": false
+            },
+            "majority_supported": false
+          },
+          {
+            "claim": "It's important to keep hands clear of the cut path to prevent accidents.",
+            "judge_votes": {
+              "openai/gpt-4.1": false,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-sonnet-4.5": false
+            },
+            "judge_errors": {
+              "openai/gpt-4.1": false,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-sonnet-4.5": false
+            },
+            "majority_supported": false
+          }
+        ],
+        "claim_count": 3,
+        "per_judge_scores": {
+          "openai/gpt-4.1": 0.0,
+          "google/gemini-2.5-flash": 0.0,
+          "anthropic/claude-sonnet-4.5": 0.0
+        },
+        "per_judge_supported_counts": {
+          "openai/gpt-4.1": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-sonnet-4.5": 0
+        },
+        "per_judge_evaluable_counts": {
+          "openai/gpt-4.1": 3,
+          "google/gemini-2.5-flash": 3,
+          "anthropic/claude-sonnet-4.5": 3
+        },
+        "per_judge_error_counts": {
+          "openai/gpt-4.1": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-sonnet-4.5": 0
+        },
+        "majority_vote_score": 0.0,
+        "majority_supported_count": 0,
+        "majority_evaluable_claim_count": 3
+      },
+      "answer_relevance": {
+        "metric_name": "answer_relevance",
+        "scored": true,
+        "skip_reason": null,
+        "judge_votes": {
+          "openai/gpt-4.1": true,
+          "google/gemini-2.5-flash": true,
+          "anthropic/claude-sonnet-4.5": true
+        },
+        "judge_errors": {
+          "openai/gpt-4.1": false,
+          "google/gemini-2.5-flash": false,
+          "anthropic/claude-sonnet-4.5": false
+        },
+        "majority_relevant": true,
+        "majority_evaluable": true
+      }
+    },
+    {
+      "turn": {
+        "turn_index": 4,
+        "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0004",
+        "user_timestamp": "2026-08-11T10:01:57.679456+00:00",
+        "assistant_timestamp": "2026-08-11T10:02:03.242524+00:00",
+        "evaluated_at": "2026-08-11T10:49:20.700876+00:00",
+        "user_message": "We were Laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run.",
+        "assistant_response": "Thanks for the additional detail! Laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run sounds like a crucial part of your task today. This aligns with the building code guidelines for ensuring proper support and framing for openings in walls. \n\nYour report is now complete, and you can download it at your convenience. If there's anything else you need help with, just let me know!",
         "candidate_count": 8,
         "accepted_source_count": 3,
         "source_refs": [
           {
             "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
             "page_label": "38",
-            "score": 0.501
+            "score": 0.4982
           },
           {
             "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
             "page_label": "37",
-            "score": 0.534
+            "score": 0.53
           },
           {
             "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
             "page_label": "5",
-            "score": 0.4966
+            "score": 0.4934
           }
         ]
       },
@@ -653,191 +1205,76 @@
       "precision_at_k": 0.75,
       "faithfulness": {
         "metric_name": "faithfulness",
-        "scored": false,
-        "skip_reason": "no_claims",
-        "claims": [],
-        "claim_count": 0,
+        "scored": true,
+        "skip_reason": null,
+        "claims": [
+          {
+            "claim": "Laying out rough openings and marking king studs, jack studs, and blocking for an interior wall run is a crucial part of ensuring proper support and framing for openings in walls.",
+            "judge_votes": {
+              "openai/gpt-4.1": true,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-sonnet-4.5": true
+            },
+            "judge_errors": {
+              "openai/gpt-4.1": false,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-sonnet-4.5": false
+            },
+            "majority_supported": true
+          },
+          {
+            "claim": "This aligns with the building code guidelines for ensuring proper support and framing for openings in walls.",
+            "judge_votes": {
+              "openai/gpt-4.1": true,
+              "google/gemini-2.5-flash": true,
+              "anthropic/claude-sonnet-4.5": true
+            },
+            "judge_errors": {
+              "openai/gpt-4.1": false,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-sonnet-4.5": false
+            },
+            "majority_supported": true
+          }
+        ],
+        "claim_count": 2,
         "per_judge_scores": {
-          "openai/gpt-4o-mini": null,
-          "google/gemini-2.5-flash": null,
-          "anthropic/claude-3-haiku": null
+          "openai/gpt-4.1": 1.0,
+          "google/gemini-2.5-flash": 0.5,
+          "anthropic/claude-sonnet-4.5": 1.0
         },
         "per_judge_supported_counts": {
-          "openai/gpt-4o-mini": 0,
-          "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
+          "openai/gpt-4.1": 2,
+          "google/gemini-2.5-flash": 1,
+          "anthropic/claude-sonnet-4.5": 2
         },
         "per_judge_evaluable_counts": {
-          "openai/gpt-4o-mini": 0,
-          "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
+          "openai/gpt-4.1": 2,
+          "google/gemini-2.5-flash": 2,
+          "anthropic/claude-sonnet-4.5": 2
         },
         "per_judge_error_counts": {
-          "openai/gpt-4o-mini": 0,
+          "openai/gpt-4.1": 0,
           "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
+          "anthropic/claude-sonnet-4.5": 0
         },
-        "majority_vote_score": null,
-        "majority_supported_count": 0,
-        "majority_evaluable_claim_count": 0
+        "majority_vote_score": 1.0,
+        "majority_supported_count": 2,
+        "majority_evaluable_claim_count": 2
       },
       "answer_relevance": {
         "metric_name": "answer_relevance",
         "scored": true,
         "skip_reason": null,
         "judge_votes": {
-          "openai/gpt-4o-mini": true,
+          "openai/gpt-4.1": true,
           "google/gemini-2.5-flash": true,
-          "anthropic/claude-3-haiku": true
+          "anthropic/claude-sonnet-4.5": true
         },
         "judge_errors": {
-          "openai/gpt-4o-mini": false,
+          "openai/gpt-4.1": false,
           "google/gemini-2.5-flash": false,
-          "anthropic/claude-3-haiku": false
-        },
-        "majority_relevant": true,
-        "majority_evaluable": true
-      }
-    },
-    {
-      "turn": {
-        "turn_index": 2,
-        "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0002",
-        "user_timestamp": "2026-08-10T13:44:48.216204+00:00",
-        "assistant_timestamp": "2026-08-10T13:44:50.983278+00:00",
-        "evaluated_at": "2026-08-10T14:37:09.349071+00:00",
-        "user_message": "There were three students and one TA using a chalk line, speed square, tape measures, circular saw, and palm nailer.",
-        "assistant_response": "Great, so we had a team of three students guided by a TA. It sounds like you had a good mix of tools there. Now, let's talk about materials. What materials did you use for today's task?",
-        "candidate_count": 8,
-        "accepted_source_count": 0,
-        "source_refs": []
-      },
-      "retrieval_precision_proxy": {
-        "metric_name": "retrieval_precision_proxy@4",
-        "scored": true,
-        "score": 0.0,
-        "k": 4,
-        "candidate_count": 8,
-        "top_k_count": 4,
-        "relevant_count_in_top_k": 0,
-        "skip_reason": null
-      },
-      "precision_at_k": 0.0,
-      "faithfulness": {
-        "metric_name": "faithfulness",
-        "scored": false,
-        "skip_reason": "no_context",
-        "claims": [],
-        "claim_count": 0,
-        "per_judge_scores": {
-          "openai/gpt-4o-mini": null,
-          "google/gemini-2.5-flash": null,
-          "anthropic/claude-3-haiku": null
-        },
-        "per_judge_supported_counts": {
-          "openai/gpt-4o-mini": 0,
-          "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
-        },
-        "per_judge_evaluable_counts": {
-          "openai/gpt-4o-mini": 0,
-          "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
-        },
-        "per_judge_error_counts": {
-          "openai/gpt-4o-mini": 0,
-          "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
-        },
-        "majority_vote_score": null,
-        "majority_supported_count": 0,
-        "majority_evaluable_claim_count": 0
-      },
-      "answer_relevance": {
-        "metric_name": "answer_relevance",
-        "scored": true,
-        "skip_reason": null,
-        "judge_votes": {
-          "openai/gpt-4o-mini": true,
-          "google/gemini-2.5-flash": true,
-          "anthropic/claude-3-haiku": true
-        },
-        "judge_errors": {
-          "openai/gpt-4o-mini": false,
-          "google/gemini-2.5-flash": false,
-          "anthropic/claude-3-haiku": false
-        },
-        "majority_relevant": true,
-        "majority_evaluable": true
-      }
-    },
-    {
-      "turn": {
-        "turn_index": 3,
-        "round_id": "4337da8f-05f6-4881-9004-a7146ebd0885-turn-0003",
-        "user_timestamp": "2026-08-10T13:44:52.328670+00:00",
-        "assistant_timestamp": "2026-08-10T13:44:55.573120+00:00",
-        "evaluated_at": "2026-08-10T14:37:12.456535+00:00",
-        "user_message": "The main hazards were blade contact, kickback on cuts, and hand placement while toenailing the blocking. We wore eye and hearing protection.",
-        "assistant_response": "Thank you for the information on safety hazards. It's good to hear that you were using personal protective equipment like eye and hearing protection to mitigate those risks. Now, if you could just let me know about the materials used today, we can wrap up the report.",
-        "candidate_count": 8,
-        "accepted_source_count": 0,
-        "source_refs": []
-      },
-      "retrieval_precision_proxy": {
-        "metric_name": "retrieval_precision_proxy@4",
-        "scored": true,
-        "score": 0.0,
-        "k": 4,
-        "candidate_count": 8,
-        "top_k_count": 4,
-        "relevant_count_in_top_k": 0,
-        "skip_reason": null
-      },
-      "precision_at_k": 0.0,
-      "faithfulness": {
-        "metric_name": "faithfulness",
-        "scored": false,
-        "skip_reason": "no_context",
-        "claims": [],
-        "claim_count": 0,
-        "per_judge_scores": {
-          "openai/gpt-4o-mini": null,
-          "google/gemini-2.5-flash": null,
-          "anthropic/claude-3-haiku": null
-        },
-        "per_judge_supported_counts": {
-          "openai/gpt-4o-mini": 0,
-          "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
-        },
-        "per_judge_evaluable_counts": {
-          "openai/gpt-4o-mini": 0,
-          "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
-        },
-        "per_judge_error_counts": {
-          "openai/gpt-4o-mini": 0,
-          "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
-        },
-        "majority_vote_score": null,
-        "majority_supported_count": 0,
-        "majority_evaluable_claim_count": 0
-      },
-      "answer_relevance": {
-        "metric_name": "answer_relevance",
-        "scored": true,
-        "skip_reason": null,
-        "judge_votes": {
-          "openai/gpt-4o-mini": true,
-          "google/gemini-2.5-flash": true,
-          "anthropic/claude-3-haiku": true
-        },
-        "judge_errors": {
-          "openai/gpt-4o-mini": false,
-          "google/gemini-2.5-flash": false,
-          "anthropic/claude-3-haiku": false
+          "anthropic/claude-sonnet-4.5": false
         },
         "majority_relevant": true,
         "majority_evaluable": true
@@ -847,107 +1284,77 @@
   "aggregated_metrics": {
     "retrieval_precision_proxy": {
       "mean": 0.25,
-      "n_scored": 3,
+      "n_scored": 4,
       "n_skipped": 0,
       "k": 4,
       "skip_reason_counts": {}
     },
     "faithfulness": {
       "judge_models": [
-        "openai/gpt-4o-mini",
+        "openai/gpt-4.1",
         "google/gemini-2.5-flash",
-        "anthropic/claude-3-haiku"
+        "anthropic/claude-sonnet-4.5"
       ],
       "per_judge_mean": {
-        "openai/gpt-4o-mini": null,
-        "google/gemini-2.5-flash": null,
-        "anthropic/claude-3-haiku": null
+        "openai/gpt-4.1": 0.5,
+        "google/gemini-2.5-flash": 0.25,
+        "anthropic/claude-sonnet-4.5": 0.5
       },
-      "majority_vote_mean": null,
+      "majority_vote_mean": 0.5,
       "pairwise_raw_agreement": {
-        "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
-        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
-        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+        "openai/gpt-4.1 vs google/gemini-2.5-flash": 0.8,
+        "openai/gpt-4.1 vs anthropic/claude-sonnet-4.5": 1.0,
+        "google/gemini-2.5-flash vs anthropic/claude-sonnet-4.5": 0.8
       },
       "pairwise_compared_count": {
-        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
-        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
-        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+        "openai/gpt-4.1 vs google/gemini-2.5-flash": 5,
+        "openai/gpt-4.1 vs anthropic/claude-sonnet-4.5": 5,
+        "google/gemini-2.5-flash vs anthropic/claude-sonnet-4.5": 5
       },
-      "n_turns": 0,
-      "n_skipped": 3,
-      "n_claims": 0,
+      "n_turns": 2,
+      "n_skipped": 2,
+      "n_claims": 5,
       "per_judge_error_count": {
-        "openai/gpt-4o-mini": 0,
+        "openai/gpt-4.1": 0,
         "google/gemini-2.5-flash": 0,
-        "anthropic/claude-3-haiku": 0
+        "anthropic/claude-sonnet-4.5": 0
       },
       "skip_reason_counts": {
-        "no_claims": 1,
         "no_context": 2
       }
     },
     "answer_relevance": {
       "judge_models": [
-        "openai/gpt-4o-mini",
+        "openai/gpt-4.1",
         "google/gemini-2.5-flash",
-        "anthropic/claude-3-haiku"
+        "anthropic/claude-sonnet-4.5"
       ],
       "per_judge_mean": {
-        "openai/gpt-4o-mini": 1.0,
+        "openai/gpt-4.1": 1.0,
         "google/gemini-2.5-flash": 1.0,
-        "anthropic/claude-3-haiku": 1.0
+        "anthropic/claude-sonnet-4.5": 1.0
       },
       "majority_vote_mean": 1.0,
       "pairwise_raw_agreement": {
-        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
-        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
-        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+        "openai/gpt-4.1 vs google/gemini-2.5-flash": 1.0,
+        "openai/gpt-4.1 vs anthropic/claude-sonnet-4.5": 1.0,
+        "google/gemini-2.5-flash vs anthropic/claude-sonnet-4.5": 1.0
       },
       "pairwise_compared_count": {
-        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
-        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
-        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+        "openai/gpt-4.1 vs google/gemini-2.5-flash": 4,
+        "openai/gpt-4.1 vs anthropic/claude-sonnet-4.5": 4,
+        "google/gemini-2.5-flash vs anthropic/claude-sonnet-4.5": 4
       },
-      "n_turns": 3,
+      "n_turns": 4,
       "per_judge_error_count": {
-        "openai/gpt-4o-mini": 0,
+        "openai/gpt-4.1": 0,
         "google/gemini-2.5-flash": 0,
-        "anthropic/claude-3-haiku": 0
+        "anthropic/claude-sonnet-4.5": 0
       }
     },
     "precision_at_k": {
       "mean": 0.25,
-      "n": 3
-    }
-  },
-  "evaluation": {
-    "status": "complete",
-    "evaluated_at": "2026-08-10T14:37:13.353903+00:00",
-    "config": {
-      "claim_decomposition_model": "openai/gpt-4o-mini",
-      "judge_models": [
-        "openai/gpt-4o-mini",
-        "google/gemini-2.5-flash",
-        "anthropic/claude-3-haiku"
-      ],
-      "openrouter_base_url": "https://openrouter.ai/api/v1",
-      "retrieval_precision_k": 4,
-      "executor_max_workers": 4,
-      "verify_pool_max_workers": 6
-    },
-    "turns_evaluated": 3,
-    "artifact_source": "reconstructed_retrieval"
-  },
-  "collection_config": {
-    "chat_model": "gpt-4o",
-    "retrieval": {
-      "retrieval_relevance_judge_model": "gpt-4o",
-      "embedding_model": "text-embedding-3-large",
-      "dense_top_k": 10,
-      "bm25_top_k": 10,
-      "candidate_pool": 8,
-      "max_results": 4
+      "n": 4
     }
   }
 }

@@ -1,17 +1,19 @@
 """Multi-judge evaluation metrics for RAG chat turns.
 
-Independent from the chat pipeline: computes a retrieval precision proxy
-(reusing the runtime retrieval relevance gate), Faithfulness, and Answer
-Relevance. Faithfulness and Answer Relevance are judged by three separate
-model families routed through OpenRouter, then aggregated with majority-vote
-and pairwise agreement statistics.
+Independent from the chat pipeline: computes a retrieval precision proxy from
+the saved retrieval snapshot, Faithfulness, and Answer Relevance. Faithfulness
+and Answer Relevance are judged by three separate model families routed through
+OpenRouter, then aggregated with majority-vote and pairwise agreement
+statistics.
 
-Runs fire-and-forget in a background thread pool so it never adds latency
-to the live chat response.
+The normal workflow is offline: eval_exports.py reads saved session exports and
+rewrites them with per-turn metrics plus aggregate summaries. The async helper
+is retained for compatibility, but live chat collection does not call judges.
 """
 
 import json
 import os
+import re
 from concurrent.futures import Future, ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from itertools import combinations
@@ -19,16 +21,19 @@ from itertools import combinations
 from openai import OpenAI
 from tenacity import retry, stop_after_attempt, wait_random_exponential
 
-# Claim decomposition is a separate knob from the panel itself. Keep it cheap
-# and stable because every Faithfulness turn depends on it.
-CLAIM_DECOMPOSITION_MODEL = "openai/gpt-4o-mini"
+# Claim decomposition is a separate knob from the panel itself. Keep it
+# materially cheaper than the panel while still strong on structured
+# instruction following because every Faithfulness turn depends on it.
+CLAIM_DECOMPOSITION_MODEL = "openai/gpt-4.1-mini"
 
 # Judge panel. Use exact OpenRouter slugs so exports and figures match the
-# actual routed models. Order matters for stable reporting and pair labels.
+# actual routed models. Keep these on chat-completions-compatible models that
+# return explicit text answers for the binary judge path. Order matters for
+# stable reporting and pair labels.
 JUDGE_MODELS = [
-    "openai/gpt-4o-mini",
+    "openai/gpt-4.1",
     "google/gemini-2.5-flash",
-    "anthropic/claude-3-haiku",
+    "anthropic/claude-sonnet-4.5",
 ]
 
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
@@ -87,6 +92,30 @@ def _get_executor() -> ThreadPoolExecutor:
             thread_name_prefix="evaluator",
         )
     return _executor
+
+
+def _message_text(content) -> str:
+    """Normalize OpenRouter/OpenAI message content into plain text."""
+    if content is None:
+        return ""
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        parts = []
+        for item in content:
+            if isinstance(item, str):
+                parts.append(item)
+                continue
+            if isinstance(item, dict):
+                text = item.get("text")
+                if isinstance(text, str):
+                    parts.append(text)
+                continue
+            text = getattr(item, "text", None)
+            if isinstance(text, str):
+                parts.append(text)
+        return "".join(parts)
+    return str(content)
 
 
 def get_evaluation_config() -> dict:
@@ -231,7 +260,7 @@ def _decompose_claims(response: str) -> list[str]:
         temperature=0,
         max_tokens=500,
     )
-    text = (result.choices[0].message.content or "").strip()
+    text = _message_text(result.choices[0].message.content).strip()
     if "```" in text:
         text = text.split("```")[1]
         if text.startswith("json"):
@@ -269,10 +298,17 @@ def _judge_yes_no(model: str, prompt: str) -> bool:
         model=model,
         messages=[{"role": "user", "content": prompt}],
         temperature=0,
-        max_tokens=3,
+        max_tokens=4,
     )
-    answer = (result.choices[0].message.content or "").strip().lower()
-    return answer.startswith("yes")
+    answer = _message_text(result.choices[0].message.content).strip().lower()
+    match = re.match(r"^(yes|no)\b", answer)
+    if not match:
+        finish_reason = getattr(result.choices[0], "finish_reason", None)
+        raise ValueError(
+            f"{model} returned no parseable yes/no answer "
+            f"(finish_reason={finish_reason!r}, content={answer!r})"
+        )
+    return match.group(1) == "yes"
 
 
 def compute_faithfulness(response: str, context: str) -> dict:

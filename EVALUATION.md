@@ -22,9 +22,13 @@ The three evaluation metrics are:
 
 Faithfulness and Answer Relevance use a three-model judge panel through OpenRouter:
 
-- `openai/gpt-4o-mini`
+- `openai/gpt-4.1`
 - `google/gemini-2.5-flash`
-- `anthropic/claude-3-haiku`
+- `anthropic/claude-sonnet-4.5`
+
+Faithfulness first decomposes assistant responses into factual claims with
+`openai/gpt-4.1-mini`, then asks each judge whether each claim is supported by
+the saved retrieved context.
 
 ## Quick start
 
@@ -101,9 +105,18 @@ This script rewrites the export files in place and fills:
 - per-turn `evaluation_status`
 - per-turn `metrics`
 - top-level `evaluation` metadata
+- top-level `evaluation_config` for compatibility with older readers
 
 Current exports use schema `4.0`, so evaluation runs directly from the saved
 retrieval snapshot in each session export.
+
+Useful options:
+
+| Option | Use |
+|---|---|
+| `--pending-only` | Only evaluate exports whose top-level `evaluation.status` is not `complete`. |
+| `--file <name>.json` | Evaluate one named export. Pass this option multiple times for a small batch. |
+| `--no-rebuild-missing-snapshots` | Fail on older exports that do not contain saved retrieval snapshots instead of reconstructing retrieval. |
 
 ## Step 4 - Build the summary and figures
 
@@ -114,6 +127,16 @@ cd backend
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 python summarize.py
 ```
+
+By default the summary is written to `res/study_summary.json`, and figures are
+written to `res/figures/`:
+
+| Figure | Content |
+|---|---|
+| `pooled_metric_means.png` | Pooled mean scores for Retrieval Precision Proxy, Faithfulness majority vote, and Answer Relevance majority vote. |
+| `faithfulness_panel_means.png` | Faithfulness mean score for each judge model plus the majority-vote mean. |
+| `answer_relevance_panel_means.png` | Answer Relevance mean score for each judge model plus the majority-vote mean. |
+| `metric_trends_by_turn.png` | Mean metric scores by conversation turn index across sessions, with hollow `N/A` markers where Faithfulness was skipped rather than scored as zero. |
 
 This script:
 
@@ -130,8 +153,38 @@ If the exports have not been evaluated yet, the summarizer will still run, but i
 | Metric | What it measures | Notes |
 |---|---|---|
 | Retrieval Precision Proxy@4 | How many top retrieved candidates are judged relevant near the top of the ranking | Proxy metric, not a human-labeled benchmark |
-| Faithfulness | Whether factual claims in the assistant response are supported by the saved retrieved context | Three-judge panel, reported with per-judge and majority-vote summaries |
-| Answer Relevance | Whether the assistant responds appropriately to the user's immediately preceding message | Three-judge panel, reported with per-judge and majority-vote summaries |
+| Faithfulness | Whether factual claims in the assistant response are supported by the saved retrieved context | Claim-level three-judge panel, reported with per-judge means, majority-vote mean, pairwise raw agreement, skipped-turn counts, and judge error counts |
+| Answer Relevance | Whether the assistant responds appropriately to the user's immediately preceding message | Turn-level three-judge panel, reported with per-judge means, majority-vote mean, pairwise raw agreement, and judge error counts |
+
+## How majority vote is calculated
+
+Faithfulness and Answer Relevance use the same strict-majority rule over the
+available non-error judge votes. A majority result is `true` only when more than
+half of the usable judge votes are `yes`; otherwise it is `false`. If all judges
+fail for an item, the majority result is `null` and that item is excluded from
+majority-mean calculations.
+
+For Answer Relevance, each user-assistant turn gets one panel vote. For example,
+`yes, yes, no` becomes majority relevant, while `yes, no, no` becomes not
+majority relevant. The reported majority-vote mean is the fraction of evaluated
+turns whose majority result is relevant.
+
+For Faithfulness, majority vote is applied separately to each extracted factual
+claim. The turn-level majority Faithfulness score is:
+
+```text
+claims supported by majority / claims with a usable majority vote
+```
+
+For example, if a response has 4 factual claims and the panel majority says 3
+are supported by the retrieved context, that turn's majority Faithfulness score
+is `0.75`.
+
+In `metric_trends_by_turn.png`, `turn_index` means the user-assistant round
+number inside a saved session. `1` is the first user message and assistant
+response after the initial greeting. Faithfulness may start later than
+retrieval or answer relevance because it is skipped when a turn has no saved
+retrieved context or no factual claims to verify.
 
 ## Known limitations
 
@@ -139,7 +192,7 @@ If the exports have not been evaluated yet, the summarizer will still run, but i
 - Faithfulness depends on model-based claim extraction and claim verification.
 - Answer Relevance is tuned to this specific conversational assistant, not a fully general RAG setting.
 - Majority vote improves robustness, but it is still model-based judgment, not human annotation.
-- OpenRouter model availability and slugs should be rechecked before formal study runs.
+- OpenRouter model availability, pricing, and slugs should be rechecked before formal study runs.
 - Prompt validation is still limited.
 - Study-scale cost has not been fully measured yet.
 

@@ -49,3 +49,9 @@ backend/rag_storage/
 # ===== Participant session exports =====
 # Conversation transcripts + evaluation metrics, written on report download.
 # backend/session_exports/
+
+# ===== Synthetic regeneration artifacts =====
+backend/local_*.py
+tests/test_local_*.py
+backend/regeneration_logs/
+backend/session_exports_regen_*/

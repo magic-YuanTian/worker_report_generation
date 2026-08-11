@@ -25,7 +25,7 @@ rag:
 
 judge:
   openai:
-    model: openai/gpt-4o-mini
+    model: openai/gpt-4.1
     file: backend/evaluator.py
     constant: JUDGE_MODELS[0]
     provider: OpenRouter
@@ -38,11 +38,10 @@ judge:
     constant: JUDGE_MODELS[1]
     provider: OpenRouter
     auth: OPENROUTER_API_KEY
-    purpose: Google-family judge for Faithfulness and Answer Relevance, routed through OpenRouter for cross-model comparison.
-    note: Slug not verified against a live OpenRouter catalog - recheck before running the study.
+    purpose: Google-family judge for Faithfulness and Answer Relevance, routed through OpenRouter for cross-model comparison. Uses a flash-tier model because it returns explicit text answers cleanly on the binary chat-completions judge path.
 
   anthropic:
-    model: anthropic/claude-3-haiku
+    model: anthropic/claude-sonnet-4.5
     file: backend/evaluator.py
     constant: JUDGE_MODELS[2]
     provider: OpenRouter
@@ -50,7 +49,7 @@ judge:
     purpose: Anthropic-family judge for Faithfulness and Answer Relevance, routed through OpenRouter as the third panel member.
 
   claim_decomposition:
-    model: openai/gpt-4o-mini
+    model: openai/gpt-4.1-mini
     file: backend/evaluator.py
     constant: CLAIM_DECOMPOSITION_MODEL
     provider: OpenRouter
