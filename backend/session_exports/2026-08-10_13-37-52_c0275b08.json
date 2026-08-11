@@ -1,13 +1,42 @@
 {
   "session_id": "c0275b08-098f-4fbd-b099-9369306581ff",
-  "saved_at": "2026-08-10T11:37:52.220431+00:00",
+  "saved_at": "2026-08-11T09:55:28.477537+00:00",
   "metrics_schema_version": "4.0",
+  "collection_config": {
+    "chat_model": "gpt-4o",
+    "retrieval": {
+      "retrieval_relevance_judge_model": "gpt-4o",
+      "embedding_model": "text-embedding-3-large",
+      "dense_top_k": 10,
+      "bm25_top_k": 10,
+      "candidate_pool": 8,
+      "max_results": 4
+    }
+  },
+  "evaluation": {
+    "status": "complete",
+    "evaluated_at": "2026-08-11T10:46:06.084436+00:00",
+    "config": {
+      "claim_decomposition_model": "openai/gpt-4.1-mini",
+      "judge_models": [
+        "openai/gpt-4.1",
+        "google/gemini-2.5-flash",
+        "anthropic/claude-sonnet-4.5"
+      ],
+      "openrouter_base_url": "https://openrouter.ai/api/v1",
+      "retrieval_precision_k": 4,
+      "executor_max_workers": 4,
+      "verify_pool_max_workers": 6
+    },
+    "turns_evaluated": 4,
+    "artifact_source": "saved_turn_snapshot"
+  },
   "evaluation_config": {
-    "claim_decomposition_model": "openai/gpt-4o-mini",
+    "claim_decomposition_model": "openai/gpt-4.1-mini",
     "judge_models": [
-      "openai/gpt-4o-mini",
+      "openai/gpt-4.1",
       "google/gemini-2.5-flash",
-      "anthropic/claude-3-haiku"
+      "anthropic/claude-sonnet-4.5"
     ],
     "openrouter_base_url": "https://openrouter.ai/api/v1",
     "retrieval_precision_k": 4,
@@ -16,147 +45,104 @@
   },
   "conversation_history": [
     {
-      "message_id": "665bc810-c494-4092-9d9f-735d78112b7e",
+      "message_id": "9dab7598-4993-426a-9bdb-1a3edb104d1c",
       "role": "assistant",
       "content": "Hi there! I'm your Daily Report Assistant. I'll help you put together today's daily activity report through a quick conversation.\n\nLet's get started. What task or activity did you work on today?",
-      "timestamp": "2026-08-10T11:37:39.325316+00:00",
+      "timestamp": "2026-08-11T09:55:07.474224+00:00",
       "turn_index": 0,
       "phase": "initial_prompt"
     },
     {
-      "message_id": "e98c2852-7728-4f92-b150-69ed4e76290e",
+      "message_id": "c5a3d158-ea91-461b-9d81-96ae68c04373",
       "role": "user",
-      "content": "Framing work.",
-      "timestamp": "2026-08-10T11:37:39.325316+00:00",
+      "content": "We had the lift underway after the plan review and had the sections stood and temporarily braced by the end of the session.",
+      "timestamp": "2026-08-11T09:55:07.474224+00:00",
       "turn_index": 1,
       "phase": "user_message"
     },
     {
-      "message_id": "c37aa86f-1ea3-4ed1-921e-c073c5ffc8e3",
+      "message_id": "e759ba78-1253-4fa0-8fdc-a5408caee216",
       "role": "assistant",
-      "content": "Great, you were working on framing. Was this task started today or was it completed? Could you also tell me a bit more about the specific activities involved in the framing work today?",
-      "timestamp": "2026-08-10T11:37:41.377012+00:00",
+      "content": "That sounds like a productive day with the lift and bracing work. Let's talk about the workforce next. How many people were involved in today's activities, and what were their roles?",
+      "timestamp": "2026-08-11T09:55:09.488621+00:00",
       "turn_index": 1,
+      "phase": "assistant_response",
+      "source_count": 0
+    },
+    {
+      "message_id": "f7ca4007-ca06-4560-a4d9-c574d301e7d7",
+      "role": "user",
+      "content": "There were Three people. We used Braces, clamps, hammers, levels, and impact drivers.",
+      "timestamp": "2026-08-11T09:55:10.597084+00:00",
+      "turn_index": 2,
+      "phase": "user_message"
+    },
+    {
+      "message_id": "6431fda4-6a7d-4ca8-8b0c-7dcd423ebc6e",
+      "role": "assistant",
+      "content": "Great, so a team of three was at work today. You mentioned using braces, clamps, hammers, levels, and impact drivers. I'll note that under equipment and tools. Could you also tell me about the materials you used?",
+      "timestamp": "2026-08-11T09:55:12.597302+00:00",
+      "turn_index": 2,
+      "phase": "assistant_response",
+      "source_count": 0
+    },
+    {
+      "message_id": "940327c5-d8b6-4484-85f8-61d163be68bb",
+      "role": "user",
+      "content": "We were working with preframed wall sections, bottom plates, bracing lumber, and fasteners. Pinch points, wall instability during lifting, possible falls while positioning the wall. That came up while we were Framing work. Brief lift plan before raising the wall.",
+      "timestamp": "2026-08-11T09:55:13.906887+00:00",
+      "turn_index": 3,
+      "phase": "user_message"
+    },
+    {
+      "message_id": "8f30aca2-eebb-4a3c-a9fb-116d192bebe4",
+      "role": "assistant",
+      "content": "Thanks for providing that information. I've noted the preframed wall sections, bottom plates, bracing lumber, and fasteners under materials. It's also important to address the safety concerns you mentioned. Pinch points, wall instability during lifting, and possible falls are significant hazards. It's good to hear you had a brief lift plan to tackle these issues. Remember, establishing a limited access zone and using proper fall protection can help enhance safety during such tasks.\n\nI've got all your details down. You can now download your completed report. If you need any more help, just let me know!",
+      "timestamp": "2026-08-11T09:55:20.091161+00:00",
+      "turn_index": 3,
       "phase": "assistant_response",
       "source_count": 4
     },
     {
-      "message_id": "c8ea9774-a39d-4ec1-aa6b-6e5c1f714146",
+      "message_id": "7ad5b851-3109-451e-9f40-c1dac286e883",
       "role": "user",
-      "content": "Three people.",
-      "timestamp": "2026-08-10T11:37:42.161961+00:00",
-      "turn_index": 2,
+      "content": "Pinch points, wall instability during lifting, possible falls while positioning the wall. That came up while we were Framing work. Brief lift plan before raising the wall.",
+      "timestamp": "2026-08-11T09:55:21.361385+00:00",
+      "turn_index": 4,
       "phase": "user_message"
     },
     {
-      "message_id": "82b284e9-6ae1-40e7-9916-4ad51768d815",
+      "message_id": "4babc9d1-68de-4872-9bfd-89ca905e68bf",
       "role": "assistant",
-      "content": "Got it, you had a team of three working on the framing. Were there any specific roles or positions among the three of you, like a supervisor or a lead worker? And were there any absences today?",
-      "timestamp": "2026-08-10T11:37:45.811368+00:00",
-      "turn_index": 2,
+      "content": "Got it! I've included the pinch points, wall instability during lifting, and possible falls as noted hazards. It's excellent that you had a brief lift plan in place to address these concerns. Remember, discussing the safest methods and having a competent person supervise can help manage these risks effectively.\n\nYour report is ready for download! Let me know if there's anything else you need.",
+      "timestamp": "2026-08-11T09:55:27.261879+00:00",
+      "turn_index": 4,
       "phase": "assistant_response",
-      "source_count": 0
-    },
-    {
-      "message_id": "42c3856e-3440-4579-850e-70509d20cab2",
-      "role": "user",
-      "content": "Used some tools. No incident.",
-      "timestamp": "2026-08-10T11:37:47.462331+00:00",
-      "turn_index": 3,
-      "phase": "user_message"
-    },
-    {
-      "message_id": "037a1fd5-9339-425e-a2fa-793fcdaec511",
-      "role": "assistant",
-      "content": "Thanks for letting me know. Since you mentioned tools, could you describe what kinds of equipment and tools were used during your framing work today? And it's good to hear there were no incidents. Did you happen to notice any safety hazards or risks, even if they didn't lead to an incident?",
-      "timestamp": "2026-08-10T11:37:49.891113+00:00",
-      "turn_index": 3,
-      "phase": "assistant_response",
-      "source_count": 0
+      "source_count": 4
     }
   ],
   "turn_records": [
     {
       "round_id": "c0275b08-098f-4fbd-b099-9369306581ff-turn-0001",
       "turn_index": 1,
-      "user_message": "Framing work.",
-      "user_timestamp": "2026-08-10T11:37:39.325316+00:00",
-      "assistant_response": "Great, you were working on framing. Was this task started today or was it completed? Could you also tell me a bit more about the specific activities involved in the framing work today?",
-      "assistant_timestamp": "2026-08-10T11:37:41.377012+00:00",
+      "user_message": "We had the lift underway after the plan review and had the sections stood and temporarily braced by the end of the session.",
+      "user_timestamp": "2026-08-11T09:55:07.474224+00:00",
+      "assistant_response": "That sounds like a productive day with the lift and bracing work. Let's talk about the workforce next. How many people were involved in today's activities, and what were their roles?",
+      "assistant_timestamp": "2026-08-11T09:55:09.488621+00:00",
       "retrieval": {
-        "query": "Framing work.",
+        "query": "We had the lift underway after the plan review and had the sections stood and temporarily braced by the end of the session.",
         "candidate_count": 8,
-        "accepted_source_count": 4,
-        "source_file_names": [
-          "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
-          "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
-          "5-2018IBC-International Building Code_Chapter23-33.pdf",
-          "3-Hazards of Manually Lifting Balloon Framed Walls.pdf"
-        ],
-        "sources": [
-          {
-            "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
-            "page_label": "1",
-            "score": 0.3975,
-            "text": "FactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine..."
-          },
-          {
-            "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
-            "page_label": "2",
-            "score": 0.3873,
-            "text": "Guardrails\nGuardrail systems can protect workers framing \nwalls around the perimeter and at floor openings. \nFramed exterior walls typically include openings for \nwindows and doors.  Workers can apply sheathing \nto the frame, and install guardrails across window \nand door openings, before raising wall sections so \nthat the openings are protected when the walls are \nset into place.\nOSHA generally requires the top rail height to be \n42 inches + 3 inches above the walking/working \nlevel. A midrail is also required between the top \nrail and the walking/working surface when there \nis no wall or par..."
-          },
-          {
-            "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-            "page_label": "5",
-            "score": 0.4429,
-            "text": "Computations to deter-\nmine the required sizes of members shall be based on the net\ndimensions (actual sizes) and not nominal sizes.\n2304.3 Wall framing.  The framing of exterior and interior\nwalls shall be in accordance with  the provisions specified in\nSection 2308 unless a specific design is furnished.\n2304.3.1 Bottom plates. Studs shall have full bearing on a\n2-inch-thick (actual 1\n1/2-inch, 38 mm) or larger plate or sill\nhaving a width not less than equal to the width of the\nstuds.\n2304.3.2 Framing over openings. Headers, double joists,\ntrusses or other approved assemblies that are of ade..."
-          },
-          {
-            "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
-            "page_label": "2",
-            "score": 0.3956,
-            "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
-          }
-        ],
+        "accepted_source_count": 0,
+        "source_file_names": [],
+        "sources": [],
         "evaluation_snapshot": {
-          "context": "FactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine...\n\n---\n\nGuardrails\nGuardrail systems can protect workers framing \nwalls around the perimeter and at floor openings. \nFramed exterior walls typically include openings for \nwindows and doors.  Workers can apply sheathing \nto the frame, and install guardrails across window \nand door openings, before raising wall sections so \nthat the openings are protected when the walls are \nset into place.\nOSHA generally requires the top rail height to be \n42 inches + 3 inches above the walking/working \nlevel. A midrail is also required between the top \nrail and the walking/working surface when there \nis no wall or par...\n\n---\n\nComputations to deter-\nmine the required sizes of members shall be based on the net\ndimensions (actual sizes) and not nominal sizes.\n2304.3 Wall framing.  The framing of exterior and interior\nwalls shall be in accordance with  the provisions specified in\nSection 2308 unless a specific design is furnished.\n2304.3.1 Bottom plates. Studs shall have full bearing on a\n2-inch-thick (actual 1\n1/2-inch, 38 mm) or larger plate or sill\nhaving a width not less than equal to the width of the\nstuds.\n2304.3.2 Framing over openings. Headers, double joists,\ntrusses or other approved assemblies that are of ade...\n\n---\n\n2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp...",
+          "context": "",
           "candidates": [
-            {
-              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
-              "page_label": "1",
-              "score": 0.3975,
-              "text": "FactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine..."
-            },
-            {
-              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
-              "page_label": "2",
-              "score": 0.3873,
-              "text": "Guardrails\nGuardrail systems can protect workers framing \nwalls around the perimeter and at floor openings. \nFramed exterior walls typically include openings for \nwindows and doors.  Workers can apply sheathing \nto the frame, and install guardrails across window \nand door openings, before raising wall sections so \nthat the openings are protected when the walls are \nset into place.\nOSHA generally requires the top rail height to be \n42 inches + 3 inches above the walking/working \nlevel. A midrail is also required between the top \nrail and the walking/working surface when there \nis no wall or par..."
-            },
-            {
-              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "5",
-              "score": 0.4429,
-              "text": "Computations to deter-\nmine the required sizes of members shall be based on the net\ndimensions (actual sizes) and not nominal sizes.\n2304.3 Wall framing.  The framing of exterior and interior\nwalls shall be in accordance with  the provisions specified in\nSection 2308 unless a specific design is furnished.\n2304.3.1 Bottom plates. Studs shall have full bearing on a\n2-inch-thick (actual 1\n1/2-inch, 38 mm) or larger plate or sill\nhaving a width not less than equal to the width of the\nstuds.\n2304.3.2 Framing over openings. Headers, double joists,\ntrusses or other approved assemblies that are of ade..."
-            },
-            {
-              "file_name": "6-1992BuildingRegulations-New Zealand_ClauseF5.pdf",
-              "page_label": "1",
-              "score": null,
-              "text": "Clause F5\u2014Construction and demolition hazards\nProvisions Limits on application\nObjective\nF5.1 The objective of this provision is to\nsafeguard people from injury, and\nother property from damage, caused\nby construction or demolition site\nhazards.\nFunctional requirement\nF5.2 Construction and demolition work on\nbuildings shall be performed in a\nmanner that avoids the likelihood of:\n(a) objects falling onto people on\nor off the site,\n(b) objects falling on property off\nthe site,\n(c) other hazards arising on the\nsite affecting people off the\nsite and other property, and\n(d) unauthorised entry of chi..."
-            },
             {
               "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
               "page_label": "2",
-              "score": 0.3956,
+              "score": 0.3998,
               "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
-            },
-            {
-              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "73",
-              "score": null,
-              "text": "2018 INTERNATIONAL BUILDING CODE \u00ae 607\nCHAPTER 33\nSAFEGUARDS DURING CONSTRUCTION\nUser notes:\nAbout this chapter: While the balance of the chapters in this code specify how a building is to be designed and constructed in order to be in\ncompliance with the code, Chapter 33 looks to the actual constr uction process. Parameters are provided for demolition and for p rotecting\nadjacent property during demolition and construc tion. Issues such as how to provide egr ess while the building is growing, the t iming of stand-\npipe and sprinkler installation, and protection of pedestrians are addressed. \nC..."
             },
             {
               "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
@@ -165,18 +151,48 @@
               "text": "3\n/square4Prior to the lifting of the wall, establish a\nlimited access zone whenever a balloon\nframed wall is being raised;\nThe limited access zone should be equal to\nthe height of the wall plus four feet and\nshould run the entire length of the wall;\nThe limited access zone should be restricted\nto entry by employees actively engaged in\nlifting the wall and no other workers be\nallowed to enter the zone;\nThe limited access zone should remain in\nplace until the wall is adequately supported\nand braced to prevent accidental collapse;\n/square4Secure bottom plates with adequate sized\nmetal bands (at ..."
             },
             {
-              "file_name": "6-1992BuildingRegulations-New Zealand_ClauseF5.pdf",
-              "page_label": "2",
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "29",
+              "score": 0.3443,
+              "text": "ceiling and \ntwo center-bearing \nfloors\n1-2 \u00d7 6 2-8 2 2-1 2 1-10 2 2-7 2 2-0 2 1-9 2 2-5 2 1-11 2 1-8 2\n1-2 \u00d7 8 3-5 2 2-8 2 2-4 3 3-3 2 2-7 2 2-2 3 3-1 2 2-5 3 2-1 3\n1-2 \u00d7 10 4-0 2 3-2 3 2-9 3 3-10 2 3-1 3 2-7 3 3-8 2 2-11 3 2-5 3\n1-2 \u00d7 12 4-9 3 3-9 3 3-2 4 4-6 3 3-7 3 3-1 4 4-3 3 3-5 3 2-11 4\n2-2 \u00d7 4 2-8 1 2-1 1 1-9 1 2-6 1 2-0 1 1-8 1 2-5 1 1-11 1 1-7 1\n2-2 \u00d7 6 4-0 1 3-2 2 2-8 2 3-9 1 3-0 2 2-7 2 3-7 1 2-10 2 2-5 2\n2-2 \u00d7 8 5-0 2 4-0 2 3-5 2 4-10 2 3-10 2 3-3 2 4-7 2 3-7 2 3-1 2\n2-2 \u00d7 10 6-0 2 4-9 2 4-0 2 5-8 2 4-6 2 3-10 3 5-5 2 4-3 2 3-8 3\n2-2 \u00d7 12 7-0 2 5-7 2 4-9 3 6-8 2 5-4 3 4-6 3 6-4 2 ..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "3",
               "score": null,
-              "text": "Provisions Limits on application\n(f) be clearly marked where the\nbarrier itself may otherwise\npresent a hazard to traffic or\npassersby.\nF5.3.3 Where a construction or demolition\nsite contains any hazard which might\nbe expected to attract the\nunauthorised entry of children, the\nhazard shall be enclosed to restrict\naccess by children.\nF5.3.4 Suitable barriers shall be constructed\nto provide a safe route for people\nwhere lifting equipment creates a risk\nof accident from objects falling on a\nplace of public access, or where a\nsimilar risk results from the height at\nwhich construction or demolition..."
+              "text": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 485\n2303.2 Fire-retardant-treated wood. Fire-retardant-treated\nwood is any wood product that, when impregnated with\nchemicals by a pressure process or other means during manu-\nfacture, shall have, when te sted in accordance with ASTM\nE84 or UL 723, a listed flame spread index of 25 or less and\nshow no evidence of significant progressive combustion\nwhen the test is continued for an additional 20-minute period.\nAdditionally, the flame front shall not progress more than\n10\n1/2 feet (3200 mm) beyond the centerline of the burners at\nany time during the test.\n..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "45",
+              "score": 0.3401,
+              "text": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 527\nFOR PANEL SPLICE (IF NEEDED) ADJOINING PANEL\nEDGES SHALL MEET OVER AND BE FASTENED TO\nCOMMON FRAMING\n8d COMON OR GALVANIZED BOX NAILS AT 6\u2033 O.C.\nAT PANEL EDGES FOR SINGLE STORY AND AT 4\u2033 O.C.\nAT PANEL EDGES FOR THE FIRST OF 2 STORIES\nANCHOR BOLTS PER SECTION 2308.6.5.1\nHOLD-DOWN PER SECTION\n2308.6.5.1\nSTUDS UNDER HEADER AS\nREQUIRED\n10\u2032-0\u2033 MAX HEIGHT\n2\u2032-8\u2033 MIN PANEL\nLENGTH\nMIN. 2x4 FRAMING. MIN. DOUBLE\nSTUDS REQUIRED\nMIN. \n3/8\u2033 THICK WOOD\nSTRUCTURAL PANEL\nSHEATHING ON ONE FACE\nMINIMUM REINFORCING OF FOUNDATION, ONE\n#4 BAR TOP AND BOTTOM OF FOOTING.\nRE..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "3",
+              "score": null,
+              "text": "The test data developed by ASTM\nD5516 shall be used to develop adjustment factors,\nmaximum loads and spans, or both, for untreated ply-\nwood design values in accordance with ASTM D6305.\nEach manufacturer shall p ublish the allowable maxi-\nmum loads and spans for service as floor and roof\nsheathing for its treatment.\n2303.2.5.2 Lumber.  For each species of wood that is\ntreated, the effects of the treatment, the method of\nredrying after treatment and exposure to high tempera-\ntures and high humidities on the allowable design prop-\nerties of fire-retardant-treated lumber shall be\ndetermined in ac..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "40",
+              "score": 0.3383,
+              "text": "6.1\nBRACED PANELS ALLOWED UP TO\n4\u2032 OFFSET FROM BRACED WALL LINE\nCONTINUOUS FOUNDATION AND\nBRACED CRIPPLE WALL RECOMMENDED\nUNDER LOWER STORY BRACED WALL\nPANELS\nMAX DISTANCE OF BWP EXTENDING OVER\nOPENING BELOW IN SEISMIC DESIGN\nCATEGORIES D AND E IN ACCORDANCE\nWITH SECTION 2308.6.8.1\nBRACED PANELS ALLOWED\nUP TO 4\u2032 OFFSET FROM\nBRACED WALL LINE\nMAX DISTANCE FROM END\nOF BWL TO BRACED PANEL\nPER TABLE 2308.6.1\nEXAMPLES OF THE\nSUM OF BRACING PER BWL\nBWL 1 = BWP 1A + BWP 1B + BWP 1C\nBWL 3 = BWP 3A +3B\nEXAMPLES OF THE\nSUM OF BRACING PER BWL\nBWL 1 = BWP 1A + BWP 1B + BWP1C\nBOX 1\nFor SI: 1 foot = 304.8 mm..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "38",
+              "score": null,
+              "text": "Bored holes not greater than 60 percent of the\nstud width are permitted in nonbearing partitions or in any\nwall where each bored stud is doubled, provided that not\nmore than two such successive doubled studs are so bored.\nThe edge of a bored hole shall not be nearer than \n5/8 inch\n(15.9 mm) to the edge of the stud. Bored holes shall not be\nlocated at the same section of stud as a cut or notch.\n2308.5.11 Exterior wall sheathing.  Except where stucco\nconstruction that complies with Section 2510 is installed,\nthe outside of exterior walls, including gables, of enclosed\nbuildings shall be sheathed..."
             }
           ],
           "relevance": [
-            true,
-            true,
-            true,
             false,
-            true,
+            false,
+            false,
+            false,
+            false,
             false,
             false,
             false
@@ -184,78 +200,57 @@
         }
       },
       "evaluation_status": "complete",
-      "evaluation_completed_at": "2026-08-10T14:33:18.823766+00:00",
+      "evaluation_completed_at": "2026-08-11T10:45:53.485272+00:00",
       "evaluation_failed_reason": null,
       "metrics": {
         "turn": {
           "turn_index": 1,
           "round_id": "c0275b08-098f-4fbd-b099-9369306581ff-turn-0001",
-          "user_timestamp": "2026-08-10T11:37:39.325316+00:00",
-          "assistant_timestamp": "2026-08-10T11:37:41.377012+00:00",
-          "evaluated_at": "2026-08-10T14:33:18.823766+00:00",
-          "user_message": "Framing work.",
-          "assistant_response": "Great, you were working on framing. Was this task started today or was it completed? Could you also tell me a bit more about the specific activities involved in the framing work today?",
+          "user_timestamp": "2026-08-11T09:55:07.474224+00:00",
+          "assistant_timestamp": "2026-08-11T09:55:09.488621+00:00",
+          "evaluated_at": "2026-08-11T10:45:53.485272+00:00",
+          "user_message": "We had the lift underway after the plan review and had the sections stood and temporarily braced by the end of the session.",
+          "assistant_response": "That sounds like a productive day with the lift and bracing work. Let's talk about the workforce next. How many people were involved in today's activities, and what were their roles?",
           "candidate_count": 8,
-          "accepted_source_count": 4,
-          "source_refs": [
-            {
-              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
-              "page_label": "1",
-              "score": 0.3975
-            },
-            {
-              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
-              "page_label": "2",
-              "score": 0.3873
-            },
-            {
-              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "5",
-              "score": 0.4429
-            },
-            {
-              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
-              "page_label": "2",
-              "score": 0.3956
-            }
-          ]
+          "accepted_source_count": 0,
+          "source_refs": []
         },
         "retrieval_precision_proxy": {
           "metric_name": "retrieval_precision_proxy@4",
           "scored": true,
-          "score": 0.75,
+          "score": 0.0,
           "k": 4,
           "candidate_count": 8,
           "top_k_count": 4,
-          "relevant_count_in_top_k": 3,
+          "relevant_count_in_top_k": 0,
           "skip_reason": null
         },
-        "precision_at_k": 0.75,
+        "precision_at_k": 0.0,
         "faithfulness": {
           "metric_name": "faithfulness",
           "scored": false,
-          "skip_reason": "no_claims",
+          "skip_reason": "no_context",
           "claims": [],
           "claim_count": 0,
           "per_judge_scores": {
-            "openai/gpt-4o-mini": null,
+            "openai/gpt-4.1": null,
             "google/gemini-2.5-flash": null,
-            "anthropic/claude-3-haiku": null
+            "anthropic/claude-sonnet-4.5": null
           },
           "per_judge_supported_counts": {
-            "openai/gpt-4o-mini": 0,
+            "openai/gpt-4.1": 0,
             "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
+            "anthropic/claude-sonnet-4.5": 0
           },
           "per_judge_evaluable_counts": {
-            "openai/gpt-4o-mini": 0,
+            "openai/gpt-4.1": 0,
             "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
+            "anthropic/claude-sonnet-4.5": 0
           },
           "per_judge_error_counts": {
-            "openai/gpt-4o-mini": 0,
+            "openai/gpt-4.1": 0,
             "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
+            "anthropic/claude-sonnet-4.5": 0
           },
           "majority_vote_score": null,
           "majority_supported_count": 0,
@@ -266,14 +261,14 @@
           "scored": true,
           "skip_reason": null,
           "judge_votes": {
-            "openai/gpt-4o-mini": true,
+            "openai/gpt-4.1": true,
             "google/gemini-2.5-flash": true,
-            "anthropic/claude-3-haiku": true
+            "anthropic/claude-sonnet-4.5": true
           },
           "judge_errors": {
-            "openai/gpt-4o-mini": false,
+            "openai/gpt-4.1": false,
             "google/gemini-2.5-flash": false,
-            "anthropic/claude-3-haiku": false
+            "anthropic/claude-sonnet-4.5": false
           },
           "majority_relevant": true,
           "majority_evaluable": true
@@ -284,12 +279,12 @@
     {
       "round_id": "c0275b08-098f-4fbd-b099-9369306581ff-turn-0002",
       "turn_index": 2,
-      "user_message": "Three people.",
-      "user_timestamp": "2026-08-10T11:37:42.161961+00:00",
-      "assistant_response": "Got it, you had a team of three working on the framing. Were there any specific roles or positions among the three of you, like a supervisor or a lead worker? And were there any absences today?",
-      "assistant_timestamp": "2026-08-10T11:37:45.811368+00:00",
+      "user_message": "There were Three people. We used Braces, clamps, hammers, levels, and impact drivers.",
+      "user_timestamp": "2026-08-11T09:55:10.597084+00:00",
+      "assistant_response": "Great, so a team of three was at work today. You mentioned using braces, clamps, hammers, levels, and impact drivers. I'll note that under equipment and tools. Could you also tell me about the materials you used?",
+      "assistant_timestamp": "2026-08-11T09:55:12.597302+00:00",
       "retrieval": {
-        "query": "Three people.",
+        "query": "There were Three people. We used Braces, clamps, hammers, levels, and impact drivers.",
         "candidate_count": 8,
         "accepted_source_count": 0,
         "source_file_names": [],
@@ -298,22 +293,16 @@
           "context": "",
           "candidates": [
             {
-              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "21",
-              "score": 0.1153,
-              "text": "2308.2.1 Stories.  Structures of conventional light-frame\nconstruction shall be limited in story height in accordance\nwith Table 2308.2.1.\nTABLE 2308.2.1\nALLOWABLE STORY HEIGHT\nFor SI: 1 inch = 25.4 mm.\na. For the purposes of this section, for buildings assigned to Seismic Design\nCategory D or E, cripple walls shall be considered to be a story  unless\ncripple walls are solid blocked and do not exceed 14 inches in height.\n2308.2.2 Allowable floor-to-floor height. Maximum floor-\nto-floor height shall not exceed 11 feet, 7 inches (3531\nmm). Exterior bearing wall and interior braced wall heights\ns..."
-            },
-            {
               "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
               "page_label": "2",
-              "score": 0.11,
+              "score": 0.3316,
               "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
             },
             {
-              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
-              "page_label": "3",
-              "score": 0.1315,
-              "text": "3\n/square4Prior to the lifting of the wall, establish a\nlimited access zone whenever a balloon\nframed wall is being raised;\nThe limited access zone should be equal to\nthe height of the wall plus four feet and\nshould run the entire length of the wall;\nThe limited access zone should be restricted\nto entry by employees actively engaged in\nlifting the wall and no other workers be\nallowed to enter the zone;\nThe limited access zone should remain in\nplace until the wall is adequately supported\nand braced to prevent accidental collapse;\n/square4Secure bottom plates with adequate sized\nmetal bands (at ..."
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "13",
+              "score": 0.3303,
+              "text": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 495\nTABLE 2304.10.1\u2014continued\nFASTENING SCHEDULE\n(continued)\nDESCRIPTION OF BUILDING ELEMENTS NUMBER AND TYPE OF FASTENER SPACING AND LOCATION\nWall\n18. 1\u2033 brace to each stud and plate\n2-8d common (21/2\u2033 \u00d7 0.131\u2033); or \n2-10d box (3\u2033 \u00d7 0.128\u2033); or\n2-3\u2033 \u00d7 0.131\u2033 nails; or\n2-3\u2033 14 gage staples, 7/16\u2033 crown\nFace nail\n19. 1\u2033 \u00d7 6\u2033 sheathing to each bearing 2-8d common (21/2\u2033 \u00d7 0.131\u2033); or \n2-10d box (3\u2033 \u00d7 0.128\u2033) Face nail\n20. 1\u2033 \u00d7 8\u2033 and wider sheathing to each bearing 3-8d common (21/2\u2033 \u00d7 0.131\u2033); or\n3-10d box (3\u2033 \u00d7 0.128\u2033) Face nail\nFloor\n21. Joist to sill, ..."
             },
             {
               "file_name": "6-1992BuildingRegulations-New Zealand_ClauseF5.pdf",
@@ -322,28 +311,34 @@
               "text": "Clause F5\u2014Construction and demolition hazards\nProvisions Limits on application\nObjective\nF5.1 The objective of this provision is to\nsafeguard people from injury, and\nother property from damage, caused\nby construction or demolition site\nhazards.\nFunctional requirement\nF5.2 Construction and demolition work on\nbuildings shall be performed in a\nmanner that avoids the likelihood of:\n(a) objects falling onto people on\nor off the site,\n(b) objects falling on property off\nthe site,\n(c) other hazards arising on the\nsite affecting people off the\nsite and other property, and\n(d) unauthorised entry of chi..."
             },
             {
-              "file_name": "6-1992BuildingRegulations-New Zealand_ClauseF5.pdf",
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "3",
+              "score": 0.328,
+              "text": "3\n/square4Prior to the lifting of the wall, establish a\nlimited access zone whenever a balloon\nframed wall is being raised;\nThe limited access zone should be equal to\nthe height of the wall plus four feet and\nshould run the entire length of the wall;\nThe limited access zone should be restricted\nto entry by employees actively engaged in\nlifting the wall and no other workers be\nallowed to enter the zone;\nThe limited access zone should remain in\nplace until the wall is adequately supported\nand braced to prevent accidental collapse;\n/square4Secure bottom plates with adequate sized\nmetal bands (at ..."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "1",
+              "score": null,
+              "text": "U. S. Department of Labor\nOccupational Safety and Health Administration\nDirectorate of Science, Technology & Medicine\nOffice of Science and Technology Assessment\nSHIB 11-17-2005\nSafety and Health Information Bulletin\nHazards of Manually Lifting Balloon Framed Walls\nPurpose\nThis Safety and Health Information Bulletin\nalerts employers and employees that manually raised\nballoon framed walls could become too heavy for\nemployees to hold and could collapse back onto the\nemployees.  From July 1999 through July 2004, 22\nballoon framed wall collapses were reported.  Four of\nthese accidents occurred in ..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "13",
+              "score": 0.3224,
+              "text": "face nail at top and bot-\ntom staggered on opposite sides\nAnd:\n2-20d common (4\u2033 \u00d7 0.192\u2033); or \n3-10d box (3\u2033 \u00d7 0.128\u2033); or \n3-3\u2033 \u00d7 0.131\u2033 nails; or\n3-3\u2033 14 gage staples, 7/16\u2033 crown\nEnds and at each splice, face nail\n27. Ledger strip supporting joists or rafters\n3-16d common (31/2\u2033 \u00d7 0.162\u2033); or\n4-10d box (3\u2033 \u00d7 0.128\u2033); or\n4-3\u2033 \u00d7 0.131\u2033 nails; or\n4-3\u2033 14 gage staples, 7/16\u2033 crown\nEach joist or rafter, face nail\n28. Joist to band joist or rim joist\n3-16d common (31/2\u2033 \u00d7 0.162\u2033); or \n4-10d box (3\u2033 \u00d7 0.128\u2033); or\n4-3\u2033 \u00d7 0.131\u2033 nails; or\n4-3\u2033 14 gage staples, 7/16\u2033 crown\nEnd nail\n29. Bridging or bl..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
               "page_label": "2",
               "score": null,
-              "text": "Provisions Limits on application\n(f) be clearly marked where the\nbarrier itself may otherwise\npresent a hazard to traffic or\npassersby.\nF5.3.3 Where a construction or demolition\nsite contains any hazard which might\nbe expected to attract the\nunauthorised entry of children, the\nhazard shall be enclosed to restrict\naccess by children.\nF5.3.4 Suitable barriers shall be constructed\nto provide a safe route for people\nwhere lifting equipment creates a risk\nof accident from objects falling on a\nplace of public access, or where a\nsimilar risk results from the height at\nwhich construction or demolition..."
+              "text": "Guardrails\nGuardrail systems can protect workers framing \nwalls around the perimeter and at floor openings. \nFramed exterior walls typically include openings for \nwindows and doors.  Workers can apply sheathing \nto the frame, and install guardrails across window \nand door openings, before raising wall sections so \nthat the openings are protected when the walls are \nset into place.\nOSHA generally requires the top rail height to be \n42 inches + 3 inches above the walking/working \nlevel. A midrail is also required between the top \nrail and the walking/working surface when there \nis no wall or par..."
             },
             {
               "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "4",
-              "score": 0.1116,
-              "text": "2303.4.1.4 Truss designer. The individual or organiza-\ntion responsible for the design of trusses.\n2303.4.1.4.1 Truss design drawings. Where\nrequired by the registered design professional , the\nbuilding official or the statutes of the jurisdiction in\nwhich the project is to be constructed, each individ-\nual truss design drawing shall bear the seal and sig-\nnature of the truss designer.\nExceptions:\n1. Where a cover sheet and truss index sheet\nare combined into a single sheet and\nattached to the set of truss design drawings,\nthe single cover/truss index sheet is the\nonly document required to be ..."
-            },
-            {
-              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "10",
-              "score": null,
-              "text": "WOOD\n492 2018 INTERNATIONAL BUILDING CODE \u00ae\nnate supports. Not more than seven intervening courses\nshall be permitted before this pattern is repeated.\n2304.9.5 Three- and four-inch sawn tongue-and-groove\ndecking. Three- and four-inch (76 mm and 102 mm) sawn\ntongue-and-groove decking shall comply with Sections\n2304.9.5.1 through 2304.9.5.3.\n2304.9.5.1 General. Three-inch (76 mm) and four-inch\n(102 mm) decking shall have a maximum moisture\ncontent of 19 percent. Deck ing shall be machined with\na double tongue-and-groove pattern. Decking pieces\nshall be interconnected and nailed to the supports.\n..."
-            },
-            {
-              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "7",
-              "score": null,
-              "text": "WOOD\n2018 INTERNATIONAL BUILDING CODE \u00ae 489\n2304.9.2.1 Simple span pattern.  All pieces shall be\nsupported on their ends (in other words, by two sup-\nports).\n2304.9.2.2 Two-span continuous pattern.  All pieces\nshall be supported by three supports, and all end joints\nshall occur in line on alternating supports. Supporting\nmembers shall be designed  to accommodate the load\nredistribution caused by this pattern.\n2304.9.2.3 Combination simple and two-span con-\ntinuous pattern.  Courses in end spans shall be alter-\nnating simple-span pattern and two-span continuous\npattern. End joints shall be stag..."
+              "page_label": "12",
+              "score": 0.3173,
+              "text": "WOOD\n494 2018 INTERNATIONAL BUILDING CODE \u00ae\nTABLE 2304.10.1\u2014continued\nFASTENING SCHEDULE\n(continued)\nDESCRIPTION OF BUILDING ELEMENTS NUMBER AND TYPE OF FASTENER SPACING AND LOCATION\nWall\n8. Stud to stud (not at braced wall panels)\n16d common (31/2\u2033 \u00d7 0.162\u2033); 24\u2033 o.c. face nail\n10d box (3\u2033 \u00d7 0.128\u2033); or\n3\u2033 \u00d7 0.131\u2033 nails; or\n3-3\u2033 14 gage staples, 7/16\u2033 crown\n16\u2033 o.c. face nail\n9. Stud to stud and abutting studs at intersecting wall \ncorners (at braced wall panels)\n16d common (31/2\u2033 \u00d7 0.162\u2033); or 16\u2033 o.c. face nail\n16d box (31/2\u2033 \u00d7 0.135\u2033); or 12 \u2033 o.c. face nail\n3\u2033 \u00d7 0.131\u2033 nails; or\n3-3\u2033 14 ..."
             }
           ],
           "relevance": [
@@ -359,17 +354,17 @@
         }
       },
       "evaluation_status": "complete",
-      "evaluation_completed_at": "2026-08-10T14:33:24.841752+00:00",
+      "evaluation_completed_at": "2026-08-11T10:45:55.435732+00:00",
       "evaluation_failed_reason": null,
       "metrics": {
         "turn": {
           "turn_index": 2,
           "round_id": "c0275b08-098f-4fbd-b099-9369306581ff-turn-0002",
-          "user_timestamp": "2026-08-10T11:37:42.161961+00:00",
-          "assistant_timestamp": "2026-08-10T11:37:45.811368+00:00",
-          "evaluated_at": "2026-08-10T14:33:24.841752+00:00",
-          "user_message": "Three people.",
-          "assistant_response": "Got it, you had a team of three working on the framing. Were there any specific roles or positions among the three of you, like a supervisor or a lead worker? And were there any absences today?",
+          "user_timestamp": "2026-08-11T09:55:10.597084+00:00",
+          "assistant_timestamp": "2026-08-11T09:55:12.597302+00:00",
+          "evaluated_at": "2026-08-11T10:45:55.435732+00:00",
+          "user_message": "There were Three people. We used Braces, clamps, hammers, levels, and impact drivers.",
+          "assistant_response": "Great, so a team of three was at work today. You mentioned using braces, clamps, hammers, levels, and impact drivers. I'll note that under equipment and tools. Could you also tell me about the materials you used?",
           "candidate_count": 8,
           "accepted_source_count": 0,
           "source_refs": []
@@ -392,24 +387,24 @@
           "claims": [],
           "claim_count": 0,
           "per_judge_scores": {
-            "openai/gpt-4o-mini": null,
+            "openai/gpt-4.1": null,
             "google/gemini-2.5-flash": null,
-            "anthropic/claude-3-haiku": null
+            "anthropic/claude-sonnet-4.5": null
           },
           "per_judge_supported_counts": {
-            "openai/gpt-4o-mini": 0,
+            "openai/gpt-4.1": 0,
             "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
+            "anthropic/claude-sonnet-4.5": 0
           },
           "per_judge_evaluable_counts": {
-            "openai/gpt-4o-mini": 0,
+            "openai/gpt-4.1": 0,
             "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
+            "anthropic/claude-sonnet-4.5": 0
           },
           "per_judge_error_counts": {
-            "openai/gpt-4o-mini": 0,
+            "openai/gpt-4.1": 0,
             "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
+            "anthropic/claude-sonnet-4.5": 0
           },
           "majority_vote_score": null,
           "majority_supported_count": 0,
@@ -420,91 +415,355 @@
           "scored": true,
           "skip_reason": null,
           "judge_votes": {
-            "openai/gpt-4o-mini": true,
+            "openai/gpt-4.1": true,
             "google/gemini-2.5-flash": true,
-            "anthropic/claude-3-haiku": true
+            "anthropic/claude-sonnet-4.5": true
           },
           "judge_errors": {
-            "openai/gpt-4o-mini": false,
+            "openai/gpt-4.1": false,
             "google/gemini-2.5-flash": false,
-            "anthropic/claude-3-haiku": false
+            "anthropic/claude-sonnet-4.5": false
           },
           "majority_relevant": true,
           "majority_evaluable": true
         }
       },
-      "report_completion_after_turn": 0.4
+      "report_completion_after_turn": 0.6
     },
     {
       "round_id": "c0275b08-098f-4fbd-b099-9369306581ff-turn-0003",
       "turn_index": 3,
-      "user_message": "Used some tools. No incident.",
-      "user_timestamp": "2026-08-10T11:37:47.462331+00:00",
-      "assistant_response": "Thanks for letting me know. Since you mentioned tools, could you describe what kinds of equipment and tools were used during your framing work today? And it's good to hear there were no incidents. Did you happen to notice any safety hazards or risks, even if they didn't lead to an incident?",
-      "assistant_timestamp": "2026-08-10T11:37:49.891113+00:00",
+      "user_message": "We were working with preframed wall sections, bottom plates, bracing lumber, and fasteners. Pinch points, wall instability during lifting, possible falls while positioning the wall. That came up while we were Framing work. Brief lift plan before raising the wall.",
+      "user_timestamp": "2026-08-11T09:55:13.906887+00:00",
+      "assistant_response": "Thanks for providing that information. I've noted the preframed wall sections, bottom plates, bracing lumber, and fasteners under materials. It's also important to address the safety concerns you mentioned. Pinch points, wall instability during lifting, and possible falls are significant hazards. It's good to hear you had a brief lift plan to tackle these issues. Remember, establishing a limited access zone and using proper fall protection can help enhance safety during such tasks.\n\nI've got all your details down. You can now download your completed report. If you need any more help, just let me know!",
+      "assistant_timestamp": "2026-08-11T09:55:20.091161+00:00",
       "retrieval": {
-        "query": "Used some tools. No incident.",
+        "query": "We were working with preframed wall sections, bottom plates, bracing lumber, and fasteners. Pinch points, wall instability during lifting, possible falls while positioning the wall. That came up while we were Framing work. Brief lift plan before raising the wall.",
         "candidate_count": 8,
-        "accepted_source_count": 0,
-        "source_file_names": [],
-        "sources": [],
+        "accepted_source_count": 4,
+        "source_file_names": [
+          "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+          "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+          "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+          "3-Hazards of Manually Lifting Balloon Framed Walls.pdf"
+        ],
+        "sources": [
+          {
+            "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+            "page_label": "2",
+            "score": 0.6664,
+            "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
+          },
+          {
+            "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+            "page_label": "1",
+            "score": 0.5658,
+            "text": "FactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine..."
+          },
+          {
+            "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+            "page_label": "1",
+            "score": 0.5787,
+            "text": "U. S. Department of Labor\nOccupational Safety and Health Administration\nDirectorate of Science, Technology & Medicine\nOffice of Science and Technology Assessment\nSHIB 11-17-2005\nSafety and Health Information Bulletin\nHazards of Manually Lifting Balloon Framed Walls\nPurpose\nThis Safety and Health Information Bulletin\nalerts employers and employees that manually raised\nballoon framed walls could become too heavy for\nemployees to hold and could collapse back onto the\nemployees.  From July 1999 through July 2004, 22\nballoon framed wall collapses were reported.  Four of\nthese accidents occurred in ..."
+          },
+          {
+            "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+            "page_label": "3",
+            "score": 0.6469,
+            "text": "3\n/square4Prior to the lifting of the wall, establish a\nlimited access zone whenever a balloon\nframed wall is being raised;\nThe limited access zone should be equal to\nthe height of the wall plus four feet and\nshould run the entire length of the wall;\nThe limited access zone should be restricted\nto entry by employees actively engaged in\nlifting the wall and no other workers be\nallowed to enter the zone;\nThe limited access zone should remain in\nplace until the wall is adequately supported\nand braced to prevent accidental collapse;\n/square4Secure bottom plates with adequate sized\nmetal bands (at ..."
+          }
+        ],
         "evaluation_snapshot": {
-          "context": "",
+          "context": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp...\n\n---\n\nFactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine...\n\n---\n\nU. S. Department of Labor\nOccupational Safety and Health Administration\nDirectorate of Science, Technology & Medicine\nOffice of Science and Technology Assessment\nSHIB 11-17-2005\nSafety and Health Information Bulletin\nHazards of Manually Lifting Balloon Framed Walls\nPurpose\nThis Safety and Health Information Bulletin\nalerts employers and employees that manually raised\nballoon framed walls could become too heavy for\nemployees to hold and could collapse back onto the\nemployees.  From July 1999 through July 2004, 22\nballoon framed wall collapses were reported.  Four of\nthese accidents occurred in ...\n\n---\n\n3\n/square4Prior to the lifting of the wall, establish a\nlimited access zone whenever a balloon\nframed wall is being raised;\nThe limited access zone should be equal to\nthe height of the wall plus four feet and\nshould run the entire length of the wall;\nThe limited access zone should be restricted\nto entry by employees actively engaged in\nlifting the wall and no other workers be\nallowed to enter the zone;\nThe limited access zone should remain in\nplace until the wall is adequately supported\nand braced to prevent accidental collapse;\n/square4Secure bottom plates with adequate sized\nmetal bands (at ...",
           "candidates": [
             {
               "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
               "page_label": "2",
-              "score": 0.2438,
+              "score": 0.6664,
               "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
             },
             {
               "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
               "page_label": "1",
-              "score": 0.2268,
+              "score": 0.5658,
               "text": "FactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine..."
             },
             {
-              "file_name": "6-1992BuildingRegulations-New Zealand_ClauseF5.pdf",
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
               "page_label": "1",
-              "score": null,
-              "text": "Clause F5\u2014Construction and demolition hazards\nProvisions Limits on application\nObjective\nF5.1 The objective of this provision is to\nsafeguard people from injury, and\nother property from damage, caused\nby construction or demolition site\nhazards.\nFunctional requirement\nF5.2 Construction and demolition work on\nbuildings shall be performed in a\nmanner that avoids the likelihood of:\n(a) objects falling onto people on\nor off the site,\n(b) objects falling on property off\nthe site,\n(c) other hazards arising on the\nsite affecting people off the\nsite and other property, and\n(d) unauthorised entry of chi..."
+              "score": 0.5787,
+              "text": "U. S. Department of Labor\nOccupational Safety and Health Administration\nDirectorate of Science, Technology & Medicine\nOffice of Science and Technology Assessment\nSHIB 11-17-2005\nSafety and Health Information Bulletin\nHazards of Manually Lifting Balloon Framed Walls\nPurpose\nThis Safety and Health Information Bulletin\nalerts employers and employees that manually raised\nballoon framed walls could become too heavy for\nemployees to hold and could collapse back onto the\nemployees.  From July 1999 through July 2004, 22\nballoon framed wall collapses were reported.  Four of\nthese accidents occurred in ..."
             },
             {
               "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
               "page_label": "3",
-              "score": 0.234,
+              "score": 0.6469,
               "text": "3\n/square4Prior to the lifting of the wall, establish a\nlimited access zone whenever a balloon\nframed wall is being raised;\nThe limited access zone should be equal to\nthe height of the wall plus four feet and\nshould run the entire length of the wall;\nThe limited access zone should be restricted\nto entry by employees actively engaged in\nlifting the wall and no other workers be\nallowed to enter the zone;\nThe limited access zone should remain in\nplace until the wall is adequately supported\nand braced to prevent accidental collapse;\n/square4Secure bottom plates with adequate sized\nmetal bands (at ..."
             },
             {
-              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "23",
-              "score": 0.2237,
-              "text": "ALL RIGHTS RESERVED.  Accessed by Eric Fitch on Mar 21, 2018 8:11:26 AM  pursuant to License Agreement with ICC.  No further reproduction or\ndistribution authorized.  ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE\nAGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER."
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "2",
+              "score": 0.5331,
+              "text": "Guardrails\nGuardrail systems can protect workers framing \nwalls around the perimeter and at floor openings. \nFramed exterior walls typically include openings for \nwindows and doors.  Workers can apply sheathing \nto the frame, and install guardrails across window \nand door openings, before raising wall sections so \nthat the openings are protected when the walls are \nset into place.\nOSHA generally requires the top rail height to be \n42 inches + 3 inches above the walking/working \nlevel. A midrail is also required between the top \nrail and the walking/working surface when there \nis no wall or par..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "2",
+              "score": 0.528,
+              "text": "A \nfall restraint system is comprised of a body belt or \nbody harness, an anchorage, connectors, and other \nnecessary equipment. Other components typically \ninclude a lanyard, and may also include a lifeline \nand other devices. Note: A self-retracting lanyard \nis not appropriate for a fall restraint system unless \nthe worker cannot reach the fall hazard when the \nlanyard is fully extended.\nAlways follow the manufacturer\u2019s instructions \nor consult a qualified person to ensure proper \ninstallation of anchor points. OSHA recommends \nthat fall restraint systems have the capacity to \nwithstand 3,00..."
             },
             {
               "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "58",
+              "page_label": "73",
               "score": null,
-              "text": "WOOD\n540 2018 INTERNATIONAL BUILDING CODE \u00ae\nTABLE 2308.7.2(1)\u2014continued\nRAFTER SPANS FOR COMMON LUMBER SPECIES \n(Roof live load = 20 psf, ceiling not attached to rafters, L/ \u2206 = 180)\nCheck sources for availability of lumber in lengths greater than 20 feet.\nFor SI: 1 inch = 25.4 mm, 1 foot = 304.8 mm, 1 pound per square foot = 0.0479 kPa.\na. The tabulated rafter spans assume that ceiling joists are located at the bottom of the attic space or that some other method of resisting the outward push of the\nrafters on the bearing walls, such as rafter ties, is provided at that location. Where ceiling ..."
+              "text": "2018 INTERNATIONAL BUILDING CODE \u00ae 607\nCHAPTER 33\nSAFEGUARDS DURING CONSTRUCTION\nUser notes:\nAbout this chapter: While the balance of the chapters in this code specify how a building is to be designed and constructed in order to be in\ncompliance with the code, Chapter 33 looks to the actual constr uction process. Parameters are provided for demolition and for p rotecting\nadjacent property during demolition and construc tion. Issues such as how to provide egr ess while the building is growing, the t iming of stand-\npipe and sprinkler installation, and protection of pedestrians are addressed. \nC..."
             },
             {
               "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "54",
-              "score": 0.2222,
-              "text": "ALL RIGHTS RESERVED.  Accessed by Eric Fitch on Mar 21, 2018 8:11:26 AM  pursuant to License Agreement with ICC.  No further reproduction or\ndistribution authorized.  ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE\nAGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER."
-            },
-            {
-              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-              "page_label": "1",
-              "score": null,
-              "text": "2303.1.1.2 End-jointed lumber. Approved end-jointed\nlumber is permitted to be used interchangeably with\nsolid-sawn members of the same species and grade.\nEnd-jointed lumber used in an assembly required to\nhave a fire-resistance rating shall have the designation\n\u201cHeat Resistant Adhesive\u201d or \u201cHRA\u201d included in its\ngrade mark.\n2303.1.2 Prefabricated wood I-joists.  Structural capaci-\nties and design provisions for prefabricated wood I-joists\nshall be established and monitored in accordance with\nASTM D5055.\n2303.1.3 Structural glued-laminated timber.  Glued-\nlaminated timbers shall be manufactured ..."
+              "page_label": "5",
+              "score": 0.5097,
+              "text": "Computations to deter-\nmine the required sizes of members shall be based on the net\ndimensions (actual sizes) and not nominal sizes.\n2304.3 Wall framing.  The framing of exterior and interior\nwalls shall be in accordance with  the provisions specified in\nSection 2308 unless a specific design is furnished.\n2304.3.1 Bottom plates. Studs shall have full bearing on a\n2-inch-thick (actual 1\n1/2-inch, 38 mm) or larger plate or sill\nhaving a width not less than equal to the width of the\nstuds.\n2304.3.2 Framing over openings. Headers, double joists,\ntrusses or other approved assemblies that are of ade..."
             }
           ],
           "relevance": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
             false,
-            false,
-            false,
-            false,
+            true
+          ]
+        }
+      },
+      "evaluation_status": "complete",
+      "evaluation_completed_at": "2026-08-11T10:45:57.257792+00:00",
+      "evaluation_failed_reason": null,
+      "metrics": {
+        "turn": {
+          "turn_index": 3,
+          "round_id": "c0275b08-098f-4fbd-b099-9369306581ff-turn-0003",
+          "user_timestamp": "2026-08-11T09:55:13.906887+00:00",
+          "assistant_timestamp": "2026-08-11T09:55:20.091161+00:00",
+          "evaluated_at": "2026-08-11T10:45:57.257792+00:00",
+          "user_message": "We were working with preframed wall sections, bottom plates, bracing lumber, and fasteners. Pinch points, wall instability during lifting, possible falls while positioning the wall. That came up while we were Framing work. Brief lift plan before raising the wall.",
+          "assistant_response": "Thanks for providing that information. I've noted the preframed wall sections, bottom plates, bracing lumber, and fasteners under materials. It's also important to address the safety concerns you mentioned. Pinch points, wall instability during lifting, and possible falls are significant hazards. It's good to hear you had a brief lift plan to tackle these issues. Remember, establishing a limited access zone and using proper fall protection can help enhance safety during such tasks.\n\nI've got all your details down. You can now download your completed report. If you need any more help, just let me know!",
+          "candidate_count": 8,
+          "accepted_source_count": 4,
+          "source_refs": [
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "2",
+              "score": 0.6664
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "1",
+              "score": 0.5658
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "1",
+              "score": 0.5787
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "3",
+              "score": 0.6469
+            }
+          ]
+        },
+        "retrieval_precision_proxy": {
+          "metric_name": "retrieval_precision_proxy@4",
+          "scored": true,
+          "score": 1.0,
+          "k": 4,
+          "candidate_count": 8,
+          "top_k_count": 4,
+          "relevant_count_in_top_k": 4,
+          "skip_reason": null
+        },
+        "precision_at_k": 1.0,
+        "faithfulness": {
+          "metric_name": "faithfulness",
+          "scored": true,
+          "skip_reason": null,
+          "claims": [
+            {
+              "claim": "Pinch points, wall instability during lifting, and possible falls are significant hazards.",
+              "judge_votes": {
+                "openai/gpt-4.1": true,
+                "google/gemini-2.5-flash": true,
+                "anthropic/claude-sonnet-4.5": true
+              },
+              "judge_errors": {
+                "openai/gpt-4.1": false,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-sonnet-4.5": false
+              },
+              "majority_supported": true
+            },
+            {
+              "claim": "Establishing a limited access zone and using proper fall protection can help enhance safety during such tasks.",
+              "judge_votes": {
+                "openai/gpt-4.1": true,
+                "google/gemini-2.5-flash": true,
+                "anthropic/claude-sonnet-4.5": true
+              },
+              "judge_errors": {
+                "openai/gpt-4.1": false,
+                "google/gemini-2.5-flash": false,
+                "anthropic/claude-sonnet-4.5": false
+              },
+              "majority_supported": true
+            }
+          ],
+          "claim_count": 2,
+          "per_judge_scores": {
+            "openai/gpt-4.1": 1.0,
+            "google/gemini-2.5-flash": 1.0,
+            "anthropic/claude-sonnet-4.5": 1.0
+          },
+          "per_judge_supported_counts": {
+            "openai/gpt-4.1": 2,
+            "google/gemini-2.5-flash": 2,
+            "anthropic/claude-sonnet-4.5": 2
+          },
+          "per_judge_evaluable_counts": {
+            "openai/gpt-4.1": 2,
+            "google/gemini-2.5-flash": 2,
+            "anthropic/claude-sonnet-4.5": 2
+          },
+          "per_judge_error_counts": {
+            "openai/gpt-4.1": 0,
+            "google/gemini-2.5-flash": 0,
+            "anthropic/claude-sonnet-4.5": 0
+          },
+          "majority_vote_score": 1.0,
+          "majority_supported_count": 2,
+          "majority_evaluable_claim_count": 2
+        },
+        "answer_relevance": {
+          "metric_name": "answer_relevance",
+          "scored": true,
+          "skip_reason": null,
+          "judge_votes": {
+            "openai/gpt-4.1": true,
+            "google/gemini-2.5-flash": true,
+            "anthropic/claude-sonnet-4.5": true
+          },
+          "judge_errors": {
+            "openai/gpt-4.1": false,
+            "google/gemini-2.5-flash": false,
+            "anthropic/claude-sonnet-4.5": false
+          },
+          "majority_relevant": true,
+          "majority_evaluable": true
+        }
+      },
+      "report_completion_after_turn": 1.0
+    },
+    {
+      "round_id": "c0275b08-098f-4fbd-b099-9369306581ff-turn-0004",
+      "turn_index": 4,
+      "user_message": "Pinch points, wall instability during lifting, possible falls while positioning the wall. That came up while we were Framing work. Brief lift plan before raising the wall.",
+      "user_timestamp": "2026-08-11T09:55:21.361385+00:00",
+      "assistant_response": "Got it! I've included the pinch points, wall instability during lifting, and possible falls as noted hazards. It's excellent that you had a brief lift plan in place to address these concerns. Remember, discussing the safest methods and having a competent person supervise can help manage these risks effectively.\n\nYour report is ready for download! Let me know if there's anything else you need.",
+      "assistant_timestamp": "2026-08-11T09:55:27.261879+00:00",
+      "retrieval": {
+        "query": "Pinch points, wall instability during lifting, possible falls while positioning the wall. That came up while we were Framing work. Brief lift plan before raising the wall.",
+        "candidate_count": 8,
+        "accepted_source_count": 4,
+        "source_file_names": [
+          "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+          "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+          "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+          "3-Hazards of Manually Lifting Balloon Framed Walls.pdf"
+        ],
+        "sources": [
+          {
+            "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+            "page_label": "2",
+            "score": 0.6724,
+            "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
+          },
+          {
+            "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+            "page_label": "1",
+            "score": 0.5586,
+            "text": "FactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine..."
+          },
+          {
+            "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+            "page_label": "1",
+            "score": 0.5841,
+            "text": "U. S. Department of Labor\nOccupational Safety and Health Administration\nDirectorate of Science, Technology & Medicine\nOffice of Science and Technology Assessment\nSHIB 11-17-2005\nSafety and Health Information Bulletin\nHazards of Manually Lifting Balloon Framed Walls\nPurpose\nThis Safety and Health Information Bulletin\nalerts employers and employees that manually raised\nballoon framed walls could become too heavy for\nemployees to hold and could collapse back onto the\nemployees.  From July 1999 through July 2004, 22\nballoon framed wall collapses were reported.  Four of\nthese accidents occurred in ..."
+          },
+          {
+            "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+            "page_label": "3",
+            "score": 0.6574,
+            "text": "3\n/square4Prior to the lifting of the wall, establish a\nlimited access zone whenever a balloon\nframed wall is being raised;\nThe limited access zone should be equal to\nthe height of the wall plus four feet and\nshould run the entire length of the wall;\nThe limited access zone should be restricted\nto entry by employees actively engaged in\nlifting the wall and no other workers be\nallowed to enter the zone;\nThe limited access zone should remain in\nplace until the wall is adequately supported\nand braced to prevent accidental collapse;\n/square4Secure bottom plates with adequate sized\nmetal bands (at ..."
+          }
+        ],
+        "evaluation_snapshot": {
+          "context": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp...\n\n---\n\nFactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine...\n\n---\n\nU. S. Department of Labor\nOccupational Safety and Health Administration\nDirectorate of Science, Technology & Medicine\nOffice of Science and Technology Assessment\nSHIB 11-17-2005\nSafety and Health Information Bulletin\nHazards of Manually Lifting Balloon Framed Walls\nPurpose\nThis Safety and Health Information Bulletin\nalerts employers and employees that manually raised\nballoon framed walls could become too heavy for\nemployees to hold and could collapse back onto the\nemployees.  From July 1999 through July 2004, 22\nballoon framed wall collapses were reported.  Four of\nthese accidents occurred in ...\n\n---\n\n3\n/square4Prior to the lifting of the wall, establish a\nlimited access zone whenever a balloon\nframed wall is being raised;\nThe limited access zone should be equal to\nthe height of the wall plus four feet and\nshould run the entire length of the wall;\nThe limited access zone should be restricted\nto entry by employees actively engaged in\nlifting the wall and no other workers be\nallowed to enter the zone;\nThe limited access zone should remain in\nplace until the wall is adequately supported\nand braced to prevent accidental collapse;\n/square4Secure bottom plates with adequate sized\nmetal bands (at ...",
+          "candidates": [
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "2",
+              "score": 0.6724,
+              "text": "2\n/square4Pre-plan the job;\n/square4Determine the weight of the walls;\n/square4Conduct \u201cpre-lift\u201d meetings to discuss the\nsafest methods for raising these walls;\n/square4Use a competent person to consider and\nsupervise all aspects of the lifting operation;\n/square4Use cranes with appropriate and approved\nattachments to assist in raising and placing\nballoon framed walls;\nExample of carpenters manually raising a balloon framed wall\nwith a chimney chase attached.  As the photo depicts, more\nthan 10 workers are exposed to being struck by the wall if it\ncollapses onto them.\nSafe Lifting Methods\nEmp..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "1",
+              "score": 0.5586,
+              "text": "FactSheet\nRisks While Erecting Exterior and  \nInterior Walls\nWorkers can be exposed to serious fall hazards \nwhile framing and erecting walls \u2013 particularly if the \nstructure being built has multiple stories. Openings \nin walls (such as windows and doors) and floor \nopenings present potential hazards, as workers can \nfall through them.  The use of effective fall protection \ncan prevent a serious fall. \nThe employer must provide a training program for \neach worker who might be exposed to fall hazards. \nThe program must enable each worker to recognize \nfall hazards and each worker must be traine..."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "1",
+              "score": 0.5841,
+              "text": "U. S. Department of Labor\nOccupational Safety and Health Administration\nDirectorate of Science, Technology & Medicine\nOffice of Science and Technology Assessment\nSHIB 11-17-2005\nSafety and Health Information Bulletin\nHazards of Manually Lifting Balloon Framed Walls\nPurpose\nThis Safety and Health Information Bulletin\nalerts employers and employees that manually raised\nballoon framed walls could become too heavy for\nemployees to hold and could collapse back onto the\nemployees.  From July 1999 through July 2004, 22\nballoon framed wall collapses were reported.  Four of\nthese accidents occurred in ..."
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "3",
+              "score": 0.6574,
+              "text": "3\n/square4Prior to the lifting of the wall, establish a\nlimited access zone whenever a balloon\nframed wall is being raised;\nThe limited access zone should be equal to\nthe height of the wall plus four feet and\nshould run the entire length of the wall;\nThe limited access zone should be restricted\nto entry by employees actively engaged in\nlifting the wall and no other workers be\nallowed to enter the zone;\nThe limited access zone should remain in\nplace until the wall is adequately supported\nand braced to prevent accidental collapse;\n/square4Secure bottom plates with adequate sized\nmetal bands (at ..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "2",
+              "score": 0.5178,
+              "text": "Guardrails\nGuardrail systems can protect workers framing \nwalls around the perimeter and at floor openings. \nFramed exterior walls typically include openings for \nwindows and doors.  Workers can apply sheathing \nto the frame, and install guardrails across window \nand door openings, before raising wall sections so \nthat the openings are protected when the walls are \nset into place.\nOSHA generally requires the top rail height to be \n42 inches + 3 inches above the walking/working \nlevel. A midrail is also required between the top \nrail and the walking/working surface when there \nis no wall or par..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "3",
+              "score": 0.4511,
+              "text": "safely. The employer must ensure that employees \non scaffold systems 10 feet or more above a \nlower level are protected from falls. For other \nrequirements for scaffolds, refer to 29 CFR 1926 \nSubpart L \u2013 Scaffolds.\nWritten Fall Protection Plans\nWhen working at heights of 6 feet or greater, if the \nemployer does not use ladders, scaffolds, aerial lifts \nor fall restraint systems and can demonstrate that \nit is not feasible or would create a greater hazard \nto use conventional fall protection equipment \n(guardrails, safety nets or a PFAS), the employer \nmust develop a written site-specific fall..."
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "2",
+              "score": 0.5062,
+              "text": "A \nfall restraint system is comprised of a body belt or \nbody harness, an anchorage, connectors, and other \nnecessary equipment. Other components typically \ninclude a lanyard, and may also include a lifeline \nand other devices. Note: A self-retracting lanyard \nis not appropriate for a fall restraint system unless \nthe worker cannot reach the fall hazard when the \nlanyard is fully extended.\nAlways follow the manufacturer\u2019s instructions \nor consult a qualified person to ensure proper \ninstallation of anchor points. OSHA recommends \nthat fall restraint systems have the capacity to \nwithstand 3,00..."
+            },
+            {
+              "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
+              "page_label": "73",
+              "score": null,
+              "text": "2018 INTERNATIONAL BUILDING CODE \u00ae 607\nCHAPTER 33\nSAFEGUARDS DURING CONSTRUCTION\nUser notes:\nAbout this chapter: While the balance of the chapters in this code specify how a building is to be designed and constructed in order to be in\ncompliance with the code, Chapter 33 looks to the actual constr uction process. Parameters are provided for demolition and for p rotecting\nadjacent property during demolition and construc tion. Issues such as how to provide egr ess while the building is growing, the t iming of stand-\npipe and sprinkler installation, and protection of pedestrians are addressed. \nC..."
+            }
+          ],
+          "relevance": [
+            true,
+            true,
+            true,
+            true,
             false,
             false,
             false,
@@ -513,57 +772,78 @@
         }
       },
       "evaluation_status": "complete",
-      "evaluation_completed_at": "2026-08-10T14:33:30.192628+00:00",
+      "evaluation_completed_at": "2026-08-11T10:46:02.843856+00:00",
       "evaluation_failed_reason": null,
       "metrics": {
         "turn": {
-          "turn_index": 3,
-          "round_id": "c0275b08-098f-4fbd-b099-9369306581ff-turn-0003",
-          "user_timestamp": "2026-08-10T11:37:47.462331+00:00",
-          "assistant_timestamp": "2026-08-10T11:37:49.891113+00:00",
-          "evaluated_at": "2026-08-10T14:33:30.192628+00:00",
-          "user_message": "Used some tools. No incident.",
-          "assistant_response": "Thanks for letting me know. Since you mentioned tools, could you describe what kinds of equipment and tools were used during your framing work today? And it's good to hear there were no incidents. Did you happen to notice any safety hazards or risks, even if they didn't lead to an incident?",
+          "turn_index": 4,
+          "round_id": "c0275b08-098f-4fbd-b099-9369306581ff-turn-0004",
+          "user_timestamp": "2026-08-11T09:55:21.361385+00:00",
+          "assistant_timestamp": "2026-08-11T09:55:27.261879+00:00",
+          "evaluated_at": "2026-08-11T10:46:02.843856+00:00",
+          "user_message": "Pinch points, wall instability during lifting, possible falls while positioning the wall. That came up while we were Framing work. Brief lift plan before raising the wall.",
+          "assistant_response": "Got it! I've included the pinch points, wall instability during lifting, and possible falls as noted hazards. It's excellent that you had a brief lift plan in place to address these concerns. Remember, discussing the safest methods and having a competent person supervise can help manage these risks effectively.\n\nYour report is ready for download! Let me know if there's anything else you need.",
           "candidate_count": 8,
-          "accepted_source_count": 0,
-          "source_refs": []
+          "accepted_source_count": 4,
+          "source_refs": [
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "2",
+              "score": 0.6724
+            },
+            {
+              "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+              "page_label": "1",
+              "score": 0.5586
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "1",
+              "score": 0.5841
+            },
+            {
+              "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+              "page_label": "3",
+              "score": 0.6574
+            }
+          ]
         },
         "retrieval_precision_proxy": {
           "metric_name": "retrieval_precision_proxy@4",
           "scored": true,
-          "score": 0.0,
+          "score": 1.0,
           "k": 4,
           "candidate_count": 8,
           "top_k_count": 4,
-          "relevant_count_in_top_k": 0,
+          "relevant_count_in_top_k": 4,
           "skip_reason": null
         },
-        "precision_at_k": 0.0,
+        "precision_at_k": 1.0,
         "faithfulness": {
           "metric_name": "faithfulness",
           "scored": false,
-          "skip_reason": "no_context",
+          "skip_reason": "no_claims",
           "claims": [],
           "claim_count": 0,
           "per_judge_scores": {
-            "openai/gpt-4o-mini": null,
+            "openai/gpt-4.1": null,
             "google/gemini-2.5-flash": null,
-            "anthropic/claude-3-haiku": null
+            "anthropic/claude-sonnet-4.5": null
           },
           "per_judge_supported_counts": {
-            "openai/gpt-4o-mini": 0,
+            "openai/gpt-4.1": 0,
             "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
+            "anthropic/claude-sonnet-4.5": 0
           },
           "per_judge_evaluable_counts": {
-            "openai/gpt-4o-mini": 0,
+            "openai/gpt-4.1": 0,
             "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
+            "anthropic/claude-sonnet-4.5": 0
           },
           "per_judge_error_counts": {
-            "openai/gpt-4o-mini": 0,
+            "openai/gpt-4.1": 0,
             "google/gemini-2.5-flash": 0,
-            "anthropic/claude-3-haiku": 0
+            "anthropic/claude-sonnet-4.5": 0
           },
           "majority_vote_score": null,
           "majority_supported_count": 0,
@@ -574,27 +854,27 @@
           "scored": true,
           "skip_reason": null,
           "judge_votes": {
-            "openai/gpt-4o-mini": true,
+            "openai/gpt-4.1": true,
             "google/gemini-2.5-flash": true,
-            "anthropic/claude-3-haiku": true
+            "anthropic/claude-sonnet-4.5": true
           },
           "judge_errors": {
-            "openai/gpt-4o-mini": false,
+            "openai/gpt-4.1": false,
             "google/gemini-2.5-flash": false,
-            "anthropic/claude-3-haiku": false
+            "anthropic/claude-sonnet-4.5": false
           },
           "majority_relevant": true,
           "majority_evaluable": true
         }
       },
-      "report_completion_after_turn": 0.8
+      "report_completion_after_turn": 1.0
     }
   ],
   "report_data": {
     "activity": {
       "task_type": {
         "label": "Task Type",
-        "value": "Framing work",
+        "value": "Lift underway after plan review, sections stood and temporarily braced",
         "filled": true
       },
       "workforce": {
@@ -604,95 +884,74 @@
       },
       "materials": {
         "label": "Materials",
-        "value": null,
-        "filled": false
+        "value": "Preframed wall sections, bottom plates, bracing lumber, fasteners",
+        "filled": true
       },
       "equipment_and_tools": {
         "label": "Equipment & Tools",
-        "value": "Used some tools",
+        "value": "Braces, clamps, hammers, levels, impact drivers",
         "filled": true
       }
     },
     "safety": {
       "hazard": {
         "label": "Hazard",
-        "value": "No incident",
+        "value": "Pinch points, wall instability during lifting, possible falls while positioning the wall",
         "filled": true
       }
     }
   },
-  "completion": 0.8,
+  "completion": 1.0,
   "metrics_history": [
     {
       "turn": {
         "turn_index": 1,
         "round_id": "c0275b08-098f-4fbd-b099-9369306581ff-turn-0001",
-        "user_timestamp": "2026-08-10T11:37:39.325316+00:00",
-        "assistant_timestamp": "2026-08-10T11:37:41.377012+00:00",
-        "evaluated_at": "2026-08-10T14:33:18.823766+00:00",
-        "user_message": "Framing work.",
-        "assistant_response": "Great, you were working on framing. Was this task started today or was it completed? Could you also tell me a bit more about the specific activities involved in the framing work today?",
+        "user_timestamp": "2026-08-11T09:55:07.474224+00:00",
+        "assistant_timestamp": "2026-08-11T09:55:09.488621+00:00",
+        "evaluated_at": "2026-08-11T10:45:53.485272+00:00",
+        "user_message": "We had the lift underway after the plan review and had the sections stood and temporarily braced by the end of the session.",
+        "assistant_response": "That sounds like a productive day with the lift and bracing work. Let's talk about the workforce next. How many people were involved in today's activities, and what were their roles?",
         "candidate_count": 8,
-        "accepted_source_count": 4,
-        "source_refs": [
-          {
-            "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
-            "page_label": "1",
-            "score": 0.3975
-          },
-          {
-            "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
-            "page_label": "2",
-            "score": 0.3873
-          },
-          {
-            "file_name": "5-2018IBC-International Building Code_Chapter23-33.pdf",
-            "page_label": "5",
-            "score": 0.4429
-          },
-          {
-            "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
-            "page_label": "2",
-            "score": 0.3956
-          }
-        ]
+        "accepted_source_count": 0,
+        "source_refs": []
       },
       "retrieval_precision_proxy": {
         "metric_name": "retrieval_precision_proxy@4",
         "scored": true,
-        "score": 0.75,
+        "score": 0.0,
         "k": 4,
         "candidate_count": 8,
         "top_k_count": 4,
-        "relevant_count_in_top_k": 3,
+        "relevant_count_in_top_k": 0,
         "skip_reason": null
       },
-      "precision_at_k": 0.75,
+      "precision_at_k": 0.0,
       "faithfulness": {
         "metric_name": "faithfulness",
         "scored": false,
-        "skip_reason": "no_claims",
+        "skip_reason": "no_context",
         "claims": [],
         "claim_count": 0,
         "per_judge_scores": {
-          "openai/gpt-4o-mini": null,
+          "openai/gpt-4.1": null,
           "google/gemini-2.5-flash": null,
-          "anthropic/claude-3-haiku": null
+          "anthropic/claude-sonnet-4.5": null
         },
         "per_judge_supported_counts": {
-          "openai/gpt-4o-mini": 0,
+          "openai/gpt-4.1": 0,
           "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
+          "anthropic/claude-sonnet-4.5": 0
         },
         "per_judge_evaluable_counts": {
-          "openai/gpt-4o-mini": 0,
+          "openai/gpt-4.1": 0,
           "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
+          "anthropic/claude-sonnet-4.5": 0
         },
         "per_judge_error_counts": {
-          "openai/gpt-4o-mini": 0,
+          "openai/gpt-4.1": 0,
           "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
+          "anthropic/claude-sonnet-4.5": 0
         },
         "majority_vote_score": null,
         "majority_supported_count": 0,
@@ -703,14 +962,14 @@
         "scored": true,
         "skip_reason": null,
         "judge_votes": {
-          "openai/gpt-4o-mini": true,
+          "openai/gpt-4.1": true,
           "google/gemini-2.5-flash": true,
-          "anthropic/claude-3-haiku": true
+          "anthropic/claude-sonnet-4.5": true
         },
         "judge_errors": {
-          "openai/gpt-4o-mini": false,
+          "openai/gpt-4.1": false,
           "google/gemini-2.5-flash": false,
-          "anthropic/claude-3-haiku": false
+          "anthropic/claude-sonnet-4.5": false
         },
         "majority_relevant": true,
         "majority_evaluable": true
@@ -720,11 +979,11 @@
       "turn": {
         "turn_index": 2,
         "round_id": "c0275b08-098f-4fbd-b099-9369306581ff-turn-0002",
-        "user_timestamp": "2026-08-10T11:37:42.161961+00:00",
-        "assistant_timestamp": "2026-08-10T11:37:45.811368+00:00",
-        "evaluated_at": "2026-08-10T14:33:24.841752+00:00",
-        "user_message": "Three people.",
-        "assistant_response": "Got it, you had a team of three working on the framing. Were there any specific roles or positions among the three of you, like a supervisor or a lead worker? And were there any absences today?",
+        "user_timestamp": "2026-08-11T09:55:10.597084+00:00",
+        "assistant_timestamp": "2026-08-11T09:55:12.597302+00:00",
+        "evaluated_at": "2026-08-11T10:45:55.435732+00:00",
+        "user_message": "There were Three people. We used Braces, clamps, hammers, levels, and impact drivers.",
+        "assistant_response": "Great, so a team of three was at work today. You mentioned using braces, clamps, hammers, levels, and impact drivers. I'll note that under equipment and tools. Could you also tell me about the materials you used?",
         "candidate_count": 8,
         "accepted_source_count": 0,
         "source_refs": []
@@ -747,24 +1006,24 @@
         "claims": [],
         "claim_count": 0,
         "per_judge_scores": {
-          "openai/gpt-4o-mini": null,
+          "openai/gpt-4.1": null,
           "google/gemini-2.5-flash": null,
-          "anthropic/claude-3-haiku": null
+          "anthropic/claude-sonnet-4.5": null
         },
         "per_judge_supported_counts": {
-          "openai/gpt-4o-mini": 0,
+          "openai/gpt-4.1": 0,
           "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
+          "anthropic/claude-sonnet-4.5": 0
         },
         "per_judge_evaluable_counts": {
-          "openai/gpt-4o-mini": 0,
+          "openai/gpt-4.1": 0,
           "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
+          "anthropic/claude-sonnet-4.5": 0
         },
         "per_judge_error_counts": {
-          "openai/gpt-4o-mini": 0,
+          "openai/gpt-4.1": 0,
           "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
+          "anthropic/claude-sonnet-4.5": 0
         },
         "majority_vote_score": null,
         "majority_supported_count": 0,
@@ -775,14 +1034,14 @@
         "scored": true,
         "skip_reason": null,
         "judge_votes": {
-          "openai/gpt-4o-mini": true,
+          "openai/gpt-4.1": true,
           "google/gemini-2.5-flash": true,
-          "anthropic/claude-3-haiku": true
+          "anthropic/claude-sonnet-4.5": true
         },
         "judge_errors": {
-          "openai/gpt-4o-mini": false,
+          "openai/gpt-4.1": false,
           "google/gemini-2.5-flash": false,
-          "anthropic/claude-3-haiku": false
+          "anthropic/claude-sonnet-4.5": false
         },
         "majority_relevant": true,
         "majority_evaluable": true
@@ -792,51 +1051,194 @@
       "turn": {
         "turn_index": 3,
         "round_id": "c0275b08-098f-4fbd-b099-9369306581ff-turn-0003",
-        "user_timestamp": "2026-08-10T11:37:47.462331+00:00",
-        "assistant_timestamp": "2026-08-10T11:37:49.891113+00:00",
-        "evaluated_at": "2026-08-10T14:33:30.192628+00:00",
-        "user_message": "Used some tools. No incident.",
-        "assistant_response": "Thanks for letting me know. Since you mentioned tools, could you describe what kinds of equipment and tools were used during your framing work today? And it's good to hear there were no incidents. Did you happen to notice any safety hazards or risks, even if they didn't lead to an incident?",
+        "user_timestamp": "2026-08-11T09:55:13.906887+00:00",
+        "assistant_timestamp": "2026-08-11T09:55:20.091161+00:00",
+        "evaluated_at": "2026-08-11T10:45:57.257792+00:00",
+        "user_message": "We were working with preframed wall sections, bottom plates, bracing lumber, and fasteners. Pinch points, wall instability during lifting, possible falls while positioning the wall. That came up while we were Framing work. Brief lift plan before raising the wall.",
+        "assistant_response": "Thanks for providing that information. I've noted the preframed wall sections, bottom plates, bracing lumber, and fasteners under materials. It's also important to address the safety concerns you mentioned. Pinch points, wall instability during lifting, and possible falls are significant hazards. It's good to hear you had a brief lift plan to tackle these issues. Remember, establishing a limited access zone and using proper fall protection can help enhance safety during such tasks.\n\nI've got all your details down. You can now download your completed report. If you need any more help, just let me know!",
         "candidate_count": 8,
-        "accepted_source_count": 0,
-        "source_refs": []
+        "accepted_source_count": 4,
+        "source_refs": [
+          {
+            "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+            "page_label": "2",
+            "score": 0.6664
+          },
+          {
+            "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+            "page_label": "1",
+            "score": 0.5658
+          },
+          {
+            "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+            "page_label": "1",
+            "score": 0.5787
+          },
+          {
+            "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+            "page_label": "3",
+            "score": 0.6469
+          }
+        ]
       },
       "retrieval_precision_proxy": {
         "metric_name": "retrieval_precision_proxy@4",
         "scored": true,
-        "score": 0.0,
+        "score": 1.0,
         "k": 4,
         "candidate_count": 8,
         "top_k_count": 4,
-        "relevant_count_in_top_k": 0,
+        "relevant_count_in_top_k": 4,
         "skip_reason": null
       },
-      "precision_at_k": 0.0,
+      "precision_at_k": 1.0,
+      "faithfulness": {
+        "metric_name": "faithfulness",
+        "scored": true,
+        "skip_reason": null,
+        "claims": [
+          {
+            "claim": "Pinch points, wall instability during lifting, and possible falls are significant hazards.",
+            "judge_votes": {
+              "openai/gpt-4.1": true,
+              "google/gemini-2.5-flash": true,
+              "anthropic/claude-sonnet-4.5": true
+            },
+            "judge_errors": {
+              "openai/gpt-4.1": false,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-sonnet-4.5": false
+            },
+            "majority_supported": true
+          },
+          {
+            "claim": "Establishing a limited access zone and using proper fall protection can help enhance safety during such tasks.",
+            "judge_votes": {
+              "openai/gpt-4.1": true,
+              "google/gemini-2.5-flash": true,
+              "anthropic/claude-sonnet-4.5": true
+            },
+            "judge_errors": {
+              "openai/gpt-4.1": false,
+              "google/gemini-2.5-flash": false,
+              "anthropic/claude-sonnet-4.5": false
+            },
+            "majority_supported": true
+          }
+        ],
+        "claim_count": 2,
+        "per_judge_scores": {
+          "openai/gpt-4.1": 1.0,
+          "google/gemini-2.5-flash": 1.0,
+          "anthropic/claude-sonnet-4.5": 1.0
+        },
+        "per_judge_supported_counts": {
+          "openai/gpt-4.1": 2,
+          "google/gemini-2.5-flash": 2,
+          "anthropic/claude-sonnet-4.5": 2
+        },
+        "per_judge_evaluable_counts": {
+          "openai/gpt-4.1": 2,
+          "google/gemini-2.5-flash": 2,
+          "anthropic/claude-sonnet-4.5": 2
+        },
+        "per_judge_error_counts": {
+          "openai/gpt-4.1": 0,
+          "google/gemini-2.5-flash": 0,
+          "anthropic/claude-sonnet-4.5": 0
+        },
+        "majority_vote_score": 1.0,
+        "majority_supported_count": 2,
+        "majority_evaluable_claim_count": 2
+      },
+      "answer_relevance": {
+        "metric_name": "answer_relevance",
+        "scored": true,
+        "skip_reason": null,
+        "judge_votes": {
+          "openai/gpt-4.1": true,
+          "google/gemini-2.5-flash": true,
+          "anthropic/claude-sonnet-4.5": true
+        },
+        "judge_errors": {
+          "openai/gpt-4.1": false,
+          "google/gemini-2.5-flash": false,
+          "anthropic/claude-sonnet-4.5": false
+        },
+        "majority_relevant": true,
+        "majority_evaluable": true
+      }
+    },
+    {
+      "turn": {
+        "turn_index": 4,
+        "round_id": "c0275b08-098f-4fbd-b099-9369306581ff-turn-0004",
+        "user_timestamp": "2026-08-11T09:55:21.361385+00:00",
+        "assistant_timestamp": "2026-08-11T09:55:27.261879+00:00",
+        "evaluated_at": "2026-08-11T10:46:02.843856+00:00",
+        "user_message": "Pinch points, wall instability during lifting, possible falls while positioning the wall. That came up while we were Framing work. Brief lift plan before raising the wall.",
+        "assistant_response": "Got it! I've included the pinch points, wall instability during lifting, and possible falls as noted hazards. It's excellent that you had a brief lift plan in place to address these concerns. Remember, discussing the safest methods and having a competent person supervise can help manage these risks effectively.\n\nYour report is ready for download! Let me know if there's anything else you need.",
+        "candidate_count": 8,
+        "accepted_source_count": 4,
+        "source_refs": [
+          {
+            "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+            "page_label": "2",
+            "score": 0.6724
+          },
+          {
+            "file_name": "2-OSHAFactSheet - Reducing Falls during Residential Construction Erecting Exterior and Interior Walls.pdf",
+            "page_label": "1",
+            "score": 0.5586
+          },
+          {
+            "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+            "page_label": "1",
+            "score": 0.5841
+          },
+          {
+            "file_name": "3-Hazards of Manually Lifting Balloon Framed Walls.pdf",
+            "page_label": "3",
+            "score": 0.6574
+          }
+        ]
+      },
+      "retrieval_precision_proxy": {
+        "metric_name": "retrieval_precision_proxy@4",
+        "scored": true,
+        "score": 1.0,
+        "k": 4,
+        "candidate_count": 8,
+        "top_k_count": 4,
+        "relevant_count_in_top_k": 4,
+        "skip_reason": null
+      },
+      "precision_at_k": 1.0,
       "faithfulness": {
         "metric_name": "faithfulness",
         "scored": false,
-        "skip_reason": "no_context",
+        "skip_reason": "no_claims",
         "claims": [],
         "claim_count": 0,
         "per_judge_scores": {
-          "openai/gpt-4o-mini": null,
+          "openai/gpt-4.1": null,
           "google/gemini-2.5-flash": null,
-          "anthropic/claude-3-haiku": null
+          "anthropic/claude-sonnet-4.5": null
         },
         "per_judge_supported_counts": {
-          "openai/gpt-4o-mini": 0,
+          "openai/gpt-4.1": 0,
           "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
+          "anthropic/claude-sonnet-4.5": 0
         },
         "per_judge_evaluable_counts": {
-          "openai/gpt-4o-mini": 0,
+          "openai/gpt-4.1": 0,
           "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
+          "anthropic/claude-sonnet-4.5": 0
         },
         "per_judge_error_counts": {
-          "openai/gpt-4o-mini": 0,
+          "openai/gpt-4.1": 0,
           "google/gemini-2.5-flash": 0,
-          "anthropic/claude-3-haiku": 0
+          "anthropic/claude-sonnet-4.5": 0
         },
         "majority_vote_score": null,
         "majority_supported_count": 0,
@@ -847,14 +1249,14 @@
         "scored": true,
         "skip_reason": null,
         "judge_votes": {
-          "openai/gpt-4o-mini": true,
+          "openai/gpt-4.1": true,
           "google/gemini-2.5-flash": true,
-          "anthropic/claude-3-haiku": true
+          "anthropic/claude-sonnet-4.5": true
         },
         "judge_errors": {
-          "openai/gpt-4o-mini": false,
+          "openai/gpt-4.1": false,
           "google/gemini-2.5-flash": false,
-          "anthropic/claude-3-haiku": false
+          "anthropic/claude-sonnet-4.5": false
         },
         "majority_relevant": true,
         "majority_evaluable": true
@@ -863,108 +1265,79 @@
   ],
   "aggregated_metrics": {
     "retrieval_precision_proxy": {
-      "mean": 0.25,
-      "n_scored": 3,
+      "mean": 0.5,
+      "n_scored": 4,
       "n_skipped": 0,
       "k": 4,
       "skip_reason_counts": {}
     },
     "faithfulness": {
       "judge_models": [
-        "openai/gpt-4o-mini",
+        "openai/gpt-4.1",
         "google/gemini-2.5-flash",
-        "anthropic/claude-3-haiku"
+        "anthropic/claude-sonnet-4.5"
       ],
       "per_judge_mean": {
-        "openai/gpt-4o-mini": null,
-        "google/gemini-2.5-flash": null,
-        "anthropic/claude-3-haiku": null
+        "openai/gpt-4.1": 1.0,
+        "google/gemini-2.5-flash": 1.0,
+        "anthropic/claude-sonnet-4.5": 1.0
       },
-      "majority_vote_mean": null,
+      "majority_vote_mean": 1.0,
       "pairwise_raw_agreement": {
-        "openai/gpt-4o-mini vs google/gemini-2.5-flash": null,
-        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": null,
-        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": null
+        "openai/gpt-4.1 vs google/gemini-2.5-flash": 1.0,
+        "openai/gpt-4.1 vs anthropic/claude-sonnet-4.5": 1.0,
+        "google/gemini-2.5-flash vs anthropic/claude-sonnet-4.5": 1.0
       },
       "pairwise_compared_count": {
-        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 0,
-        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 0,
-        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 0
+        "openai/gpt-4.1 vs google/gemini-2.5-flash": 2,
+        "openai/gpt-4.1 vs anthropic/claude-sonnet-4.5": 2,
+        "google/gemini-2.5-flash vs anthropic/claude-sonnet-4.5": 2
       },
-      "n_turns": 0,
+      "n_turns": 1,
       "n_skipped": 3,
-      "n_claims": 0,
+      "n_claims": 2,
       "per_judge_error_count": {
-        "openai/gpt-4o-mini": 0,
+        "openai/gpt-4.1": 0,
         "google/gemini-2.5-flash": 0,
-        "anthropic/claude-3-haiku": 0
+        "anthropic/claude-sonnet-4.5": 0
       },
       "skip_reason_counts": {
-        "no_claims": 1,
-        "no_context": 2
+        "no_context": 2,
+        "no_claims": 1
       }
     },
     "answer_relevance": {
       "judge_models": [
-        "openai/gpt-4o-mini",
+        "openai/gpt-4.1",
         "google/gemini-2.5-flash",
-        "anthropic/claude-3-haiku"
+        "anthropic/claude-sonnet-4.5"
       ],
       "per_judge_mean": {
-        "openai/gpt-4o-mini": 1.0,
+        "openai/gpt-4.1": 1.0,
         "google/gemini-2.5-flash": 1.0,
-        "anthropic/claude-3-haiku": 1.0
+        "anthropic/claude-sonnet-4.5": 1.0
       },
       "majority_vote_mean": 1.0,
       "pairwise_raw_agreement": {
-        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 1.0,
-        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 1.0,
-        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 1.0
+        "openai/gpt-4.1 vs google/gemini-2.5-flash": 1.0,
+        "openai/gpt-4.1 vs anthropic/claude-sonnet-4.5": 1.0,
+        "google/gemini-2.5-flash vs anthropic/claude-sonnet-4.5": 1.0
       },
       "pairwise_compared_count": {
-        "openai/gpt-4o-mini vs google/gemini-2.5-flash": 3,
-        "openai/gpt-4o-mini vs anthropic/claude-3-haiku": 3,
-        "google/gemini-2.5-flash vs anthropic/claude-3-haiku": 3
+        "openai/gpt-4.1 vs google/gemini-2.5-flash": 4,
+        "openai/gpt-4.1 vs anthropic/claude-sonnet-4.5": 4,
+        "google/gemini-2.5-flash vs anthropic/claude-sonnet-4.5": 4
       },
-      "n_turns": 3,
+      "n_turns": 4,
       "per_judge_error_count": {
-        "openai/gpt-4o-mini": 0,
+        "openai/gpt-4.1": 0,
         "google/gemini-2.5-flash": 0,
-        "anthropic/claude-3-haiku": 0
+        "anthropic/claude-sonnet-4.5": 0
       }
     },
     "precision_at_k": {
-      "mean": 0.25,
-      "n": 3
-    }
-  },
-  "evaluation": {
-    "status": "complete",
-    "evaluated_at": "2026-08-10T14:33:31.564688+00:00",
-    "config": {
-      "claim_decomposition_model": "openai/gpt-4o-mini",
-      "judge_models": [
-        "openai/gpt-4o-mini",
-        "google/gemini-2.5-flash",
-        "anthropic/claude-3-haiku"
-      ],
-      "openrouter_base_url": "https://openrouter.ai/api/v1",
-      "retrieval_precision_k": 4,
-      "executor_max_workers": 4,
-      "verify_pool_max_workers": 6
-    },
-    "turns_evaluated": 3,
-    "artifact_source": "reconstructed_retrieval"
-  },
-  "collection_config": {
-    "chat_model": "gpt-4o",
-    "retrieval": {
-      "retrieval_relevance_judge_model": "gpt-4o",
-      "embedding_model": "text-embedding-3-large",
-      "dense_top_k": 10,
-      "bm25_top_k": 10,
-      "candidate_pool": 8,
-      "max_results": 4
+      "mean": 0.5,
+      "n": 4
     }
   }
 }

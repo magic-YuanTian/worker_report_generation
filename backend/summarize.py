@@ -23,7 +23,7 @@ DEFAULT_SUMMARY_FILENAME = "study_summary.json"
 FIGURE_DPI = 300
 PANEL_FIGURE_SIZE = (18, 10)
 POOLED_FIGURE_SIZE = (14, 8)
-TREND_FIGURE_SIZE = (16, 9)
+TREND_FIGURE_SIZE = (18, 9)
 RETRIEVAL_COLOR = "#6B86A3"
 FAITHFULNESS_COLOR = "#7E95A6"
 ANSWER_COLOR = "#8A92AE"
@@ -129,6 +129,24 @@ def _turn_level_means(points: list[tuple[int, float]]) -> tuple[list[int], list[
     return ordered_turns, [_safe_mean(grouped[turn]) for turn in ordered_turns]
 
 
+def _faithfulness_na_turns(
+    sessions: list[dict],
+    scored_turns: list[int],
+) -> list[int]:
+    """Turns where Faithfulness was skipped everywhere it appeared."""
+    scored = set(scored_turns)
+    skipped = set()
+    for session in sessions:
+        for metric in _sorted_turn_metrics(session):
+            turn_index = metric.get("turn", {}).get("turn_index")
+            if turn_index is None or turn_index in scored:
+                continue
+            entry = metric.get("faithfulness")
+            if entry and not entry.get("scored") and entry.get("skip_reason"):
+                skipped.add(turn_index)
+    return sorted(skipped)
+
+
 def _bar_value(values: list[float | None]) -> list[float]:
     return [value if value is not None else 0 for value in values]
 
@@ -149,10 +167,13 @@ def _apply_paper_style(ax) -> None:
     ax.title.set_size(TITLE_FONT_SIZE)
 
 
-def _tight_save(fig, path: str, *, rect=None) -> None:
+def _tight_save(fig, path: str, *, rect=None, crop=False) -> None:
     """Apply consistent padding before saving larger paper-ready figures."""
-    fig.tight_layout(rect=rect, pad=1.1)
-    fig.savefig(path, dpi=FIGURE_DPI)
+    fig.tight_layout(rect=rect, pad=0.8)
+    save_options = {"dpi": FIGURE_DPI}
+    if crop:
+        save_options.update({"bbox_inches": "tight", "pad_inches": 0.08})
+    fig.savefig(path, **save_options)
 
 
 def _render_figures(summary: dict, sessions: list[dict], figure_dir: str) -> list[str]:
@@ -314,13 +335,18 @@ def _render_figures(summary: dict, sessions: list[dict], figure_dir: str) -> lis
     faith_turns, faith_means = _turn_level_means(
         _extract_turn_series(sessions, "faithfulness_majority")
     )
+    faith_na_turns = _faithfulness_na_turns(sessions, faith_turns)
     answer_turns, answer_means = _turn_level_means(
         _extract_turn_series(sessions, "answer_relevance_majority")
     )
 
     fig, ax = plt.subplots(figsize=TREND_FIGURE_SIZE)
+    retrieval_handle = None
+    faith_handle = None
+    faith_na_handle = None
+    answer_handle = None
     if retrieval_turns:
-        ax.plot(
+        (retrieval_handle,) = ax.plot(
             retrieval_turns,
             retrieval_means,
             marker="o",
@@ -330,7 +356,7 @@ def _render_figures(summary: dict, sessions: list[dict], figure_dir: str) -> lis
             color=RETRIEVAL_COLOR,
         )
     if faith_turns:
-        ax.plot(
+        (faith_handle,) = ax.plot(
             faith_turns,
             faith_means,
             marker="s",
@@ -339,8 +365,32 @@ def _render_figures(summary: dict, sessions: list[dict], figure_dir: str) -> lis
             label="Faithfulness (majority vote)",
             color=FAITHFULNESS_COLOR,
         )
+    if faith_na_turns:
+        y_na = 0.13
+        faith_na_handle = ax.scatter(
+            faith_na_turns,
+            [y_na] * len(faith_na_turns),
+            marker="s",
+            s=80,
+            facecolors="none",
+            edgecolors=FAITHFULNESS_COLOR,
+            linewidths=1.8,
+            alpha=0.65,
+            label="Faithfulness N/A (skipped)",
+        )
+        for turn in faith_na_turns:
+            ax.text(
+                turn,
+                y_na + 0.035,
+                "N/A",
+                ha="center",
+                va="bottom",
+                fontsize=12,
+                color=FAITHFULNESS_COLOR,
+                alpha=0.75,
+            )
     if answer_turns:
-        ax.plot(
+        (answer_handle,) = ax.plot(
             answer_turns,
             answer_means,
             marker="^",
@@ -352,24 +402,36 @@ def _render_figures(summary: dict, sessions: list[dict], figure_dir: str) -> lis
     all_turns = sorted(set(retrieval_turns + faith_turns + answer_turns))
     if all_turns:
         ax.set_xticks(all_turns)
-        ax.set_xlim(min(all_turns) - 0.15, max(all_turns) + 0.15)
-    ax.set_ylim(0, 1.10)
-    ax.set_xlabel("Turn index")
+        ax.set_xlim(min(all_turns) - 0.08, max(all_turns) + 0.08)
+    ax.set_ylim(0, 1.05)
+    ax.set_xlabel("Turn index (1 = first user-assistant round)")
     ax.set_ylabel("Mean score across sessions")
     ax.set_title("Metric Trends by Conversation Round")
     ax.grid(True, linestyle="--", linewidth=0.7, color=GRID_COLOR, alpha=0.8)
     _apply_paper_style(ax)
+    legend_handles = [
+        handle
+        for handle in (
+            retrieval_handle,
+            faith_handle,
+            answer_handle,
+            faith_na_handle,
+        )
+        if handle is not None
+    ]
     ax.legend(
+        handles=legend_handles,
         loc="upper center",
-        bbox_to_anchor=(0.5, -0.18),
+        bbox_to_anchor=(0.5, -0.27),
         ncol=2,
         frameon=False,
-        fontsize=LEGEND_FONT_SIZE,
-        columnspacing=1.6,
+        fontsize=18,
+        columnspacing=2.0,
         handlelength=2.8,
+        borderaxespad=0.0,
     )
     trend_path = os.path.join(figure_dir, "metric_trends_by_turn.png")
-    _tight_save(fig, trend_path, rect=(0, 0.08, 1, 1))
+    _tight_save(fig, trend_path, rect=(0.02, 0.18, 0.995, 0.98), crop=True)
     plt.close(fig)
     figure_paths.append(trend_path)
 
